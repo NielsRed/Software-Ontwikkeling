@@ -1,0 +1,9 @@
+Debug/
+!.gitignore
+.settings/
+*.cproject
+*.mxproject
+*.project
+*.Id
+*.launch
+*.ioc
