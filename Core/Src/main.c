@@ -36,9 +36,11 @@ int main(void)
 	    	  }
 	      }
 	    }
+
+	    matchesCommand("lijn");
+
   while(1)
   {
-
 
   }
 }
