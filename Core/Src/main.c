@@ -14,6 +14,7 @@
 #include "UART.h"
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
+#include "API_Draw.h"
 
 
 int main(void)
@@ -21,27 +22,14 @@ int main(void)
 	SystemInit(); // System speed to 168MHz
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
-	UART2_Init_Interrupt(9600);
-	uint16_t xp,yp;
 
-	    for(yp = 0; yp < VGA_DISPLAY_Y; yp++) {
-	      for(xp = 0; xp < VGA_DISPLAY_X; xp++) {
-	    	  if(xp < 200 && xp > 198)
-	    	  {
-	    		  UB_VGA_SetPixel(xp, yp, VGA_COL_MAGENTA);
-	    	  }
-	    	  else
-	    	  {
-	    	       UB_VGA_SetPixel(xp, yp, VGA_COL_CYAN);
-	    	  }
-	      }
-	    }
+	testscherm();
   while(1)
   {
 
-
   }
 }
+<<<<<<< Updated upstream
 
 void delay_us(uint32_t us) {
     uint32_t count = us * (SystemCoreClock / 1000000) / 5; // Adjust division based on compiler optimization
@@ -50,3 +38,5 @@ void delay_us(uint32_t us) {
     }
 }
 
+=======
+>>>>>>> Stashed changes
