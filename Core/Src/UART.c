@@ -73,6 +73,9 @@ void USART2_IRQHandler(void) {
             UART2_SendString(uart2_rx_buffer);
             UART2_SendString("\n");
 
+            // Call function to process the strings.
+            FL_Parse_String(uart2_rx_buffer);
+
             // Reset the buffer index for the next string
             uart2_rx_index = 0;
         } else {
