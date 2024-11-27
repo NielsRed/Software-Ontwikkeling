@@ -37,7 +37,7 @@ int main(void)
 	      }
 	    }
 
-	    matchesCommand("lijn");
+	    matchesCommand("lijn, 1, 2, 3, 4, red, 20");
 
   while(1)
   {
