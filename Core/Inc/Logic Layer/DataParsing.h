@@ -23,7 +23,6 @@ typedef struct {
 typedef struct {
     int x_lup;
     int y_lup;
-    int x_prime;
     int width;
     int height;
     char color[20];
@@ -33,7 +32,7 @@ typedef struct {
 typedef struct {
     int x;
     int y;
-    int color;
+    char color[20];
     char text[20];
     char fontName[20];
     int fontSize;
@@ -48,14 +47,21 @@ typedef struct {
 
 typedef struct {
     int color[20];
-} Bitmap;
+} Clearscherm;
 
 char *userCommands[] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm"};
+char *colors[] = {"rood", "groen", "blauw"};
+char *fontNames[] = {"arial", "consolas"};
+char *fontStyles[] = {"normaal", "vet", "cursief"};
 
 void matchesCommand(const char *command);
 void handleUnknownCommand();
 void parseCommand(const char *command, const char*fullCommand);
 void parseLijn(const char *input);
+void parseRechthoek(const char *input);
+void parseTekst(const char *input);
+void parseBitmap(const char *input);
+void parseClearscherm(const char *input);
 
 
 #endif /* INC_DATAPARSING_H_ */

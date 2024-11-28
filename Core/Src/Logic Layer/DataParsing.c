@@ -56,7 +56,56 @@ void parseLijn(const char *input) {
     // Convert values to strings and send over UART
     char buffer[50];
 
-    // Send x
     sprintf(buffer, "x: %s\n", lijn.color);
+    UART2_SendString(buffer);
+}
+
+void parseRechthoek(const char *input) {
+    Rechthoek rect = {0};
+    if (sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d",
+               &rect.x_lup, &rect.y_lup, &rect.width, &rect.height,
+			   rect.color, &rect.filled) == 6) {
+    }
+    // Convert values to strings and send over UART
+    char buffer[50];
+
+    sprintf(buffer, "width: %s\n", rect.width);
+    UART2_SendString(buffer);
+}
+
+void parseTekst(const char *input) {
+    Tekst txt = {0};
+    if (sscanf(input, "tekst,%d,%d,%19[^,],%19[^,],%19[^,],%d, %19[^,]",
+               &txt.x, &txt.y, txt.color, txt.text,
+			   txt.fontName, &txt.fontSize, txt.fontStyle) == 7) {
+    }
+    // Convert values to strings and send over UART
+    char buffer[50];
+
+    sprintf(buffer, "txt: %s\n", txt.text);
+    UART2_SendString(buffer);
+}
+
+void parseBitmap(const char *input) {
+    Bitmap bitmap = {0};
+    if (sscanf(input, "bitmap,%d,%d,%d",
+               &bitmap.bitmapIndex, &bitmap.x_lup, &bitmap.y_lup) == 3) {
+    }
+    // Convert values to strings and send over UART
+    char buffer[50];
+
+    sprintf(buffer, "index: %s\n", bitmap.bitmapIndex);
+    UART2_SendString(buffer);
+}
+
+void parseClearscherm(const char *input) {
+	Clearscherm clear = {0};
+    if (sscanf(input, "clearscherm,%19[^,]",
+    		clear.color) == 1) {
+    }
+    // Convert values to strings and send over UART
+    char buffer[50];
+
+    sprintf(buffer, "color: %s\n", clear.color);
     UART2_SendString(buffer);
 }
