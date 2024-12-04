@@ -29,14 +29,3 @@ int main(void)
 
   }
 }
-<<<<<<< Updated upstream
-
-void delay_us(uint32_t us) {
-    uint32_t count = us * (SystemCoreClock / 1000000) / 5; // Adjust division based on compiler optimization
-    while (count--) {
-        __NOP(); // No operation (assembly instruction)
-    }
-}
-
-=======
->>>>>>> Stashed changes
