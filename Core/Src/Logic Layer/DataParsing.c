@@ -30,6 +30,48 @@ void handleUnknownCommand() {
 	UART2_SendString("Unknown command");
 }
 
+void trimWhitespace(char *str) {
+    char *start = str; // Pointer to the beginning of the string
+    char *end;
+
+    // Move the start pointer forward while there are leading whitespace characters
+    while (*start == ' ' || *start == '\n' || *start == '\t') {
+        start++;
+    }
+
+    // If there was leading whitespace, move the trimmed content to the start of the string
+    if (start != str) {
+        memmove(str, start, strlen(start) + 1); // Include the null terminator
+    }
+
+    // Trim whitespace at the end
+    end = str + strlen(str) - 1;
+    while (end > str && (*end == ' ' || *end == '\n' || *end == '\t')) {
+        *end = '\0';
+        end--;
+    }
+}
+
+
+int checkColor(const char *color) {
+    char lowerColor[20];
+    strncpy(lowerColor, color, sizeof(lowerColor) - 1);
+    lowerColor[19] = '\0'; // Ensure null-termination
+
+    // Convert to lowercase
+    for (int i = 0; lowerColor[i]; i++) {
+        lowerColor[i] = tolower(lowerColor[i]);
+    }
+
+    // Compare
+    for (int i = 0; i < NUM_COLORS; i++) {
+        if (strcmp(lowerColor, colors[i]) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
 void parseCommand(const char *command, const char*fullCommand) {
     // Use string hashing or conditionals for matching strings
     if (strcmp(command, "lijn") == 0) {
@@ -54,15 +96,29 @@ void parseCommand(const char *command, const char*fullCommand) {
 // Function to parse a comma-separated string into a Lijn struct
 void parseLijn(const char *input) {
     Lijn lijn = {0};
-    if (sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d",
-               &lijn.x, &lijn.y, &lijn.x_prime, &lijn.y_prime,
-               lijn.color, &lijn.thickness) == 6) {
-    }
+
     // Convert values to strings and send over UART
     char buffer[50];
 
-    sprintf(buffer, "x: %s\n", lijn.color);
-    UART2_SendString(buffer);
+    int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d",
+            &lijn.x, &lijn.y, &lijn.x_prime, &lijn.y_prime,
+            lijn.color, &lijn.thickness);
+
+    if (parsed == 6) {
+    }else{// if parsing failed
+        sprintf(buffer, "Parsing failed. Parsed fields: %d\n", parsed);
+        UART2_SendString(buffer);
+        return;
+    }
+
+    trimWhitespace(lijn.color); // Remove any trailing whitespace
+
+    if(checkColor(lijn.color)){
+        sprintf(buffer, "found color: %s\n", lijn.color);
+        UART2_SendString(buffer);
+    }else{
+    	UART2_SendString("unknown color detected");
+    }
 //    API_draw_line(lijn.x, lijn.y, lijn.x_prime, lijn.y_prime, VGA_COL_BLUE, lijn.thickness, 0);
 }
 

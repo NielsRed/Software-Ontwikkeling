@@ -9,6 +9,7 @@
 #define INC_DATAPARSING_H_
 
 #define ALL_COMMANDS 5
+#define NUM_COLORS 3
 #define MAX_DATA_SIZE 50
 
 typedef struct {
@@ -62,6 +63,8 @@ void parseRechthoek(const char *input);
 void parseTekst(const char *input);
 void parseBitmap(const char *input);
 void parseClearscherm(const char *input);
+int checkColor(const char *color);
+void trimWhitespace(char *str);
 
 
 #endif /* INC_DATAPARSING_H_ */
