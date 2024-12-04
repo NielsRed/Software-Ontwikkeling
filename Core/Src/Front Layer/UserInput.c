@@ -11,7 +11,7 @@
 void FL_Parse_String(char String_Received[1028])
 {
     char processed_string[1028]; // Temporary buffer for the current command
-    int i = 0, j = 0, spacebarCheck = 0, valid = 0;            // Indexes for input and output buffers
+    int i = 0, j = 0, spacebarCheck = 0;           // Indexes for input and output buffers
 
     UART2_SendString("Processing String: \n");
 
@@ -26,16 +26,20 @@ void FL_Parse_String(char String_Received[1028])
             UART2_SendString(processed_string);
             UART2_SendString("\n");
 
-            matchesCommand(processed_string); // Process the command
+//            matchesCommand(processed_string); // Process the command
 
             // Reset the buffer index for the next command
             j = 0;
         } else {
             // Append character to the current command
-        	if(String_Received[i] == ' ')
+        	if(String_Received[i] == ',')
         		{
-        	    	i++;
-        	        spacebarCheck++;
+        		processed_string[j++] = String_Received[i];
+        		if(String_Received[i+1] == ' ')
+        			{
+        	    		i++;
+        	    		spacebarCheck++;
+        			}
 
         	    }
         	else
@@ -51,6 +55,6 @@ void FL_Parse_String(char String_Received[1028])
         UART2_SendString(processed_string);
         UART2_SendString("\n");
 
-        matchesCommand(processed_string);
+//        matchesCommand(processed_string);
     }
 }
