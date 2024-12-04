@@ -27,7 +27,7 @@ var menudata={children:[
 {text:"Topics",url:"topics.html"},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
-{text:"Globals",url:"globals.html",children:[
+{text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
 {text:"d",url:"globals.html#index_d"},
 {text:"g",url:"globals.html#index_g"},

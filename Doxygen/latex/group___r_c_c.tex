@@ -1,0 +1,105 @@
+\doxysubsection{RCC}
+\hypertarget{group___r_c_c}{}\label{group___r_c_c}\index{RCC@{RCC}}
+
+
+RCC driver modules.  
+
+
+\doxysubsubsubsection*{Topics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___r_c_c___private___functions}{RCC\+\_\+\+Private\+\_\+\+Functions}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___r_c_c_ga539e07c3b3c55f1f1d47231341fb11e1}\label{group___r_c_c_ga539e07c3b3c55f1f1d47231341fb11e1} 
+\#define {\bfseries RCC\+\_\+\+OFFSET}~(RCC\+\_\+\+BASE -\/ PERIPH\+\_\+\+BASE)
+\item 
+\Hypertarget{group___r_c_c_gafa1d3d0ea72132df651c76fc1bdffffc}\label{group___r_c_c_gafa1d3d0ea72132df651c76fc1bdffffc} 
+\#define {\bfseries CR\+\_\+\+OFFSET}~(RCC\+\_\+\+OFFSET + 0x00)
+\item 
+\Hypertarget{group___r_c_c_ga3d3085e491cbef815d223afbe5bf1930}\label{group___r_c_c_ga3d3085e491cbef815d223afbe5bf1930} 
+\#define {\bfseries HSION\+\_\+\+Bit\+Number}~0x00
+\item 
+\Hypertarget{group___r_c_c_gac3290a833c0e35ec17d32c2d494e6133}\label{group___r_c_c_gac3290a833c0e35ec17d32c2d494e6133} 
+\#define {\bfseries CR\+\_\+\+HSION\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (CR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (HSION\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___r_c_c_ga253fa44d87aabc55f0cd6628e77a51fd}\label{group___r_c_c_ga253fa44d87aabc55f0cd6628e77a51fd} 
+\#define {\bfseries CSSON\+\_\+\+Bit\+Number}~0x13
+\item 
+\Hypertarget{group___r_c_c_gaca914aed10477ae4090fea0a9639b1ea}\label{group___r_c_c_gaca914aed10477ae4090fea0a9639b1ea} 
+\#define {\bfseries CR\+\_\+\+CSSON\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (CR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (CSSON\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___r_c_c_gab24d7f5f8e4b3b717fd91b54f393f6a3}\label{group___r_c_c_gab24d7f5f8e4b3b717fd91b54f393f6a3} 
+\#define {\bfseries PLLON\+\_\+\+Bit\+Number}~0x18
+\item 
+\Hypertarget{group___r_c_c_ga3f1fb2589cb8b5ac2f7121aba1135a5f}\label{group___r_c_c_ga3f1fb2589cb8b5ac2f7121aba1135a5f} 
+\#define {\bfseries CR\+\_\+\+PLLON\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (CR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (PLLON\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___r_c_c_gabae59c3e4200523e3aa5b6e10aee8c46}\label{group___r_c_c_gabae59c3e4200523e3aa5b6e10aee8c46} 
+\#define {\bfseries PLLI2\+SON\+\_\+\+Bit\+Number}~0x1A
+\item 
+\Hypertarget{group___r_c_c_ga0c0fb27aba4eb660f7590252596bdfc5}\label{group___r_c_c_ga0c0fb27aba4eb660f7590252596bdfc5} 
+\#define {\bfseries CR\+\_\+\+PLLI2\+SON\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (CR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (PLLI2\+SON\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___r_c_c_ga8682298330c3b9bae1992e4f1a0af985}\label{group___r_c_c_ga8682298330c3b9bae1992e4f1a0af985} 
+\#define {\bfseries CFGR\+\_\+\+OFFSET}~(RCC\+\_\+\+OFFSET + 0x08)
+\item 
+\Hypertarget{group___r_c_c_ga9561d436b438d8f513b754f1934c3e30}\label{group___r_c_c_ga9561d436b438d8f513b754f1934c3e30} 
+\#define {\bfseries I2\+SSRC\+\_\+\+Bit\+Number}~0x17
+\item 
+\Hypertarget{group___r_c_c_ga9076f5ddbb262fd45584702f5d280c9e}\label{group___r_c_c_ga9076f5ddbb262fd45584702f5d280c9e} 
+\#define {\bfseries CFGR\+\_\+\+I2\+SSRC\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (CFGR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (I2\+SSRC\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___r_c_c_ga5f8a0c3cb5f5c835bf7eef09515138ad}\label{group___r_c_c_ga5f8a0c3cb5f5c835bf7eef09515138ad} 
+\#define {\bfseries BDCR\+\_\+\+OFFSET}~(RCC\+\_\+\+OFFSET + 0x70)
+\item 
+\Hypertarget{group___r_c_c_ga9302c551752124766afc4cee65436405}\label{group___r_c_c_ga9302c551752124766afc4cee65436405} 
+\#define {\bfseries RTCEN\+\_\+\+Bit\+Number}~0x0F
+\item 
+\Hypertarget{group___r_c_c_gaf70aaf70b0752ccb3a60307b2fb46038}\label{group___r_c_c_gaf70aaf70b0752ccb3a60307b2fb46038} 
+\#define {\bfseries BDCR\+\_\+\+RTCEN\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (BDCR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (RTCEN\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___r_c_c_gae6718158034388d8fde8caaa28ffe8b9}\label{group___r_c_c_gae6718158034388d8fde8caaa28ffe8b9} 
+\#define {\bfseries BDRST\+\_\+\+Bit\+Number}~0x10
+\item 
+\Hypertarget{group___r_c_c_ga892fdf297b85b85cbaf0723649b31818}\label{group___r_c_c_ga892fdf297b85b85cbaf0723649b31818} 
+\#define {\bfseries BDCR\+\_\+\+BDRST\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (BDCR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (BDRST\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___r_c_c_ga984cbe73312b6d3d355c5053763d499a}\label{group___r_c_c_ga984cbe73312b6d3d355c5053763d499a} 
+\#define {\bfseries CSR\+\_\+\+OFFSET}~(RCC\+\_\+\+OFFSET + 0x74)
+\item 
+\Hypertarget{group___r_c_c_ga3f9dbe50769ce2a63ae12520433b9b40}\label{group___r_c_c_ga3f9dbe50769ce2a63ae12520433b9b40} 
+\#define {\bfseries LSION\+\_\+\+Bit\+Number}~0x00
+\item 
+\Hypertarget{group___r_c_c_gaa253e36e7e5fb02998c0e4d0388abc52}\label{group___r_c_c_gaa253e36e7e5fb02998c0e4d0388abc52} 
+\#define {\bfseries CSR\+\_\+\+LSION\+\_\+\+BB}~(PERIPH\+\_\+\+BB\+\_\+\+BASE + (CSR\+\_\+\+OFFSET \texorpdfstring{$\ast$}{*} 32) + (LSION\+\_\+\+Bit\+Number \texorpdfstring{$\ast$}{*} 4))
+\item 
+\Hypertarget{group___r_c_c_gabd7dd9cf31a9cc27fd9c0c1624f9a298}\label{group___r_c_c_gabd7dd9cf31a9cc27fd9c0c1624f9a298} 
+\#define {\bfseries CFGR\+\_\+\+MCO2\+\_\+\+RESET\+\_\+\+MASK}~((uint32\+\_\+t)0x07\+FFFFFF)
+\item 
+\Hypertarget{group___r_c_c_ga51f5130a66963090dc02b4ebd47e2f83}\label{group___r_c_c_ga51f5130a66963090dc02b4ebd47e2f83} 
+\#define {\bfseries CFGR\+\_\+\+MCO1\+\_\+\+RESET\+\_\+\+MASK}~((uint32\+\_\+t)0x\+F89\+FFFFF)
+\item 
+\Hypertarget{group___r_c_c_ga890221cb651a3f30f6d1bca0d9b0e13d}\label{group___r_c_c_ga890221cb651a3f30f6d1bca0d9b0e13d} 
+\#define {\bfseries FLAG\+\_\+\+MASK}~((uint8\+\_\+t)0x1F)
+\item 
+\Hypertarget{group___r_c_c_ga9b2724575bb34217aeddcb69c41a1547}\label{group___r_c_c_ga9b2724575bb34217aeddcb69c41a1547} 
+\#define {\bfseries CR\+\_\+\+BYTE3\+\_\+\+ADDRESS}~((uint32\+\_\+t)0x40023802)
+\item 
+\Hypertarget{group___r_c_c_gaab58c3f3f81bf1ab9a14cf3fececd8c4}\label{group___r_c_c_gaab58c3f3f81bf1ab9a14cf3fececd8c4} 
+\#define {\bfseries CIR\+\_\+\+BYTE2\+\_\+\+ADDRESS}~((uint32\+\_\+t)(RCC\+\_\+\+BASE + 0x0C + 0x01))
+\item 
+\Hypertarget{group___r_c_c_ga43f47430582c9575970901533e525bb5}\label{group___r_c_c_ga43f47430582c9575970901533e525bb5} 
+\#define {\bfseries CIR\+\_\+\+BYTE3\+\_\+\+ADDRESS}~((uint32\+\_\+t)(RCC\+\_\+\+BASE + 0x0C + 0x02))
+\item 
+\Hypertarget{group___r_c_c_ga40b5a415d697b6af7babd8a208c92435}\label{group___r_c_c_ga40b5a415d697b6af7babd8a208c92435} 
+\#define {\bfseries BDCR\+\_\+\+ADDRESS}~(PERIPH\+\_\+\+BASE + BDCR\+\_\+\+OFFSET)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+RCC driver modules. 
+
+\input{group___r_c_c___private___functions}

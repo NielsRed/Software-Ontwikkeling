@@ -1,18 +1,30 @@
-/**
- * @brief main
- *
- * This is the typical JavaDoc-style C-style comment. It starts with two
- * asterisks.
- *
- * @param theory Even if there is only one possible unified theory. it is just a
- *               set of rules and equations.
- */
+///**
+//  ******************************************************************************
+//  * @file      main.c
+//  * @author    Niels
+//  * @version   V1.0
+//  * @date      03/05/2012
+//  * @brief     STM32F4xx Devices vector table for RIDE7 toolchain.
+//  *            This module performs:
+//  *                - Set the initial SP
+//  *                - Set the initial PC == Reset_Handler,
+//  *                - Set the vector table entries with the exceptions ISR address
+//  *                - Configure the clock system and the external SRAM mounted on
+//  *                  STM324xG-EVAL board to be used as data memory (optional,
+//  *                  to be enabled by user)
+//  *                - Branches to main in the C library (which eventually
+//  *                  calls main()).
+//  *            After Reset the Cortex-M4 processor is in Thread mode,
+//  *            priority is Privileged, and the Stack is set to Main.
+//  ******************************************************************************
+//  */
 
 #include "main.h"
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
 
-
+// @brief : Main function of the code.
+// @Param : void
 int main(void)
 {
 	SystemInit(); // System speed to 168MHz
