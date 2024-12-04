@@ -5,10 +5,12 @@
  *      Author: dupon
  */
 
-#include "../../Inc/Logic Layer/DataParsing.h"
+#include "DataParsing.h"
 #include "UART.h"
 #include <string.h>
 #include <stdio.h>
+#include "API_Draw.h"
+#include "stm32_ub_vga_screen.h"
 
 void matchesCommand(const char *command) {
     // Find the first comma in the command string
@@ -35,12 +37,15 @@ void parseCommand(const char *command, const char*fullCommand) {
     	parseLijn(fullCommand);
     } else if (strcmp(command, "rechthoek") == 0) {
     	UART2_SendString("Command: rechthoek\n");
+    	parseRechthoek(fullCommand);
     } else if (strcmp(command, "tekst") == 0) {
     	UART2_SendString("Command: tekst\n");
+    	parseTekst(fullCommand);
     } else if (strcmp(command, "bitmap") == 0) {
     	UART2_SendString("Command: bitmap\n");
     } else if (strcmp(command, "clearscherm") == 0) {
     	UART2_SendString("Command: clearscherm\n");
+    	parseClearscherm(fullCommand);
     } else {
     	handleUnknownCommand();
     }
@@ -58,6 +63,7 @@ void parseLijn(const char *input) {
 
     sprintf(buffer, "x: %s\n", lijn.color);
     UART2_SendString(buffer);
+//    API_draw_line(lijn.x, lijn.y, lijn.x_prime, lijn.y_prime, VGA_COL_BLUE, lijn.thickness, 0);
 }
 
 void parseRechthoek(const char *input) {
@@ -71,6 +77,7 @@ void parseRechthoek(const char *input) {
 
     sprintf(buffer, "width: %s\n", rect.width);
     UART2_SendString(buffer);
+//    API_draw_rectangle(rect.x_lup, rect.y_lup, rect.width, rect.height, VGA_COL_BLUE, rect.filled, 0, 0);
 }
 
 void parseTekst(const char *input) {
@@ -84,6 +91,7 @@ void parseTekst(const char *input) {
 
     sprintf(buffer, "txt: %s\n", txt.text);
     UART2_SendString(buffer);
+//    API_draw_text (txt.x, txt.y, VGA_COL_BLUE, txt.text, txt.fontName, txt.fontSize, 0, 0);
 }
 
 void parseBitmap(const char *input) {
@@ -108,4 +116,5 @@ void parseClearscherm(const char *input) {
 
     sprintf(buffer, "color: %s\n", clear.color);
     UART2_SendString(buffer);
+//    API_clearscreen(VGA_COL_MAGENTA);
 }
