@@ -13,7 +13,7 @@
 #define MAX_DATA_SIZE 50
 
 char *userCommands[] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm"};
-char *colors[] = {"rood", "groen", "blauw"};
+char *colors[] = {"zwart", "blauw", "lichtblauw", "groen", "lichtgroen", "cyaan", "lichtcyaan", "rood", "lichtrood", "magenta", "lichtmagenta", "bruin", "geel", "grijs", "wit"};
 char *fontNames[] = {"arial", "consolas"};
 char *fontStyles[] = {"normaal", "vet", "cursief"};
 
