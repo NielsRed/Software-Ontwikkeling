@@ -12,44 +12,6 @@
 #define NUM_COLORS 3
 #define MAX_DATA_SIZE 50
 
-typedef struct {
-    int x;
-    int y;
-    int x_prime;
-    int y_prime;
-    char color[20];
-    int thickness;
-} Lijn;
-
-typedef struct {
-    int x_lup;
-    int y_lup;
-    int width;
-    int height;
-    char color[20];
-    char filled;
-} Rechthoek;
-
-typedef struct {
-    int x;
-    int y;
-    char color[20];
-    char text[20];
-    char fontName[20];
-    int fontSize;
-    char fontStyle[20];
-} Tekst;
-
-typedef struct {
-    int bitmapIndex;
-    int x_lup;
-    int y_lup;
-} Bitmap;
-
-typedef struct {
-    int color[20];
-} Clearscherm;
-
 char *userCommands[] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm"};
 char *colors[] = {"rood", "groen", "blauw"};
 char *fontNames[] = {"arial", "consolas"};
@@ -65,6 +27,7 @@ void parseBitmap(const char *input);
 void parseClearscherm(const char *input);
 int checkColor(const char *color);
 void trimWhitespace(char *str);
+int errorHandling(int parsed, int argumentCount);
 
 
 #endif /* INC_DATAPARSING_H_ */

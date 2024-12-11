@@ -36,7 +36,11 @@ int main(void)
 	      }
 	    }
 
-	    matchesCommand("lijn, 1, 2, 3, 4, rood, 20");
+	    matchesCommand("lijn, 1, 2, 3, 4, rood, 20, 0");
+	    matchesCommand("rechthoek, 1, 2, 3, 4, rood, 20, 0, 0");
+	    matchesCommand("tekst,10,10,rood,test2,test3,2,test3");
+	    matchesCommand("bitmap,1,20,20");
+	    matchesCommand("clearscherm,rood");
 
   while(1)
   {

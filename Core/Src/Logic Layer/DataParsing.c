@@ -66,9 +66,12 @@ int checkColor(const char *color) {
     // Compare
     for (int i = 0; i < NUM_COLORS; i++) {
         if (strcmp(lowerColor, colors[i]) == 0) {
+            sprintf(lowerColor, "found color: %s\n", color);
+            UART2_SendString(lowerColor);
             return 1;
         }
     }
+    UART2_SendString("unknown color detected");
     return 0;
 }
 
@@ -85,6 +88,7 @@ void parseCommand(const char *command, const char*fullCommand) {
     	parseTekst(fullCommand);
     } else if (strcmp(command, "bitmap") == 0) {
     	UART2_SendString("Command: bitmap\n");
+    	parseBitmap(fullCommand);
     } else if (strcmp(command, "clearscherm") == 0) {
     	UART2_SendString("Command: clearscherm\n");
     	parseClearscherm(fullCommand);
@@ -93,84 +97,65 @@ void parseCommand(const char *command, const char*fullCommand) {
     }
 }
 
-// Function to parse a comma-separated string into a Lijn struct
-void parseLijn(const char *input) {
-    Lijn lijn = {0};
-
-    // Convert values to strings and send over UART
-    char buffer[50];
-
-    int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d",
-            &lijn.x, &lijn.y, &lijn.x_prime, &lijn.y_prime,
-            lijn.color, &lijn.thickness);
-
-    if (parsed == 6) {
+int errorHandling(int parsed, int argumentCount){
+    char buffer[50]; // Convert values to strings and send over UART
+    if (parsed == argumentCount) {
     }else{// if parsing failed
         sprintf(buffer, "Parsing failed. Parsed fields: %d\n", parsed);
         UART2_SendString(buffer);
-        return;
+        return 0;
     }
+    return 1;
+}
 
-    trimWhitespace(lijn.color); // Remove any trailing whitespace
+// Function to parse a comma-separated string into a Lijn struct
+void parseLijn(const char *input) {
+    int x, y, x_prime, y_prime, thickness, reserved;
+    char color[20];
 
-    if(checkColor(lijn.color)){
-        sprintf(buffer, "found color: %s\n", lijn.color);
-        UART2_SendString(buffer);
-    }else{
-    	UART2_SendString("unknown color detected");
-    }
-//    API_draw_line(lijn.x, lijn.y, lijn.x_prime, lijn.y_prime, VGA_COL_BLUE, lijn.thickness, 0);
+    int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d",&x, &y, &x_prime, &y_prime, color, &thickness, &reserved);
+    if(!errorHandling(parsed, 7)) return;
+    trimWhitespace(color); // Remove any trailing whitespace
+    checkColor(color);
+//    API_draw_line(x, y, x_prime, y_prime, VGA_COL_BLUE, thickness, 0);
 }
 
 void parseRechthoek(const char *input) {
-    Rechthoek rect = {0};
-    if (sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d",
-               &rect.x_lup, &rect.y_lup, &rect.width, &rect.height,
-			   rect.color, &rect.filled) == 6) {
-    }
-    // Convert values to strings and send over UART
-    char buffer[50];
+    int x_lup, y_lup, width, height, filled, reserved, reserved2;
+    char color[20];
 
-    sprintf(buffer, "width: %s\n", rect.width);
-    UART2_SendString(buffer);
-//    API_draw_rectangle(rect.x_lup, rect.y_lup, rect.width, rect.height, VGA_COL_BLUE, rect.filled, 0, 0);
+    int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d",&x_lup, &y_lup, &width, &height,color, &filled, &reserved, &reserved2);
+    if(!errorHandling(parsed, 8)) return;
+    trimWhitespace(color);
+    checkColor(color);
+//    API_draw_rectangle(x_lup, y_lup, width, height, VGA_COL_BLUE, filled, 0, 0);
 }
 
 void parseTekst(const char *input) {
-    Tekst txt = {0};
-    if (sscanf(input, "tekst,%d,%d,%19[^,],%19[^,],%19[^,],%d, %19[^,]",
-               &txt.x, &txt.y, txt.color, txt.text,
-			   txt.fontName, &txt.fontSize, txt.fontStyle) == 7) {
-    }
-    // Convert values to strings and send over UART
-    char buffer[50];
+    int x, y, fontSize;
+    char color[20], text[20], fontName[20], fontStyle[20];
 
-    sprintf(buffer, "txt: %s\n", txt.text);
-    UART2_SendString(buffer);
-//    API_draw_text (txt.x, txt.y, VGA_COL_BLUE, txt.text, txt.fontName, txt.fontSize, 0, 0);
+    int parsed = sscanf(input, "tekst,%d,%d,%19[^,],%19[^,],%19[^,],%d, %19[^,]",&x, &y, color, text,fontName, &fontSize, fontStyle);
+
+    if(!errorHandling(parsed, 7)) return;
+    trimWhitespace(color);
+    checkColor(color);
+//    API_draw_text (x, y, VGA_COL_BLUE, text, fontName, fontSize, 0, 0);
 }
 
 void parseBitmap(const char *input) {
-    Bitmap bitmap = {0};
-    if (sscanf(input, "bitmap,%d,%d,%d",
-               &bitmap.bitmapIndex, &bitmap.x_lup, &bitmap.y_lup) == 3) {
-    }
-    // Convert values to strings and send over UART
-    char buffer[50];
+    int bitmapIndex, x_lup, y_lup;
 
-    sprintf(buffer, "index: %s\n", bitmap.bitmapIndex);
-    UART2_SendString(buffer);
+    int parsed = sscanf(input, "bitmap,%d,%d,%d",&bitmapIndex, &x_lup, &y_lup);
+    if(!errorHandling(parsed, 3)) return;
 }
 
 void parseClearscherm(const char *input) {
-	Clearscherm clear = {0};
-    if (sscanf(input, "clearscherm,%19[^,]",
-    		clear.color) == 1) {
-    }
-    // Convert values to strings and send over UART
-    char buffer[50];
+	char color[20];
 
-    sprintf(buffer, "color: %s\n", clear.color);
-    UART2_SendString(buffer);
+	int parsed = sscanf(input, "clearscherm,%19[^,]",color);
+    if(!errorHandling(parsed, 1)) return;
+    trimWhitespace(color);
+    checkColor(color);
 //    API_clearscreen(VGA_COL_MAGENTA);
 }
