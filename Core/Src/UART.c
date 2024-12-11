@@ -1,7 +1,8 @@
 #include "UART.h"
 #include "main.h"
-#include "../Inc/Front Layer/UserInput.h"
+#include "UserInput.h"
 #include <math.h>
+#include <string.h>
 
 void UART2_Init_Interrupt(uint32_t baudrate) {
     // 1. Schakel de klokken in voor USART2 en GPIOA
@@ -60,7 +61,9 @@ void UART2_ReceiveString(char *buffer, uint16_t max_length) {
 static char uart2_rx_buffer[UART_BUFFER_SIZE];
 static uint16_t uart2_rx_index = 0;
 
-void USART2_IRQHandler(void) {
+void USART2_IRQHandler(void)
+{
+	char err;
     if (USART2->SR & USART_SR_RXNE) { // Check if data is received
         char received = USART2->DR;  // Read the received character
 
@@ -74,7 +77,12 @@ void USART2_IRQHandler(void) {
             UART2_SendString("\n");
 
             // Call function to process the strings.
-            FL_Parse_String(uart2_rx_buffer);
+            uint8_t size = strlen(uart2_rx_buffer);
+            err = FL_Parse_String(size, uart2_rx_buffer);
+
+            UART2_SendString("\n\n\n");
+            UART2_SendChar(err);
+            UART2_SendString("\n\n\n");
 
             // Reset the buffer index for the next string
             uart2_rx_index = 0;

@@ -9,5 +9,5 @@
 #define INC_FRONT_LAYER_USERINPUT_H_
 
 
-void FL_Parse_String(char String_Received[1028]);
+char FL_Parse_String(uint16_t size, char String_Received[]);
 #endif /* INC_FRONT_LAYER_USERINPUT_H_ */
