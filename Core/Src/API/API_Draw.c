@@ -4,16 +4,16 @@
  *  Created on: Nov 21, 2024
  *      Author: dupon
  */
+//Includes
 #include "stm32_ub_vga_screen.h"
 #include "API_Draw.h"
 #include <string.h>
 #include "Character_set.h"
 #include <stdbool.h>
 
-#define bitmapsize 16
 ///////////////////////////////////////////////////////////////////////////////////////////
 /// API_draw_line
-/// This fucntion is sets pixels on the screen in order to get a line
+/// This fucntion sets pixels on the screen in order to get a line
 /// @param x_1 horizontal start value
 /// @param x_2 horizontal stop value
 /// @param y_1 verical start value
@@ -22,7 +22,9 @@
 /// @param weight
 ///////////////////////////////////////////////////////////////////////////////////////////
 int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int reserved) {
-	int test[7];
+
+	//Error handling
+	uint8_t test[7] = {0,0,0,0,0,0,0,0};
 	test[0] = CheckValueInt(x_1,VGA_X_MIN,VGA_X_MAX);
 	test[1] = CheckValueInt(y_1,VGA_Y_MIN,VGA_Y_MAX);
 	test[2] = CheckValueInt(x_2,VGA_X_MIN,VGA_X_MAX);
@@ -30,13 +32,14 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 	test[4] = CheckValueInt(color,COLOR_VALUE_MIN,COLOR_VALUE_MAX);
 	test[5] = CheckValueInt(weight,WEIGHT_VALUE_MIN,WEIGHT_VALUE_MAX);
 
+	//Make error byte and return it
 	char result = tobyte(test);
-
 	if(result)
 	{
 		return result;
 	}
 
+	//Start drawline using Bresenham's line algorithm
     int delta_x = abs(x_2 - x_1);
     int delta_y = abs(y_2 - y_1);
     int step_x = (x_1 < x_2) ? 1 : -1;
@@ -45,26 +48,32 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
     int double_error;
 
     while (1) {
-        for (int offset_x = -(weight / 2); offset_x <= (weight / 2); offset_x++) {
-            for (int offset_y = -(weight / 2); offset_y <= (weight / 2); offset_y++) {
+        for (int offset_x = -(weight / 2); offset_x <= (weight / 2); offset_x++)
+        {
+            for (int offset_y = -(weight / 2); offset_y <= (weight / 2); offset_y++)
+            {
                 int pixel_x = x_1 + offset_x;
                 int pixel_y = y_1 + offset_y;
 
-                if (pixel_x >= 0 && pixel_x < VGA_DISPLAY_X && pixel_y >= 0 && pixel_y < VGA_DISPLAY_Y) {
+                if (pixel_x >= 0 && pixel_x < VGA_DISPLAY_X && pixel_y >= 0 && pixel_y < VGA_DISPLAY_Y)
+                {
                     UB_VGA_SetPixel(pixel_x, pixel_y, color);
                 }
             }
         }
 
         if (x_1 == x_2 && y_1 == y_2)
+        {
             break;
-
+        }
         double_error = 2 * error_term;
-        if (double_error > -delta_y) {
-            error_term -= delta_y;
+        if (double_error > -delta_y)
+        {
+        	error_term -= delta_y;
             x_1 += step_x;
         }
-        if (double_error < delta_x) {
+        if (double_error < delta_x)
+        {
             error_term += delta_x;
             y_1 += step_y;
         }
@@ -73,13 +82,27 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 }
 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////
+/// API_clearscreen
+/// This fucntion sets all pixels to one color
+/// @param color the new color value
+///////////////////////////////////////////////////////////////////////////////////////////
 int API_clearscreen (int color)
 {
 	UB_VGA_FillScreen(color);
 	return 0;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////
+/// API_draw_rectangle
+/// This fucntion sets pixels on the screen in order to get a rectangle
+/// @param x left upper value
+/// @param y left upper value
+/// @param width width of rectangle
+/// @param height height of rectangle
+/// @param color set color for rectangle
+/// @param filled set 0 for non filled rectangle and 1 for filled rectangle
+///////////////////////////////////////////////////////////////////////////////////////////
 int API_draw_rectangle(int x, int y, int width, int height, int color, int filled, int reserved, int reserved1) {
     if (width <= 0 || height <= 0)
     {
@@ -115,29 +138,53 @@ int API_draw_rectangle(int x, int y, int width, int height, int color, int fille
     return 0;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////
+/// API_draw_bitmap
+/// This fucntion sets pixels on the screen in order to get a rectangle
+/// @param x_lup left upper value
+/// @param y_lup left upper value
+/// @param bm_nr bitmap number
+///////////////////////////////////////////////////////////////////////////////////////////
 int API_draw_bitmap (int x_lup, int y_lup, int bm_nr)
 {
-
-    const uint8_t *bitmap = arial_basic[bm_nr];
-    for (uint8_t row = 0; row < 8; row++)
-    {
-        uint8_t line = bitmap[row];
-        for (uint8_t col = 0; col < 8; col++)
-        {
-            if (line & (1 << (7 - col)))
-            {
-                UB_VGA_SetPixel(x_lup + col, y_lup + row, VGA_COL_GREEN);
-            }
-        }
-
-    }
+	const uint8_t (*bitmap)[bitmapsize] = NULL;
+	switch (bm_nr)
+	{
+	case 0: bitmap = bitmaptest; break;
+	case 1: bitmap = bitmap_angry_face; break;
+	case 2: bitmap = bitmap_happy_face; break;
+	case 3: bitmap = bitmap_pijl_boven; break;
+	case 4: bitmap = bitmap_pijl_beneden; break;
+	case 5: bitmap = bitmap_pijl_links; break;
+	case 6: bitmap = bitmap_pijl_rechts; break;
+	default: return 1;
+	}
+	for (uint8_t row = 0; row < bitmapsize; row++)
+	{
+	    for (uint8_t col = 0; col < bitmapsize; col++)
+	    {
+	    	uint8_t color = bitmap[row][col];
+	    	UB_VGA_SetPixel(x_lup + (col), y_lup + (row), color);
+	    }
+	}
     return 0;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////
+/// API_draw_text
+/// This fucntion sets pixels on the screen in order to get a rectangle
+/// @param x_lup left upper value
+/// @param y_lup left upper value
+/// @param color set color of text
+/// @param text the text for on the screen
+/// @param fontname can be arial, consola or comic sans
+/// @param fontsize the size of the text
+/// @param fontstyle can be 0 for basic, 1 for cursief and 2 for vet
+///////////////////////////////////////////////////////////////////////////////////////////
 int API_draw_text (int x_lup, int y_lup, int color, char *text, char *fontname, int fontsize, int fontstyle, int reserved)
 {
 	int scale = fontsize;
-	const uint16_t (*font_array)[bitmapsize];
+	const uint16_t (*font_array)[bitmaptextsize];
 
 	if (!strcmp(fontname, "arial"))
 	{
@@ -220,18 +267,18 @@ int API_draw_text (int x_lup, int y_lup, int color, char *text, char *fontname, 
     for(int i = 0; i < strlen(text); i++)
     {
         const uint16_t *bitmap = font_array[(uint8_t)text[i]];
-        for (uint16_t row = 0; row < bitmapsize; row++)
+        for (uint16_t row = 0; row < bitmaptextsize; row++)
         {
         	uint16_t line = bitmap[row];
-            for (uint16_t col = 0; col < bitmapsize; col++)
+            for (uint16_t col = 0; col < bitmaptextsize; col++)
             {
-                if (line & (1 << ((bitmapsize-1) - col)))
+                if (line & (1 << ((bitmaptextsize-1) - col)))
                 {
                     for (int dx = 0; dx < scale; dx++)
                     {
                         for (int dy = 0; dy < scale; dy++)
                         {
-                            UB_VGA_SetPixel(x_lup + (i * bitmapsize * scale) + (col * scale) + dx, y_lup + (row * scale) + dy, color);
+                            UB_VGA_SetPixel(x_lup + (i * bitmaptextsize * scale) + (col * scale) + dx, y_lup + (row * scale) + dy, color);
                         }
                     }
                 }
@@ -241,6 +288,13 @@ int API_draw_text (int x_lup, int y_lup, int color, char *text, char *fontname, 
     return 0;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////
+/// CheckValueInt
+/// This fucntion is used to check a value if it is within reach
+/// @param value the value u want to check
+/// @param lower the max lower value
+/// @param upper the max upper value
+///////////////////////////////////////////////////////////////////////////////////////////
 int CheckValueInt(int value, int lower, int upper)
 {
 	if (value < lower)
@@ -257,6 +311,11 @@ int CheckValueInt(int value, int lower, int upper)
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////
+/// tobyte
+/// This fucntion is used to convet a array[7] to a byte
+/// @param *array that needs to be converted
+///////////////////////////////////////////////////////////////////////////////////////////
 char tobyte(int *array)
 {
 	char result = 0;
@@ -267,14 +326,24 @@ char tobyte(int *array)
 	return result;
 }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////
+/// tobyte
+/// This fucntion is used to test values
+///////////////////////////////////////////////////////////////////////////////////////////
 void testscherm()
 {
-	API_clearscreen (VGA_COL_MAGENTA);
-	API_draw_text (0, 85, VGA_COL_GREEN, "Dit Werkt", "consola", 1, 2,1 );
-	API_draw_text (0, 105, VGA_COL_GREEN, "Echt waar", "arial", 1, 2,1 );
-	API_draw_text (0, 130, VGA_COL_GREEN, "Maar echt he", "comic sans", 1, 1,1 );
-	API_draw_text (0, 5, VGA_COL_GREEN, "abcdefghijklmnopqrstuvwxyz", "wingdings", 1, 0,1 );
+	API_clearscreen (VGA_COL_BLACK);
+	API_draw_text (0, 85, VGA_BROWN, "Dit Werkt", "consola", 1, 2,1 );
+	API_draw_text (0, 105, VGA_GREY, "Echt waar", "arial", 1, 2,1 );
+	API_draw_text (0, 130, VGA_LIGHTGREEN, "Maar echt he", "comic sans", 1, 1,1 );
+	API_draw_text (0, 5, VGA_LIGHTMAGENTA, "abcdefghijklmnopqrstuvwxyz", "wingdings", 1, 0,1 );
+	API_draw_bitmap(0,0,0);
+	API_draw_bitmap(20,0,1);
+	API_draw_bitmap(40,0,2);
+	API_draw_bitmap(60,0,3);
+	API_draw_bitmap(80,0,4);
+	API_draw_bitmap(100,0,5);
+	API_draw_bitmap(120,0,6);
 	//API_draw_line (0, 160, 320, 160, VGA_COL_GREEN, 3, 0);
 	//API_draw_rectangle(20, 20, 100, 150, VGA_COL_GREEN, 0,0, 0);
 }
