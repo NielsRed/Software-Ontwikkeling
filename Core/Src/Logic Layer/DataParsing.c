@@ -52,25 +52,26 @@ void trimWhitespace(char *str) {
     }
 }
 
-int checkColor(const char *color) {
-    char lowerColor[20];
-    strncpy(lowerColor, color, sizeof(lowerColor) - 1);
-    lowerColor[19] = '\0'; // Ensure null-termination
+int checkAttribute(const char *att, char *att_list[], int max_atts) {
+    char lowerAtt[20];
+    strncpy(lowerAtt, att, sizeof(lowerAtt) - 1);
+    lowerAtt[19] = '\0'; // Ensure null-termination
 
     // Convert to lowercase
-    for (int i = 0; lowerColor[i]; i++) {
-        lowerColor[i] = tolower(lowerColor[i]);
+    for (int i = 0; lowerAtt[i]; i++) {
+    	lowerAtt[i] = tolower(lowerAtt[i]);
     }
 
     // Compare
-    for (int i = 0; i < NUM_COLORS; i++) {
-        if (strcmp(lowerColor, colors[i]) == 0) {
-            sprintf(lowerColor, "found color: %s\n", color);
-            UART2_SendString(lowerColor);
+    for (int i = 0; i < max_atts; i++) {
+        if (strcmp(lowerAtt, att_list[i]) == 0) {
+            sprintf(lowerAtt, "found attribute: %s\n", att);
+            UART2_SendString(lowerAtt);
             return 1;
         }
     }
-    UART2_SendString("unknown color detected");
+    sprintf(lowerAtt, "unknown attribute detected: %s\n", att);
+    UART2_SendString(lowerAtt);
     return 0;
 }
 
@@ -128,7 +129,7 @@ void parseLijn(const char *input) {
     int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d%n",&x, &y, &x_prime, &y_prime, color, &thickness, &reserved, &trailingChars);
     if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color); // Remove any trailing whitespace
-    checkColor(color);
+    checkAttribute(color, colors, NUM_COLORS);
     hasExtraCharacters(input, trailingChars);
 //    API_draw_line(x, y, x_prime, y_prime, VGA_COL_BLUE, thickness, 0);
 }
@@ -141,7 +142,7 @@ void parseRechthoek(const char *input) {
     int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d%n",&x_lup, &y_lup, &width, &height,color, &filled, &reserved, &reserved2,&trailingChars);
     if(!errorHandling(parsed, 8)) return;
     trimWhitespace(color);
-    checkColor(color);
+    checkAttribute(color, colors, NUM_COLORS);
     hasExtraCharacters(input, trailingChars);
 //    API_draw_rectangle(x_lup, y_lup, width, height, VGA_COL_BLUE, filled, 0, 0);
 }
@@ -155,7 +156,10 @@ void parseTekst(const char *input) {
 
     if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color);
-    checkColor(color);
+    //checkColor(color);
+    checkAttribute(color, colors, NUM_COLORS);
+    checkAttribute(fontName, fontNames, NUM_FONTS);
+    checkAttribute(fontStyle, fontStyles, NUM_STYLES);
     hasExtraCharacters(input, trailingChars);
 //    API_draw_text (x, y, VGA_COL_BLUE, text, fontName, fontSize, 0, 0);
 }
@@ -176,7 +180,7 @@ void parseClearscherm(const char *input) {
 	int parsed = sscanf(input, "clearscherm,%19[^,]%n",color, &trailingChars);
     if(!errorHandling(parsed, 1)) return;
     trimWhitespace(color);
-    checkColor(color);
+    checkAttribute(color, colors, NUM_COLORS);
     hasExtraCharacters(input, trailingChars);
 //    API_clearscreen(VGA_COL_MAGENTA);
 }

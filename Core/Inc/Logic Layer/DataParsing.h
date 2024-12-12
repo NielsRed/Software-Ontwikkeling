@@ -27,10 +27,10 @@ void parseRechthoek(const char *input);
 void parseTekst(const char *input);
 void parseBitmap(const char *input);
 void parseClearscherm(const char *input);
-int checkColor(const char *color);
 void trimWhitespace(char *str);
 int errorHandling(int parsed, int argumentCount);
 int hasExtraCharacters(const char *input, int offset);
+int checkAttribute(const char *att, char *att_list[], int max_atts);
 
 
 #endif /* INC_DATAPARSING_H_ */
