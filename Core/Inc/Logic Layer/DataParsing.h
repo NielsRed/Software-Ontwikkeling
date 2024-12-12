@@ -10,14 +10,19 @@
 
 #define ALL_COMMANDS 5
 #define NUM_COLORS 15
+#define NUM_COLORS2 (sizeof(color_map) / sizeof(color_map[0]))
 #define NUM_FONTS 2
 #define NUM_STYLES 3
 #define MAX_DATA_SIZE 50
 
 char *userCommands[] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm"};
-char *colors[] = {"zwart", "blauw", "lichtblauw", "groen", "lichtgroen", "cyaan", "lichtcyaan", "rood", "lichtrood", "magenta", "lichtmagenta", "bruin", "geel", "grijs", "wit"};
 char *fontNames[] = {"arial", "consolas"};
 char *fontStyles[] = {"normaal", "vet", "cursief"};
+
+typedef struct {
+    const char *name;
+    int value;
+} ColorMap;
 
 void matchesCommand(const char *command);
 void handleUnknownCommand();
@@ -31,6 +36,7 @@ void trimWhitespace(char *str);
 int errorHandling(int parsed, int argumentCount);
 int hasExtraCharacters(const char *input, int offset);
 int checkAttribute(const char *att, char *att_list[], int max_atts);
+int getColorValue(const char *color);
 
 
 #endif /* INC_DATAPARSING_H_ */

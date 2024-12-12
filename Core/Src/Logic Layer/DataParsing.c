@@ -12,6 +12,24 @@
 #include "API_Draw.h"
 #include "stm32_ub_vga_screen.h"
 
+ColorMap color_map[] = {
+    {"zwart", VGA_COL_BLACK},
+    {"blauw", VGA_COL_BLUE},
+    {"lichtblauw", VGA_COL_LIGHTBLUE},
+    {"groen", VGA_COL_GREEN},
+    {"lichtgroen", VGA_COL_LIGHTGREEN},
+    {"cyaan", VGA_COL_CYAN},
+    {"lichtcyaan", VGA_COL_LIGHTCYAN},
+    {"rood", VGA_COL_RED},
+    {"lichtrood", VGA_COL_LIGHTRED},
+    {"magenta", VGA_COL_MAGENTA},
+    {"lichtmagenta", VGA_COL_LIGHTMAGENTA},
+    {"bruin", VGA_COL_BROWN},
+    {"geel", VGA_COL_YELLOW},
+    {"grijs", VGA_COL_GRAY},
+    {"wit", VGA_COL_WHITE}
+};
+
 void matchesCommand(const char *command) {
     // Find the first comma in the command string
     const char *commaPos = strchr(command, ',');
@@ -70,7 +88,7 @@ int checkAttribute(const char *att, char *att_list[], int max_atts) {
             return 1;
         }
     }
-    sprintf(lowerAtt, "unknown attribute detected: %s\n", att);
+    sprintf(lowerAtt, "unknown attribute: %s\n", att);
     UART2_SendString(lowerAtt);
     return 0;
 }
@@ -101,7 +119,7 @@ int errorHandling(int parsed, int argumentCount){
     char buffer[50]; // Convert values to strings and send over UART
     if (parsed == argumentCount) {
     }else{// if parsing failed
-        sprintf(buffer, "Parsing failed (check protocol). Successfully Parsed fields: %d\n", parsed);
+        sprintf(buffer, "Parsing failed. Successfully Parsed fields: %d\n", parsed);
         UART2_SendString(buffer);
         return 0;
     }
@@ -120,6 +138,18 @@ int hasExtraCharacters(const char *input, int offset) {
     return 0; // No extra characters
 }
 
+// Functie om kleurstring om te zetten naar bitwaarde
+int getColorValue(const char *color) {
+    for (int i = 0; i < NUM_COLORS; i++) {
+        if (strcmp(color_map[i].name, color) == 0) {
+            return color_map[i].value;
+        }
+    }
+    // Als kleur niet gevonden wordt, geef standaardkleur terug (zwart)
+    UART2_SendString("Unknown Color\n");
+    return VGA_COL_BLACK;
+}
+
 // Function to parse a comma-separated string into a Lijn struct
 void parseLijn(const char *input) {
     int x, y, x_prime, y_prime, thickness, reserved;
@@ -129,9 +159,9 @@ void parseLijn(const char *input) {
     int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d%n",&x, &y, &x_prime, &y_prime, color, &thickness, &reserved, &trailingChars);
     if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color); // Remove any trailing whitespace
-    checkAttribute(color, colors, NUM_COLORS);
     hasExtraCharacters(input, trailingChars);
-//    API_draw_line(x, y, x_prime, y_prime, VGA_COL_BLUE, thickness, 0);
+
+    //API_draw_line(x, y, x_prime, y_prime, getColorValue(color), thickness, 0);
 }
 
 void parseRechthoek(const char *input) {
@@ -142,9 +172,8 @@ void parseRechthoek(const char *input) {
     int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d%n",&x_lup, &y_lup, &width, &height,color, &filled, &reserved, &reserved2,&trailingChars);
     if(!errorHandling(parsed, 8)) return;
     trimWhitespace(color);
-    checkAttribute(color, colors, NUM_COLORS);
     hasExtraCharacters(input, trailingChars);
-//    API_draw_rectangle(x_lup, y_lup, width, height, VGA_COL_BLUE, filled, 0, 0);
+//    API_draw_rectangle(x_lup, y_lup, width, height, getColorValue(color), filled, 0, 0);
 }
 
 void parseTekst(const char *input) {
@@ -157,11 +186,10 @@ void parseTekst(const char *input) {
     if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color);
     //checkColor(color);
-    checkAttribute(color, colors, NUM_COLORS);
     checkAttribute(fontName, fontNames, NUM_FONTS);
     checkAttribute(fontStyle, fontStyles, NUM_STYLES);
     hasExtraCharacters(input, trailingChars);
-//    API_draw_text (x, y, VGA_COL_BLUE, text, fontName, fontSize, 0, 0);
+//    API_draw_text (x, y, getColorValue(color), text, fontName, fontSize, 0, 0);
 }
 
 void parseBitmap(const char *input) {
@@ -180,7 +208,6 @@ void parseClearscherm(const char *input) {
 	int parsed = sscanf(input, "clearscherm,%19[^,]%n",color, &trailingChars);
     if(!errorHandling(parsed, 1)) return;
     trimWhitespace(color);
-    checkAttribute(color, colors, NUM_COLORS);
     hasExtraCharacters(input, trailingChars);
-//    API_clearscreen(VGA_COL_MAGENTA);
+//    API_clearscreen(getColorValue(color));
 }
