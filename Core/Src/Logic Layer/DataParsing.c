@@ -52,7 +52,6 @@ void trimWhitespace(char *str) {
     }
 }
 
-
 int checkColor(const char *color) {
     char lowerColor[20];
     strncpy(lowerColor, color, sizeof(lowerColor) - 1);
@@ -101,61 +100,83 @@ int errorHandling(int parsed, int argumentCount){
     char buffer[50]; // Convert values to strings and send over UART
     if (parsed == argumentCount) {
     }else{// if parsing failed
-        sprintf(buffer, "Parsing failed. Parsed fields: %d\n", parsed);
+        sprintf(buffer, "Parsing failed (check protocol). Successfully Parsed fields: %d\n", parsed);
         UART2_SendString(buffer);
         return 0;
     }
     return 1;
 }
 
+int hasExtraCharacters(const char *input, int offset) {
+    const char *remainder = input + offset;
+    while (*remainder) {
+        if (!isspace(*remainder)) {
+            UART2_SendString("Command arguments overload, only using the protocol arguments\n");
+            return 1; // Found unexpected characters
+        }
+        remainder++;
+    }
+    return 0; // No extra characters
+}
+
 // Function to parse a comma-separated string into a Lijn struct
 void parseLijn(const char *input) {
     int x, y, x_prime, y_prime, thickness, reserved;
     char color[20];
+    int trailingChars;
 
-    int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d",&x, &y, &x_prime, &y_prime, color, &thickness, &reserved);
+    int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d%n",&x, &y, &x_prime, &y_prime, color, &thickness, &reserved, &trailingChars);
     if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color); // Remove any trailing whitespace
     checkColor(color);
+    hasExtraCharacters(input, trailingChars);
 //    API_draw_line(x, y, x_prime, y_prime, VGA_COL_BLUE, thickness, 0);
 }
 
 void parseRechthoek(const char *input) {
     int x_lup, y_lup, width, height, filled, reserved, reserved2;
     char color[20];
+    int trailingChars;
 
-    int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d",&x_lup, &y_lup, &width, &height,color, &filled, &reserved, &reserved2);
+    int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d%n",&x_lup, &y_lup, &width, &height,color, &filled, &reserved, &reserved2,&trailingChars);
     if(!errorHandling(parsed, 8)) return;
     trimWhitespace(color);
     checkColor(color);
+    hasExtraCharacters(input, trailingChars);
 //    API_draw_rectangle(x_lup, y_lup, width, height, VGA_COL_BLUE, filled, 0, 0);
 }
 
 void parseTekst(const char *input) {
     int x, y, fontSize;
     char color[20], text[20], fontName[20], fontStyle[20];
+    int trailingChars;
 
-    int parsed = sscanf(input, "tekst,%d,%d,%19[^,],%19[^,],%19[^,],%d, %19[^,]",&x, &y, color, text,fontName, &fontSize, fontStyle);
+    int parsed = sscanf(input, "tekst,%d,%d,%19[^,],%19[^,],%19[^,],%d, %19[^,]%n",&x, &y, color, text,fontName, &fontSize, fontStyle,&trailingChars);
 
     if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color);
     checkColor(color);
+    hasExtraCharacters(input, trailingChars);
 //    API_draw_text (x, y, VGA_COL_BLUE, text, fontName, fontSize, 0, 0);
 }
 
 void parseBitmap(const char *input) {
     int bitmapIndex, x_lup, y_lup;
+    int trailingChars;
 
-    int parsed = sscanf(input, "bitmap,%d,%d,%d",&bitmapIndex, &x_lup, &y_lup);
+    int parsed = sscanf(input, "bitmap,%d,%d,%d%n",&bitmapIndex, &x_lup, &y_lup, &trailingChars);
     if(!errorHandling(parsed, 3)) return;
+    hasExtraCharacters(input, trailingChars);
 }
 
 void parseClearscherm(const char *input) {
 	char color[20];
+	int trailingChars;
 
-	int parsed = sscanf(input, "clearscherm,%19[^,]",color);
+	int parsed = sscanf(input, "clearscherm,%19[^,]%n",color, &trailingChars);
     if(!errorHandling(parsed, 1)) return;
     trimWhitespace(color);
     checkColor(color);
+    hasExtraCharacters(input, trailingChars);
 //    API_clearscreen(VGA_COL_MAGENTA);
 }

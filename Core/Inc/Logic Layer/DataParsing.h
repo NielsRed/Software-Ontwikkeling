@@ -9,7 +9,9 @@
 #define INC_DATAPARSING_H_
 
 #define ALL_COMMANDS 5
-#define NUM_COLORS 3
+#define NUM_COLORS 15
+#define NUM_FONTS 2
+#define NUM_STYLES 3
 #define MAX_DATA_SIZE 50
 
 char *userCommands[] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm"};
@@ -28,6 +30,7 @@ void parseClearscherm(const char *input);
 int checkColor(const char *color);
 void trimWhitespace(char *str);
 int errorHandling(int parsed, int argumentCount);
+int hasExtraCharacters(const char *input, int offset);
 
 
 #endif /* INC_DATAPARSING_H_ */
