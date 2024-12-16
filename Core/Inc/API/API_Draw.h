@@ -60,7 +60,7 @@ char tobyte(uint8_t *array);
 
 int CheckValueInt(int value, int lower, int upper);
 
-int CheckValueChar(const char *value, const char *whatcanbe[]);
+int CheckValueChar(const char *value, const char *whatcanbe[], int size);
 
 void testscherm();
 

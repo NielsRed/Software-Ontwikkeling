@@ -12,11 +12,15 @@
 #include <string.h>
 #include "Character_set.h"
 #include <stdbool.h>
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Consts
 ///////////////////////////////////////////////////////////////////////////////////////////
 const char *fonts[] = {"arial", "consola"};
+const char font_amount = sizeof(fonts) / sizeof(fonts[0]);
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 /// API_draw_line
@@ -99,7 +103,7 @@ int API_draw_line(int x_1, int y_1, int x_2, int y_2, int color, int weight, int
 ///////////////////////////////////////////////////////////////////////////////////////////
 int API_clearscreen(int color)
 {
-	if(CheckValueInt(color, COLOR_VALUE_MIN, COLOR_VALUE_MAX))
+	if(!CheckValueInt(color, COLOR_VALUE_MIN, COLOR_VALUE_MAX))
 	{
 		UB_VGA_FillScreen(color);
 	}
@@ -235,125 +239,128 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
 ///////////////////////////////////////////////////////////////////////////////////////////
 int API_draw_text(int x_lup, int y_lup, int color, char *text, char *fontname, int fontsize, int fontstyle, int reserved)
 {
-//	uint8_t test[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
-//	test[0] = CheckValueInt(x_lup, VGA_X_MIN, VGA_X_MAX);
-//	test[1] = CheckValueInt(y_lup, VGA_Y_MIN, VGA_Y_MAX);
-//	test[2] = CheckValueInt(color, COLOR_VALUE_MIN, COLOR_VALUE_MAX);
-//	test[4] = CheckValueChar(fontname, fonts);
-//	test[5] = CheckValueInt(fontsize, MINFONTSIZE, MAXFONTSIZE);
-//	test[6] = CheckValueInt(fontsize, FONTAMOUNTZERO, FONTAMOUNT-1);
-//
-//	//Make error byte and return it
-//	char result = tobyte(test);
-//	if(result)
-//	{
-//		return result;
-//	}
+    uint8_t test[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+    test[0] = CheckValueInt(x_lup, VGA_X_MIN, VGA_X_MAX);
+    test[1] = CheckValueInt(y_lup, VGA_Y_MIN, VGA_Y_MAX);
+    test[2] = CheckValueInt(color, COLOR_VALUE_MIN, COLOR_VALUE_MAX);
+    test[4] = CheckValueChar(fontname, fonts, font_amount);
+    test[5] = CheckValueInt(fontsize, MINFONTSIZE, MAXFONTSIZE);
+    test[6] = CheckValueInt(fontsize, FONTAMOUNTZERO, FONTAMOUNT - 1);
 
-	int scale = fontsize;
-	const uint16_t (*font_array)[bitmaptextsize];
+    // Maak foutbyte en retourneer deze
+    char result = tobyte(test);
+    if (result)
+    {
+        return result;
+    }
 
-	if (!strcmp(fontname, "arial"))
-	{
-		if (fontstyle == 0)
-		{
-			font_array = arial_basic;
-		}
-		else if (fontstyle == 1)
-		{
-			font_array = arial_cursief;
-		}
-		else if (fontstyle == 2)
-		{
-			font_array = arial_vet;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-	else if (!strcmp(fontname, "consola"))
-	{
-		if (fontstyle == 0)
-		{
-			font_array = consola_basic;
-		}
-		else if (fontstyle == 1)
-		{
-			font_array = consola_cursief;
-		}
-		else if (fontstyle == 2)
-		{
-			font_array = consola_vet;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-	else if (!strcmp(fontname, "comic sans"))
-	{
-		if (fontstyle == 0)
-		{
-			font_array = comic_sans_basic;
-		}
-		else if (fontstyle == 1)
-		{
-			font_array = comic_sans_vet;
-		}
-		else if (fontstyle == 2)
-		{
-			font_array = comic_sans_cursief;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-	else if (!strcmp(fontname, "wingdings"))
-	{
-		if (fontstyle == 0)
-		{
-			font_array = wingdings_basic;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-	else
-	{
-		return 0;
-	}
+    int scale = fontsize;
+    const uint16_t (*font_array)[bitmaptextsize];
 
-	if (!strcmp(fontname, "Consola"))
-	{
-		font_array = consola_basic;
-	}
+    if (!strcmp(fontname, "arial"))
+    {
+        if (fontstyle == 0)
+        {
+            font_array = arial_basic;
+        }
+        else if (fontstyle == 1)
+        {
+            font_array = arial_cursief;
+        }
+        else if (fontstyle == 2)
+        {
+            font_array = arial_vet;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    else if (!strcmp(fontname, "consola"))
+    {
+        if (fontstyle == 0)
+        {
+            font_array = consola_basic;
+        }
+        else if (fontstyle == 1)
+        {
+            font_array = consola_cursief;
+        }
+        else if (fontstyle == 2)
+        {
+            font_array = consola_vet;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    else if (!strcmp(fontname, "comic sans"))
+    {
+        if (fontstyle == 0)
+        {
+            font_array = comic_sans_basic;
+        }
+        else if (fontstyle == 1)
+        {
+            font_array = comic_sans_vet;
+        }
+        else if (fontstyle == 2)
+        {
+            font_array = comic_sans_cursief;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    else
+    {
+        return 0;
+    }
 
-	for (int i = 0; i < strlen(text); i++)
-	{
-		const uint16_t *bitmap = font_array[(uint8_t) text[i]];
-		for (uint16_t row = 0; row < bitmaptextsize; row++)
-		{
-			uint16_t line = bitmap[row];
-			for (uint16_t col = 0; col < bitmaptextsize; col++)
-			{
-				if (line & (1 << ((bitmaptextsize - 1) - col)))
-				{
-					for (int dx = 0; dx < scale; dx++)
-					{
-						for (int dy = 0; dy < scale; dy++)
-						{
-							UB_VGA_SetPixel(x_lup + (i * bitmaptextsize * scale) + (col * scale) + dx, y_lup + (row * scale) + dy, color);
-						}
-					}
-				}
-			}
-		}
-	}
-	return 0;
+    if (!strcmp(fontname, "Consola"))
+    {
+        font_array = consola_basic;
+    }
+
+    int x_pos = x_lup;
+    int y_pos = y_lup;
+    int char_width = bitmaptextsize * scale;
+
+    for (int i = 0; i < strlen(text); i++)
+    {
+        // Controleer of we buiten het scherm gaan
+        if (x_pos + char_width > VGA_X_MAX)
+        {
+            x_pos = x_lup;                  // Terug naar begin van regel
+            y_pos += bitmaptextsize * scale; // Nieuwe regel
+        }
+
+        const uint16_t *bitmap = font_array[(uint8_t) text[i]];
+        for (uint16_t row = 0; row < bitmaptextsize; row++)
+        {
+            uint16_t line = bitmap[row];
+            for (uint16_t col = 0; col < bitmaptextsize; col++)
+            {
+                if (line & (1 << ((bitmaptextsize - 1) - col)))
+                {
+                    for (int dx = 0; dx < scale; dx++)
+                    {
+                        for (int dy = 0; dy < scale; dy++)
+                        {
+                            UB_VGA_SetPixel(x_pos + (col * scale) + dx, y_pos + (row * scale) + dy, color);
+                        }
+                    }
+                }
+            }
+        }
+        x_pos += char_width; // Verplaats de x-positie naar het volgende karakter
+    }
+
+    return 0;
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 /// CheckValueInt
@@ -384,17 +391,17 @@ int CheckValueInt(int value, int lower, int upper)
 /// @param value the value u want to check
 /// @param whatcanbe is a array with al posible options
 ///////////////////////////////////////////////////////////////////////////////////////////
-//int CheckValueChar(const char *value, const char *whatcanbe[])
-//{
-//    for (int i = 0; i < (sizeof(whatcanbe) / sizeof(whatcanbe[0])); i++)
-//    {
-//        if (strcmp(value, whatcanbe[i]) == 0)
-//        {
-//            return 0;
-//        }
-//    }
-//    return 1;
-//}
+int CheckValueChar(const char *value, const char *whatcanbe[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (strcmp(value, whatcanbe[i]) == 0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 /// tobyte
@@ -417,11 +424,8 @@ char tobyte(uint8_t *array)
 ///////////////////////////////////////////////////////////////////////////////////////////
 void testscherm()
 {
-	API_clearscreen(VGA_COL_BLACK);
-	API_draw_text(0, 85, VGA_BROWN, "Dit Werkt", "consola", 1, 2, 1);
-	API_draw_text(0, 105, VGA_GREY, "Echt waar", "arial", 1, 2, 1);
-	API_draw_text(0, 130, VGA_LIGHTGREEN, "Maar echt he", "comic sans", 1, 1,1);
-	API_draw_text(0, 5, VGA_LIGHTMAGENTA, "abcdefghijklmnopqrstuvwxyz","wingdings", 1, 0, 1);
+	API_clearscreen(VGA_WHITE);
+	API_draw_text(0, 18, VGA_BLUE, "Dit werkt -> Echt waar -> maar echt he! ,abcdefghijklmnopqrstuvwxyz1234567890", "arial", 1, 2, 1);
 	API_draw_bitmap(0, 0, 0);
 	API_draw_bitmap(20, 0, 1);
 	API_draw_bitmap(40, 0, 2);
@@ -429,8 +433,6 @@ void testscherm()
 	API_draw_bitmap(80, 0, 4);
 	API_draw_bitmap(100, 0, 5);
 	API_draw_bitmap(120, 0, 6);
-	//API_draw_line (0, 160, 320, 160, VGA_COL_GREEN, 3, 0);
-	//API_draw_rectangle(20, 20, 100, 150, VGA_COL_GREEN, 0,0, 0);
 }
 
 void colorpreview()

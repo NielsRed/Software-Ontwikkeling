@@ -17,7 +17,6 @@ extern const uint16_t consola_cursief[128][16];
 extern const uint16_t comic_sans_basic[128][16];
 extern const uint16_t comic_sans_vet[128][16];
 extern const uint16_t comic_sans_cursief[128][16];
-extern const uint16_t wingdings_basic[128][16];
 extern const uint8_t bitmaptest[16][16];
 extern const uint8_t bitmap_happy_face[16][16];
 extern const uint8_t bitmap_angry_face[16][16];
