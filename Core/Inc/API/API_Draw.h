@@ -1,14 +1,26 @@
-/*
- * API_Draw.h
- *
- *  Created on: Nov 21, 2024
- *      Author: dupon
- */
+/*******************************************************************************
+  * @file    API_Draw.h
+  * @author  Chris van Wijk
+  * @version V1.0.0
+  * @date    21-November-2024
+  * @brief   Header file for VGA screen drawing API
+  ******************************************************************************
+  * @attention
+  *
+  * This file contains function prototypes and definitions for working with
+  * the VGA screen, including drawing lines, rectangles, text, bitmaps, and
+  * other utilities.
+  *
+  ******************************************************************************
+  */
 
 #ifndef INC_API_DRAW_H_
 #define INC_API_DRAW_H_
 
-//colors
+///////////////////////////////////////////////////////////////////////////////////////////
+/// Colors definitions
+/// VGA color constants for use with the VGA screen API.
+///////////////////////////////////////////////////////////////////////////////////////////
 #define VGA_BLACK        0
 #define VGA_BLUE         3
 #define VGA_LIGHTBLUE    27
@@ -24,27 +36,35 @@
 #define VGA_YELLOW       252
 #define VGA_GREY         146
 #define VGA_WHITE        255
-#define VGA_ORANGE		 240
+#define VGA_ORANGE       240
 
-
-#define VGA_X_MAX 320
-#define VGA_X_MIN 0
-#define VGA_Y_MAX 240
-#define VGA_Y_MIN 0
-#define COLOR_VALUE_MAX 255
-#define COLOR_VALUE_MIN 0
+///////////////////////////////////////////////////////////////////////////////////////////
+/// Screen dimensions and value constraints
+/// Constants defining screen dimensions and value ranges.
+///////////////////////////////////////////////////////////////////////////////////////////
+#define VGA_X_MAX        320
+#define VGA_X_MIN        0
+#define VGA_Y_MAX        240
+#define VGA_Y_MIN        0
+#define COLOR_VALUE_MAX  255
+#define COLOR_VALUE_MIN  0
 #define WEIGHT_VALUE_MAX 25
 #define WEIGHT_VALUE_MIN 0
-#define bitmapsize 16
-#define bitmaptextsize 16
-#define ISFILLED 1
-#define ISNOTFILLED 0
-#define BITMAPAMOUNT 6
-#define BITMAPZERO 0
-#define MINFONTSIZE 0
-#define MAXFONTSIZE 25
-#define FONTAMOUNT 3
-#define FONTAMOUNTZERO 0
+#define bitmapsize       16
+#define bitmaptextsize   16
+#define ISFILLED         1
+#define ISNOTFILLED      0
+#define BITMAPAMOUNT     6
+#define BITMAPZERO       0
+#define MINFONTSIZE      0
+#define MAXFONTSIZE      25
+#define FONTAMOUNT       3
+#define FONTAMOUNTZERO   0
+
+///////////////////////////////////////////////////////////////////////////////////////////
+/// Function Prototypes
+/// API functions for drawing on the VGA screen.
+///////////////////////////////////////////////////////////////////////////////////////////
 
 int API_draw_line (int x_1, int y_1, int x_2,int y_2, int color, int weight, int reserved);
 

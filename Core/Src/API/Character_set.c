@@ -1,14 +1,30 @@
-/*
- * Character_set.c
- *
- *  Created on: Nov 27, 2024
- *      Author: chris
- */
+/*******************************************************************************
+  * @file    Character_set.c
+  * @author  Chris van Wijk
+  * @version V1.0.0
+  * @date    27-November-2024
+  * @brief   Implementation of character sets and bitmap definitions
+  ******************************************************************************
+  * @attention
+  *
+  * This file defines character sets and bitmap arrays used for rendering text
+  * and graphics on a VGA screen. It provides font data for various styles
+  * (Arial, Consola, Comic Sans) and predefined bitmaps for graphical elements.
+  *
+  ******************************************************************************
+  */
 
+///////////////////////////////////////////////////////////////////////////////////////////
+  // Includes
+///////////////////////////////////////////////////////////////////////////////////////////
 #include <stdint.h>
 #include "Character_set.h"
 
-// Combined font bitmap file
+///////////////////////////////////////////////////////////////////////////////////////////
+  // Consts
+  // All constants defined below are bitmaps
+  // both for text as for graphics
+///////////////////////////////////////////////////////////////////////////////////////////
 const uint8_t bitmaptest[16][16] = {
 	[0] = {0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F},
 	[1] = {0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F,0x0F},

@@ -23,7 +23,7 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 
-	//testscherm();
+	testscherm();
 	colorpreview();
 
   while(1)
