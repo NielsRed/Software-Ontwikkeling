@@ -23,7 +23,7 @@
   /// @return Returns 0 on success, -1 on format error, -3 if the string is too long.
 /////////////////////////////////////////////////////////////////////////
 char FL_Parse_String(uint16_t size, char String_Received[]) {
-    char processed_string[1028]; // Buffer for the current command
+    char processed_string[MAX_BUFFER_SIZE]; // Buffer for the current command
     int i = 0, j = 0, spacebarCheck = 0; // Indexes for buffers
     uint8_t stringStop = 0;
 
@@ -32,7 +32,7 @@ char FL_Parse_String(uint16_t size, char String_Received[]) {
         UART2_SendString("\n\n");
         UART2_SendString("ERROR! String received is bigger than 1000, cannot complete request.");
         UART2_SendString("\n\n");
-        return -3;
+        return DATALENGTH_ERR;
     }
 
     if (size > 100) {
@@ -52,7 +52,7 @@ char FL_Parse_String(uint16_t size, char String_Received[]) {
                 UART2_SendString("\n\n");
                 UART2_SendString("ERROR! String Received does not meet requirements. Missing '|'");
                 UART2_SendString("\n\n");
-                return -1;
+                return USER_INPUT_ERR;
             }
         }
 
