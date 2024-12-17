@@ -10,6 +10,8 @@
 #ifndef INC_UART_H_
 #define INC_UART_H_
 
+#define UART_ERR -2
+
 void UART2_Init_Interrupt(uint32_t baudrate);
 void UART2_SendChar(char c);
 void UART2_SendString(char *str);
