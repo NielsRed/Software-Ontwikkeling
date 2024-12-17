@@ -18,7 +18,8 @@
   /// @note  This function configures USART2 for communication and enables RX interrupts.
   /// @param baudrate Specifies the baudrate for UART communication.
 /////////////////////////////////////////////////////////////////////////
-void UART2_Init_Interrupt(uint32_t baudrate) {
+void UART2_Init_Interrupt(uint32_t baudrate)
+{
     // 1. Enable the clocks for USART2 and GPIOA
     RCC->APB1ENR |= RCC_APB1ENR_USART2EN; // Enable USART2 clock
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;  // Enable GPIOA clock
@@ -48,7 +49,8 @@ void UART2_Init_Interrupt(uint32_t baudrate) {
   /// @note  Waits until the TX buffer is empty before sending the character.
   /// @param c The character to be sent.
 /////////////////////////////////////////////////////////////////////////
-void UART2_SendChar(char c) {
+void UART2_SendChar(char c)
+{
     while (!(USART2->SR & USART_SR_TXE)); // Wait until the TX buffer is empty
     USART2->DR = c;                      // Send a character
 }
@@ -58,7 +60,8 @@ void UART2_SendChar(char c) {
   /// @note  This function repeatedly calls UART2_SendChar for each character.
   /// @param str Pointer to the null-terminated string to send.
 /////////////////////////////////////////////////////////////////////////
-void UART2_SendString(char *str) {
+void UART2_SendString(char *str)
+{
     while (*str) {
         UART2_SendChar(*str++);
     }
@@ -69,7 +72,8 @@ void UART2_SendString(char *str) {
   /// @note  Waits until data is received in the RX buffer.
   /// @return The received character.
 /////////////////////////////////////////////////////////////////////////
-char UART2_ReceiveChar(void) {
+char UART2_ReceiveChar(void)
+{
     while (!(USART2->SR & USART_SR_RXNE)); // Wait until data is received
     return (char)USART2->DR;              // Read the received character
 }
@@ -80,7 +84,8 @@ char UART2_ReceiveChar(void) {
   /// @param buffer Pointer to the buffer where the received string will be stored.
   /// @param max_length Maximum length of the string including the null terminator.
 /////////////////////////////////////////////////////////////////////////
-void UART2_ReceiveString(char *buffer, uint16_t max_length) {
+void UART2_ReceiveString(char *buffer, uint16_t max_length)
+{
     uint16_t i = 0;
     while (i < max_length - 1) {
         char c = UART2_ReceiveChar();
@@ -94,7 +99,8 @@ void UART2_ReceiveString(char *buffer, uint16_t max_length) {
   /// @brief Interrupt handler for USART2.
   /// @note  Called when data is received via UART2. Currently echoes data back.
 /////////////////////////////////////////////////////////////////////////
-void USART2_IRQHandler(void) {
+void USART2_IRQHandler(void)
+{
     if (USART2->SR & USART_SR_RXNE) { // Check if data is received
         char received = USART2->DR;  // Read the received data
         // Add processing of received data here
