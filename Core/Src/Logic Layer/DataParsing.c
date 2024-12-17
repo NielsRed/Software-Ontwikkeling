@@ -47,14 +47,17 @@ ColorMap color_map[] = {
   /// @param  command: The user command string.
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void matchesCommand(const char *command) {
+void matchesCommand(const char *command)
+{
     // Find the first comma in the command string
     const char *commaPos = strchr(command, ',');
     int commandLength = commaPos ? (int)(commaPos - command) : strlen(command);
 
     // Loop trough known commands list and compare to the user command
-    for (int i = 0; i < sizeof(userCommands) / sizeof(userCommands[0]); ++i) {
-        if (strncmp(command, userCommands[i], commandLength) == 0 && strlen(userCommands[i]) == commandLength) {
+    for (int i = 0; i < sizeof(userCommands) / sizeof(userCommands[0]); ++i)
+    {
+        if (strncmp(command, userCommands[i], commandLength) == 0 && strlen(userCommands[i]) == commandLength)
+        {
         	parseCommand(userCommands[i], command);
             return;
         }
@@ -67,7 +70,8 @@ void matchesCommand(const char *command) {
   /// @note   Sends an "Unknown command" message over UART.
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void handleUnknownCommand() {
+void handleUnknownCommand()
+{
 	UART2_SendString("Unknown command");
 }
 
@@ -77,23 +81,27 @@ void handleUnknownCommand() {
 /// @param  str: The string to trim.
 /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void trimWhitespace(char *str) {
+void trimWhitespace(char *str)
+{
     char *start = str; // Pointer to the beginning of the string
     char *end;
 
     // Move the start pointer forward when there are leading whitespace characters
-    while (*start == ' ' || *start == '\n' || *start == '\t') {
+    while (*start == ' ' || *start == '\n' || *start == '\t')
+    {
         start++;
     }
 
     // If there was leading whitespace, move the trimmed content to the start of the string
-    if (start != str) {
+    if (start != str)
+    {
         memmove(str, start, strlen(start) + 1); // Include the null terminator
     }
 
     // Trim whitespace at the end
     end = str + strlen(str) - 1;
-    while (end > str && (*end == ' ' || *end == '\n' || *end == '\t')) {
+    while (end > str && (*end == ' ' || *end == '\n' || *end == '\t'))
+    {
         *end = '\0';
         end--;
     }
@@ -107,19 +115,23 @@ void trimWhitespace(char *str) {
   /// @param  max_atts: Maximum number of valid attributes.
   /// @retval 1 if the attribute is found, 0 otherwise.
 ///////////////////////////////////////////////////////////////////////////////////////
-int checkAttribute(const char *att, char *att_list[], int max_atts) {
+int checkAttribute(const char *att, char *att_list[], int max_atts)
+{
     char lowerAtt[MAX_PARSED_STRING_SIZE];
     strncpy(lowerAtt, att, sizeof(lowerAtt) - 1);
     lowerAtt[MAX_PARSED_STRING_SIZE-1] = '\0'; // Ensure null-termination
 
     // Convert to lowercase
-    for (int i = 0; lowerAtt[i]; i++) {
+    for (int i = 0; lowerAtt[i]; i++)
+    {
     	lowerAtt[i] = tolower(lowerAtt[i]);
     }
 
     // Compare
-    for (int i = 0; i < max_atts; i++) {
-        if (strcmp(lowerAtt, att_list[i]) == 0) {
+    for (int i = 0; i < max_atts; i++)
+    {
+        if (strcmp(lowerAtt, att_list[i]) == 0)
+        {
             sprintf(lowerAtt, "found attribute: %s\n", att);
             UART2_SendString(lowerAtt);
             return 1;
@@ -137,24 +149,31 @@ int checkAttribute(const char *att, char *att_list[], int max_atts) {
   /// @param  fullCommand: The full user input string.
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void parseCommand(const char *command, const char*fullCommand) {
+void parseCommand(const char *command, const char*fullCommand)
+{
     // Compare user command with system commands
-    if (strcmp(command, "lijn") == 0) {
+    if (strcmp(command, "lijn") == 0)
+    {
     	UART2_SendString("Command: Lijn\n");
     	parseLijn(fullCommand);
-    } else if (strcmp(command, "rechthoek") == 0) {
+    } else if (strcmp(command, "rechthoek") == 0)
+    {
     	UART2_SendString("Command: rechthoek\n");
     	parseRechthoek(fullCommand);
-    } else if (strcmp(command, "tekst") == 0) {
+    } else if (strcmp(command, "tekst") == 0)
+    {
     	UART2_SendString("Command: tekst\n");
     	parseTekst(fullCommand);
-    } else if (strcmp(command, "bitmap") == 0) {
+    } else if (strcmp(command, "bitmap") == 0)
+    {
     	UART2_SendString("Command: bitmap\n");
     	parseBitmap(fullCommand);
-    } else if (strcmp(command, "clearscherm") == 0) {
+    } else if (strcmp(command, "clearscherm") == 0)
+    {
     	UART2_SendString("Command: clearscherm\n");
     	parseClearscherm(fullCommand);
-    } else {
+    } else
+    {
     	handleUnknownCommand();
     }
 }
@@ -166,10 +185,14 @@ void parseCommand(const char *command, const char*fullCommand) {
   /// @param  argumentCount: Expected number of arguments.
   /// @retval 1 if parsing succeeded, 0 otherwise.
 ///////////////////////////////////////////////////////////////////////////////////////
-int errorHandling(int parsed, int argumentCount){
+int errorHandling(int parsed, int argumentCount)
+{
     char buffer[MAX_STRING_BUFFER_SIZE]; // Convert values to strings and send over UART
-    if (parsed == argumentCount) {
-    }else{// If parsing failed
+    if (parsed == argumentCount)
+    {
+
+    }else
+    {// If parsing failed
     	// Return the amount of succesfully parsed fields
         sprintf(buffer, "Parsing failed. Successfully Parsed fields: %d\n", parsed);
         UART2_SendString(buffer);
@@ -185,10 +208,13 @@ int errorHandling(int parsed, int argumentCount){
   /// @param  offset: Offset to start checking for extra characters.
   /// @retval 1 if extra characters are found, 0 otherwise.
 ///////////////////////////////////////////////////////////////////////////////////////
-int hasExtraCharacters(const char *input, int offset) {
+int hasExtraCharacters(const char *input, int offset)
+{
     const char *remainder = input + offset;
-    while (*remainder) {
-        if (!isspace(*remainder)) { // Check if the remainder is not a whitespace or something like \n or \r
+    while (*remainder)
+    {
+        if (!isspace(*remainder))
+        { // Check if the remainder is not a whitespace or something like \n or \r
             UART2_SendString("Command arguments overload, only using the protocol arguments\n");
             return 1; // Found unexpected characters
         }
@@ -203,10 +229,13 @@ int hasExtraCharacters(const char *input, int offset) {
   /// @param  color: The name of the color.
   /// @retval VGA color value.
 ///////////////////////////////////////////////////////////////////////////////////////
-int getColorValue(const char *color) {
+int getColorValue(const char *color)
+{
 	// Find the color associated with the found parsed color
-    for (int i = 0; i < NUM_COLORS; i++) {
-        if (strcmp(color_map[i].name, color) == 0) {
+    for (int i = 0; i < NUM_COLORS; i++)
+    {
+        if (strcmp(color_map[i].name, color) == 0)
+        {
             return color_map[i].value;
         }
     }
@@ -221,7 +250,8 @@ int getColorValue(const char *color) {
   /// @param  input: The full user input string.
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void parseLijn(const char *input) {
+void parseLijn(const char *input)
+{
     int x, y, x_prime, y_prime, thickness, reserved;
     char color[MAX_PARSED_STRING_SIZE];
     int trailingChars;
@@ -241,7 +271,8 @@ void parseLijn(const char *input) {
   /// @param  input: The full user input string.
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void parseRechthoek(const char *input) {
+void parseRechthoek(const char *input)
+{
     int x_lup, y_lup, width, height, filled, reserved, reserved2;
     char color[MAX_PARSED_STRING_SIZE];
     int trailingChars;
@@ -260,7 +291,8 @@ void parseRechthoek(const char *input) {
   /// @param  input: The full user input string.
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void parseTekst(const char *input) {
+void parseTekst(const char *input)
+{
     int x, y, fontSize;
     char color[MAX_PARSED_STRING_SIZE], text[MAX_PARSED_STRING_SIZE], fontName[MAX_PARSED_STRING_SIZE], fontStyle[MAX_PARSED_STRING_SIZE];
     int trailingChars;
@@ -282,7 +314,8 @@ void parseTekst(const char *input) {
   /// @param  input: The full user input string.
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void parseBitmap(const char *input) {
+void parseBitmap(const char *input)
+{
     int bitmapIndex, x_lup, y_lup;
     int trailingChars;
 
@@ -298,7 +331,8 @@ void parseBitmap(const char *input) {
   /// @param  input: The full user input string.
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
-void parseClearscherm(const char *input) {
+void parseClearscherm(const char *input)
+{
 	char color[MAX_PARSED_STRING_SIZE];
 	int trailingChars;
 
