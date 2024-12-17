@@ -22,20 +22,23 @@
   /// @param String_Received The received string to be processed.
   /// @return Returns 0 on success, -1 on format error, -3 if the string is too long.
 /////////////////////////////////////////////////////////////////////////
-char FL_Parse_String(uint16_t size, char String_Received[]) {
+char FL_Parse_String(uint16_t size, char String_Received[])
+{
     char processed_string[MAX_BUFFER_SIZE]; // Buffer for the current command
     int i = 0, j = 0, spacebarCheck = 0; // Indexes for buffers
     uint8_t stringStop = 0;
 
     // Check the length of the string
-    if (size > 1000) {
+    if (size > MAX_STRING_SIZE)
+    {
         UART2_SendString("\n\n");
         UART2_SendString("ERROR! String received is bigger than 1000, cannot complete request.");
         UART2_SendString("\n\n");
         return DATALENGTH_ERR;
     }
 
-    if (size > 100) {
+    if (size > WARNING_STRING_SIZE)
+    {
         UART2_SendString("\n\n");
         UART2_SendString("Warning! String received is larger than 100 characters.");
         UART2_SendString("\n\n");
@@ -44,11 +47,14 @@ char FL_Parse_String(uint16_t size, char String_Received[]) {
     UART2_SendString("Processing String: \n");
 
     // Process the string
-    while (i < size && !stringStop) {
+    while (i < size && !stringStop)
+    {
         // Check for the end of the string
-        if (String_Received[i] == '\0') {
+        if (String_Received[i] == '\0')
+        {
             // Check if the previous character is not '|'
-            if (i == 0 || String_Received[i - 1] != '|') {
+            if (i == 0 || String_Received[i - 1] != '|')
+            {
                 UART2_SendString("\n\n");
                 UART2_SendString("ERROR! String Received does not meet requirements. Missing '|'");
                 UART2_SendString("\n\n");
@@ -57,7 +63,8 @@ char FL_Parse_String(uint16_t size, char String_Received[]) {
         }
 
         // Check for '|' or newline, end of a command
-        if (String_Received[i] == '|' || String_Received[i] == '\n') {
+        if (String_Received[i] == '|' || String_Received[i] == '\n')
+        {
             processed_string[j] = '\0'; // End the current command
             UART2_SendString("Command found: ");
             UART2_SendString(processed_string);
@@ -66,15 +73,19 @@ char FL_Parse_String(uint16_t size, char String_Received[]) {
             // Here you can further process the command
             // matchesCommand(processed_string);
             stringStop = 1; // Stop further processing
-        } else {
+        } else
+        {
             // Add character to the command
-            if (String_Received[i] == ',') {
+            if (String_Received[i] == ',')
+            {
                 processed_string[j++] = String_Received[i];
-                if (String_Received[i + 1] == ' ') {
+                if (String_Received[i + 1] == ' ')
+                {
                     i++; // Skip space after a comma
                     spacebarCheck++;
                 }
-            } else {
+            } else
+            {
                 processed_string[j++] = String_Received[i];
             }
         }
