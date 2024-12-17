@@ -1,19 +1,23 @@
-/*
- * DataParsing.h
- *
- *  Created on: Nov 21, 2024
- *      Author: dupon
- */
+/**
+  ******************************************************************************
+  * @file    DataParsing.c
+  * @author  Roy Dupon
+  * @version V1.0.12
+  * @date    17-December-2024
+  ******************************************************************************
+  */
 
 #ifndef INC_DATAPARSING_H_
 #define INC_DATAPARSING_H_
 
 #define ALL_COMMANDS 5
-#define NUM_COLORS 15
-#define NUM_COLORS2 (sizeof(color_map) / sizeof(color_map[0]))
+#define NUM_COLORS2 15
+#define NUM_COLORS (sizeof(color_map) / sizeof(color_map[0]))
 #define NUM_FONTS 2
 #define NUM_STYLES 3
-#define MAX_DATA_SIZE 50
+
+#define MAX_PARSED_STRING_SIZE 20
+#define MAX_STRING_BUFFER_SIZE 50
 
 char *userCommands[] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm"};
 char *fontNames[] = {"arial", "consolas"};
