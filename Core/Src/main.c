@@ -23,6 +23,7 @@
 #include "UART.h"
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
+#include "API_Draw.h"
 
 int main(void)
 {
