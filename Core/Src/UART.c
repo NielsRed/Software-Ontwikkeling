@@ -64,11 +64,13 @@ static uint16_t uart2_rx_index = 0;
 void USART2_IRQHandler(void)
 {
 	char err;
-    if (USART2->SR & USART_SR_RXNE) { // Check if data is received
+    if (USART2->SR & USART_SR_RXNE)
+    { // Check if data is received
         char received = USART2->DR;  // Read the received character
 
         // Check if we received a termination character
-        if (received == '\n' || received == '\r') {
+        if (received == '\n' || received == '\r')
+        {
             uart2_rx_buffer[uart2_rx_index] = '\0'; // Null-terminate the string
 
             // Process the received string
@@ -86,9 +88,11 @@ void USART2_IRQHandler(void)
 
             // Reset the buffer index for the next string
             uart2_rx_index = 0;
-        } else {
+        } else
+        {
             // Add the received character to the buffer if there's space
-            if (uart2_rx_index < UART_BUFFER_SIZE - 1) {
+            if (uart2_rx_index < UART_BUFFER_SIZE - 1)
+            {
                 uart2_rx_buffer[uart2_rx_index++] = received;
             } else {
                 // Handle buffer overflow (optional)
