@@ -1,14 +1,23 @@
-//--------------------------------------------------------------
-// File     : main.c
-// Datum    : 30.03.2016
-// Version  : 1.0
-// Autor    : UB
-// mods by	: J.F. van der Bent
-// CPU      : STM32F4
-// IDE      : CooCox CoIDE 1.7.x
-// Module   : CMSIS_BOOT, M4_CMSIS_CORE
-// Function : VGA_core DMA LIB 320x240, 8bit color
-//--------------------------------------------------------------
+///**
+//  ******************************************************************************
+//  * @file      main.c
+//  * @author    Niels
+//  * @version   V1.0
+//  * @date      03/05/2012
+//  * @brief     STM32F4xx Devices vector table for RIDE7 toolchain.
+//  *            This module performs:
+//  *                - Set the initial SP
+//  *                - Set the initial PC == Reset_Handler,
+//  *                - Set the vector table entries with the exceptions ISR address
+//  *                - Configure the clock system and the external SRAM mounted on
+//  *                  STM324xG-EVAL board to be used as data memory (optional,
+//  *                  to be enabled by user)
+//  *                - Branches to main in the C library (which eventually
+//  *                  calls main()).
+//  *            After Reset the Cortex-M4 processor is in Thread mode,
+//  *            priority is Privileged, and the Stack is set to Main.
+//  ******************************************************************************
+//  */
 
 #include "main.h"
 #include "UART.h"
@@ -21,37 +30,9 @@ int main(void)
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
 	UART2_Init_Interrupt(9600);
-	uint16_t xp,yp;
-
-	    for(yp = 0; yp < VGA_DISPLAY_Y; yp++) {
-	      for(xp = 0; xp < VGA_DISPLAY_X; xp++) {
-	    	  if(xp < 200 && xp > 198)
-	    	  {
-	    		  UB_VGA_SetPixel(xp, yp, VGA_COL_MAGENTA);
-	    	  }
-	    	  else
-	    	  {
-	    	       UB_VGA_SetPixel(xp, yp, VGA_COL_CYAN);
-	    	  }
-	      }
-	    }
-
-	    matchesCommand("lijn, 1, 2, 3, 4, lichtrood, 20, 0");
-	    matchesCommand("rechthoek, 1, 2, 3, 4, rood, 20, 0, 0");
-	    matchesCommand("tekst,10,10,rood,txt,arial,2,normaal");
-	    matchesCommand("bitmap,1,20,20");
-	    matchesCommand("clearscherm,rood");
 
   while(1)
   {
 
   }
 }
-
-void delay_us(uint32_t us) {
-    uint32_t count = us * (SystemCoreClock / 1000000) / 5; // Adjust division based on compiler optimization
-    while (count--) {
-        __NOP(); // No operation (assembly instruction)
-    }
-}
-
