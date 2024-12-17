@@ -26,15 +26,21 @@
 // Green (3bit) -> Bit4-Bit2
 // Blue  (2bit) -> Bit1-Bit0
 //--------------------------------------------------------------
-#define  VGA_COL_BLACK          0x00
-#define  VGA_COL_BLUE           0x03
-#define  VGA_COL_GREEN          0x1C
-#define  VGA_COL_RED            0xE0
-#define  VGA_COL_WHITE          0xFF
-
-#define  VGA_COL_CYAN           0x1F
-#define  VGA_COL_MAGENTA        0xE3
-#define  VGA_COL_YELLOW         0xFC
+#define VGA_COL_BLACK           0x00
+#define VGA_COL_BLUE            0x03
+#define VGA_COL_LIGHTBLUE       0x0B
+#define VGA_COL_GREEN           0x1C
+#define VGA_COL_LIGHTGREEN      0x3C
+#define VGA_COL_CYAN            0x1F
+#define VGA_COL_LIGHTCYAN       0x3F
+#define VGA_COL_RED             0xE0
+#define VGA_COL_LIGHTRED        0xE8
+#define VGA_COL_MAGENTA         0xE3
+#define VGA_COL_LIGHTMAGENTA    0xEB
+#define VGA_COL_BROWN           0xA4
+#define VGA_COL_YELLOW          0xFC
+#define VGA_COL_GRAY            0x92
+#define VGA_COL_WHITE           0xFF
 
 
 
@@ -73,7 +79,7 @@ extern uint8_t VGA_RAM1[(VGA_DISPLAY_X+1)*VGA_DISPLAY_Y];
 // Frq       = 168MHz/1/12 = 14MHz
 //
 //--------------------------------------------------------------
-#define VGA_TIM1_PERIODE      11
+#define VGA_TIM1_PERIODE      10-1
 #define VGA_TIM1_PRESCALE      0
 
 
@@ -88,10 +94,10 @@ extern uint8_t VGA_RAM1[(VGA_DISPLAY_X+1)*VGA_DISPLAY_Y];
 // 1TIC      = 11,90ns
 //
 //--------------------------------------------------------------
-#define  VGA_TIM2_HSYNC_PERIODE   2667
+#define  VGA_TIM2_HSYNC_PERIODE   2002-1
 #define  VGA_TIM2_HSYNC_PRESCALE     0
 
-#define  VGA_TIM2_HSYNC_IMP       320  // HSync-length (3,81us)
+#define  VGA_TIM2_HSYNC_IMP       240  // HSync-length (3,81us)
 #define  VGA_TIM2_HTRIGGER_START  480  // HSync+BackPorch (5,71us)
 #define  VGA_TIM2_DMA_DELAY        60  // ease the delay when DMA START (Optimization = none)
 //#define  VGA_TIM2_DMA_DELAY        30  // ease the delay when DMA START (Optimization = -O1)

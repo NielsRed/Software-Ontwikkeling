@@ -20,11 +20,10 @@
 //  */
 
 #include "main.h"
+#include "UART.h"
 #include "stm32_ub_vga_screen.h"
 #include <math.h>
 
-// @brief : Main function of the code.
-// @Param : void
 int main(void)
 {
 	SystemInit(); // System speed to 168MHz
@@ -34,7 +33,6 @@ int main(void)
 
   while(1)
   {
-
 
   }
 }
