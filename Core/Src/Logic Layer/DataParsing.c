@@ -23,21 +23,21 @@
 
 // Assign color strings to correct color values
 ColorMap color_map[] = {
-    {"zwart", VGA_COL_BLACK},
-    {"blauw", VGA_COL_BLUE},
-    {"lichtblauw", VGA_COL_LIGHTBLUE},
-    {"groen", VGA_COL_GREEN},
-    {"lichtgroen", VGA_COL_LIGHTGREEN},
-    {"cyaan", VGA_COL_CYAN},
-    {"lichtcyaan", VGA_COL_LIGHTCYAN},
-    {"rood", VGA_COL_RED},
-    {"lichtrood", VGA_COL_LIGHTRED},
-    {"magenta", VGA_COL_MAGENTA},
-    {"lichtmagenta", VGA_COL_LIGHTMAGENTA},
-    {"bruin", VGA_COL_BROWN},
-    {"geel", VGA_COL_YELLOW},
-    {"grijs", VGA_COL_GRAY},
-    {"wit", VGA_COL_WHITE}
+    {"zwart", VGA_BLACK},
+    {"blauw", VGA_BLUE},
+    {"lichtblauw", VGA_LIGHTBLUE},
+    {"groen", VGA_GREEN},
+    {"lichtgroen", VGA_LIGHTGREEN},
+    {"cyaan", VGA_CYAN},
+    {"lichtcyaan", VGA_LIGHTCYAN},
+    {"rood", VGA_RED},
+    {"lichtrood", VGA_LIGHTRED},
+    {"magenta", VGA_MAGENTA},
+    {"lichtmagenta", VGA_LIGHTMAGENTA},
+    {"bruin", VGA_BROWN},
+    {"geel", VGA_YELLOW},
+    {"grijs", VGA_GRAY},
+    {"wit", VGA_WHITE}
 };
 
 
