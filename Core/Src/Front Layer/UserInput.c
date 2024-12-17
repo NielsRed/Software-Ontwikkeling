@@ -1,21 +1,33 @@
-/*
- * UserInput.c
- *
- *  Created on: Nov 21, 2024
- *      Author: dupon
- */
 #include "main.h"
 #include "UART.h"
 #include "UserInput.h"
-
 #include <string.h>
 
+/**
+  ******************************************************************************
+  * @file      UserInput.c
+  * @version   v 1.0.6
+  * @date      17/12/2024
+  * @author    Niels Redegeld
+  * @brief     This file parses the string that is received via UART
+  *            it also checks if strings are too long for the function.
+  *            It ends by sending the command to the next function 'matchesCommand'
+  ******************************************************************************
+ */
+
+/////////////////////////////////////////////////////////////////////////
+  /// @brief Processes a received string and extracts commands.
+  /// @note  Ensures string meets specific requirements and processes commands.
+  /// @param size The length of the received string.
+  /// @param String_Received The received string to be processed.
+  /// @return Returns 0 on success, -1 on format error, -3 if the string is too long.
+/////////////////////////////////////////////////////////////////////////
 char FL_Parse_String(uint16_t size, char String_Received[]) {
-    char processed_string[1028]; // Buffer voor huidige opdracht
-    int i = 0, j = 0, spacebarCheck = 0; // Indexen voor buffers
+    char processed_string[1028]; // Buffer for the current command
+    int i = 0, j = 0, spacebarCheck = 0; // Indexes for buffers
     uint8_t stringStop = 0;
 
-    // Controleer lengte van de string
+    // Check the length of the string
     if (size > 1000) {
         UART2_SendString("\n\n");
         UART2_SendString("ERROR! String received is bigger than 1000, cannot complete request.");
@@ -31,11 +43,11 @@ char FL_Parse_String(uint16_t size, char String_Received[]) {
 
     UART2_SendString("Processing String: \n");
 
-    // Verwerk de string
+    // Process the string
     while (i < size && !stringStop) {
-        // Controleer op het einde van de string
+        // Check for the end of the string
         if (String_Received[i] == '\0') {
-            // Controleer of de vorige karakter geen '|' is
+            // Check if the previous character is not '|'
             if (i == 0 || String_Received[i - 1] != '|') {
                 UART2_SendString("\n\n");
                 UART2_SendString("ERROR! String Received does not meet requirements. Missing '|'");
@@ -44,22 +56,22 @@ char FL_Parse_String(uint16_t size, char String_Received[]) {
             }
         }
 
-        // Controleer op '|' of newline, einde van een opdracht
+        // Check for '|' or newline, end of a command
         if (String_Received[i] == '|' || String_Received[i] == '\n') {
-            processed_string[j] = '\0'; // Beëindig de huidige opdracht
+            processed_string[j] = '\0'; // End the current command
             UART2_SendString("Command found: ");
             UART2_SendString(processed_string);
             UART2_SendString("\n");
 
-            // Hier kun je de opdracht verder verwerken
+            // Here you can further process the command
             // matchesCommand(processed_string);
-            stringStop = 1; // Stop met verdere verwerking
+            stringStop = 1; // Stop further processing
         } else {
-            // Voeg karakter toe aan de opdracht
+            // Add character to the command
             if (String_Received[i] == ',') {
                 processed_string[j++] = String_Received[i];
                 if (String_Received[i + 1] == ' ') {
-                    i++; // Skip spatie na een komma
+                    i++; // Skip space after a comma
                     spacebarCheck++;
                 }
             } else {
@@ -69,6 +81,6 @@ char FL_Parse_String(uint16_t size, char String_Received[]) {
         i++;
     }
 
-    // Als we hier komen zonder errors
+    // If we reach here without errors
     return 0;
 }
