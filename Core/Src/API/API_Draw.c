@@ -220,7 +220,7 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
 	}
 
 	//match bitmap number with the right bitmap
-	const uint8_t (*bitmap)[bitmapsize] = NULL;
+	const uint8_t (*bitmap)[BITMAPSIZE] = NULL;
 	switch (bm_nr)
 	{
 	case 0:
@@ -233,25 +233,25 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
 		bitmap = bitmap_happy_face;
 		break;
 	case 3:
-		bitmap = bitmap_pijl_boven;
+		bitmap = bitmap_arrow_up;
 		break;
 	case 4:
-		bitmap = bitmap_pijl_beneden;
+		bitmap = bitmap_arrow_down;
 		break;
 	case 5:
-		bitmap = bitmap_pijl_links;
+		bitmap = bitmap_arrow_left;
 		break;
 	case 6:
-		bitmap = bitmap_pijl_rechts;
+		bitmap = bitmap_arrow_right;
 		break;
 	default:
 		return 1;
 	}
 
 	//draw the bitmap
-	for (uint8_t row = 0; row < bitmapsize; row++) //loop through rows
+	for (uint8_t row = 0; row < BITMAPSIZE; row++) //loop through rows
 	{
-		for (uint8_t col = 0; col < bitmapsize; col++) //loop through coloms
+		for (uint8_t col = 0; col < BITMAPSIZE; col++) //loop through coloms
 		{
 			uint8_t color = bitmap[row][col]; //get color from bitmap
 			UB_VGA_SetPixel(x_lup + (col), y_lup + (row), color); //set pixel
@@ -293,7 +293,7 @@ int API_draw_text(int x_lup, int y_lup, int color, char *text, char *fontname, i
 
     //make pointer array for pointing to bitmaps
     int scale = fontsize;
-    const uint16_t (*font_array)[bitmaptextsize];
+    const uint16_t (*font_array)[BITMAPTEXTSIZE];
 
     //check for fontname and style first it checks fontname in their it checks for the style
     if (!strcmp(fontname, "arial"))
@@ -366,7 +366,7 @@ int API_draw_text(int x_lup, int y_lup, int color, char *text, char *fontname, i
 
     int x_pos = x_lup; //current x pos
     int y_pos = y_lup; //current y pos
-    int char_width = bitmaptextsize * scale; // Width of each character in pixels
+    int char_width = BITMAPTEXTSIZE * scale; // Width of each character in pixels
 
     //loop through the text in the string
     for (int i = 0; i < strlen(text); i++)
@@ -375,17 +375,17 @@ int API_draw_text(int x_lup, int y_lup, int color, char *text, char *fontname, i
         if (x_pos + char_width > VGA_X_MAX)
         {
             x_pos = x_lup;                   // back to the start of the row
-            y_pos += bitmaptextsize * scale; // new row
+            y_pos += BITMAPTEXTSIZE * scale; // new row
         }
 
         // Retrieve the bitmap for the current character
         const uint16_t *bitmap = font_array[(uint8_t) text[i]];
-        for (uint16_t row = 0; row < bitmaptextsize; row++) // loop through rows of the character bitmap
+        for (uint16_t row = 0; row < BITMAPTEXTSIZE; row++) // loop through rows of the character bitmap
         {
             uint16_t line = bitmap[row];
-            for (uint16_t col = 0; col < bitmaptextsize; col++) // loop through coloms of the character bitmap
+            for (uint16_t col = 0; col < BITMAPTEXTSIZE; col++) // loop through coloms of the character bitmap
             {
-                if (line & (1 << ((bitmaptextsize - 1) - col))) // Check if the pixel should be set
+                if (line & (1 << ((BITMAPTEXTSIZE - 1) - col))) // Check if the pixel should be set
                 {
                 	// Scale each pixel according to the font size
                     for (int dx = 0; dx < scale; dx++)

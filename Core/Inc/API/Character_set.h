@@ -57,9 +57,9 @@ extern const uint16_t comic_sans_cursief[128][16];///< Comic Sans italic style
 extern const uint8_t bitmaptest[16][16];           ///< Test bitmap
 extern const uint8_t bitmap_happy_face[16][16];    ///< Happy face bitmap
 extern const uint8_t bitmap_angry_face[16][16];    ///< Angry face bitmap
-extern const uint8_t bitmap_pijl_boven[16][16];    ///< Up arrow bitmap
-extern const uint8_t bitmap_pijl_beneden[16][16];  ///< Down arrow bitmap
-extern const uint8_t bitmap_pijl_links[16][16];    ///< Left arrow bitmap
-extern const uint8_t bitmap_pijl_rechts[16][16];   ///< Right arrow bitmap
+extern const uint8_t bitmap_arrow_up[16][16];    ///< Up arrow bitmap
+extern const uint8_t bitmap_arrow_down[16][16];  ///< Down arrow bitmap
+extern const uint8_t bitmap_arrow_left[16][16];    ///< Left arrow bitmap
+extern const uint8_t bitmap_arrow_right[16][16];   ///< Right arrow bitmap
 
 #endif /* INC_API_CHARACTER_SET_H_ */

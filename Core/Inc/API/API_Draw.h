@@ -50,8 +50,8 @@
 #define COLOR_VALUE_MIN  0
 #define WEIGHT_VALUE_MAX 25
 #define WEIGHT_VALUE_MIN 0
-#define bitmapsize       16
-#define bitmaptextsize   16
+#define BITMAPSIZE       16
+#define BITMAPTEXTSIZE   16
 #define ISFILLED         1
 #define ISNOTFILLED      0
 #define BITMAPAMOUNT     6
