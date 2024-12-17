@@ -23,7 +23,7 @@
 #define VGA_BROWN        177
 #define VGA_YELLOW       252
 #define VGA_GREY         146
-#define VGA_WHITE        0xFF
+#define VGA_WHITE        255
 #define VGA_ORANGE		 240
 
 
