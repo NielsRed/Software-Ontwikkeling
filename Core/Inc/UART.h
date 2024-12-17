@@ -10,7 +10,7 @@
 #ifndef INC_UART_H_
 #define INC_UART_H_
 
-#define UART_ERR -2
+#define UART_BUFFER_SIZE 1028  // Define buffer size
 
 void UART2_Init_Interrupt(uint32_t baudrate);
 void UART2_SendChar(char c);

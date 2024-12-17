@@ -1,6 +1,8 @@
 #include "UART.h"
 #include "main.h"
+#include "UserInput.h"
 #include <math.h>
+#include <string.h>
 
 /**
   ******************************************************************************
@@ -95,15 +97,48 @@ void UART2_ReceiveString(char *buffer, uint16_t max_length)
     buffer[i] = '\0'; // Terminate the string
 }
 
-/////////////////////////////////////////////////////////////////////////
-  /// @brief Interrupt handler for USART2.
-  /// @note  Called when data is received via UART2. Currently echoes data back.
-/////////////////////////////////////////////////////////////////////////
+// Static buffer and index for storing the received string
+static char uart2_rx_buffer[UART_BUFFER_SIZE];
+static uint16_t uart2_rx_index = 0;
+
 void USART2_IRQHandler(void)
 {
-    if (USART2->SR & USART_SR_RXNE) { // Check if data is received
-        char received = USART2->DR;  // Read the received data
-        // Add processing of received data here
-        UART2_SendChar(received);    // Echo the received data back
+	char err;
+    if (USART2->SR & USART_SR_RXNE)
+    { // Check if data is received
+        char received = USART2->DR;  // Read the received character
+
+        // Check if we received a termination character
+        if (received == '\n' || received == '\r')
+        {
+            uart2_rx_buffer[uart2_rx_index] = '\0'; // Null-terminate the string
+
+            // Process the received string
+            UART2_SendString("Received: ");
+            UART2_SendString(uart2_rx_buffer);
+            UART2_SendString("\n");
+
+            // Call function to process the strings.
+            uint8_t size = strlen(uart2_rx_buffer);
+            err = FL_Parse_String(size, uart2_rx_buffer);
+
+            UART2_SendString("\n\n\n");
+            UART2_SendChar(err);
+            UART2_SendString("\n\n\n");
+
+            // Reset the buffer index for the next string
+            uart2_rx_index = 0;
+        } else
+        {
+            // Add the received character to the buffer if there's space
+            if (uart2_rx_index < UART_BUFFER_SIZE - 1)
+            {
+                uart2_rx_buffer[uart2_rx_index++] = received;
+            } else {
+                // Handle buffer overflow (optional)
+                UART2_SendString("Error: Buffer Overflow\n");
+                uart2_rx_index = 0; // Reset buffer
+            }
+        }
     }
 }
