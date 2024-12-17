@@ -1,12 +1,16 @@
-/*
- * UART.h
- *
- *  Created on: Nov 21, 2024
- *      Author: niels
+/**
+  ******************************************************************************
+  * @file      UART.c
+  * @version   v 1.0.1
+  * @date      17/12/2024
+  * @author    Niels Redegeld
+  ******************************************************************************
  */
 #include <stdint.h>
 #ifndef INC_UART_H_
 #define INC_UART_H_
+
+#define UART_ERR -2
 
 void UART2_Init_Interrupt(uint32_t baudrate);
 void UART2_SendChar(char c);
