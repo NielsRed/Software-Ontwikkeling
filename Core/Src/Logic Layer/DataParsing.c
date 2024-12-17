@@ -138,7 +138,7 @@ int checkAttribute(const char *att, char *att_list[], int max_atts) {
   /// @retval None
 ///////////////////////////////////////////////////////////////////////////////////////
 void parseCommand(const char *command, const char*fullCommand) {
-    // compare user command with system commands
+    // Compare user command with system commands
     if (strcmp(command, "lijn") == 0) {
     	UART2_SendString("Command: Lijn\n");
     	parseLijn(fullCommand);
@@ -169,8 +169,8 @@ void parseCommand(const char *command, const char*fullCommand) {
 int errorHandling(int parsed, int argumentCount){
     char buffer[MAX_STRING_BUFFER_SIZE]; // Convert values to strings and send over UART
     if (parsed == argumentCount) {
-    }else{// if parsing failed
-    	// return the amount of succesfully parsed fields
+    }else{// If parsing failed
+    	// Return the amount of succesfully parsed fields
         sprintf(buffer, "Parsing failed. Successfully Parsed fields: %d\n", parsed);
         UART2_SendString(buffer);
         return 0;
@@ -188,7 +188,7 @@ int errorHandling(int parsed, int argumentCount){
 int hasExtraCharacters(const char *input, int offset) {
     const char *remainder = input + offset;
     while (*remainder) {
-        if (!isspace(*remainder)) { // check if the remainder is not a whitespace or something like \n or \r
+        if (!isspace(*remainder)) { // Check if the remainder is not a whitespace or something like \n or \r
             UART2_SendString("Command arguments overload, only using the protocol arguments\n");
             return 1; // Found unexpected characters
         }
@@ -204,13 +204,13 @@ int hasExtraCharacters(const char *input, int offset) {
   /// @retval VGA color value.
 ///////////////////////////////////////////////////////////////////////////////////////
 int getColorValue(const char *color) {
-	// find the color associated with the found parsed color
+	// Find the color associated with the found parsed color
     for (int i = 0; i < NUM_COLORS; i++) {
         if (strcmp(color_map[i].name, color) == 0) {
             return color_map[i].value;
         }
     }
-    // if the color does not get found, return default (black)
+    // If the color does not get found, return default (black)
     UART2_SendString("Unknown Color\n");
     return VGA_COL_BLACK;
 }
@@ -226,7 +226,7 @@ void parseLijn(const char *input) {
     char color[MAX_PARSED_STRING_SIZE];
     int trailingChars;
 
-    // parse input using scanf for later parsing controls
+    // Parse input using scanf for later parsing controls
     int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d%n",&x, &y, &x_prime, &y_prime, color, &thickness, &reserved, &trailingChars);
     if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color);
@@ -246,7 +246,7 @@ void parseRechthoek(const char *input) {
     char color[MAX_PARSED_STRING_SIZE];
     int trailingChars;
 
-    // parse input using scanf for later parsing controls
+    // Parse input using scanf for later parsing controls
     int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d%n",&x_lup, &y_lup, &width, &height,color, &filled, &reserved, &reserved2,&trailingChars);
     if(!errorHandling(parsed, 8)) return;
     trimWhitespace(color);
@@ -265,7 +265,7 @@ void parseTekst(const char *input) {
     char color[MAX_PARSED_STRING_SIZE], text[MAX_PARSED_STRING_SIZE], fontName[MAX_PARSED_STRING_SIZE], fontStyle[MAX_PARSED_STRING_SIZE];
     int trailingChars;
 
-    // parse input using scanf for later parsing controls
+    // Parse input using scanf for later parsing controls
     int parsed = sscanf(input, "tekst,%d,%d,%19[^,],%19[^,],%19[^,],%d, %19[^,]%n",&x, &y, color, text,fontName, &fontSize, fontStyle,&trailingChars);
 
     if(!errorHandling(parsed, 7)) return;
@@ -286,7 +286,7 @@ void parseBitmap(const char *input) {
     int bitmapIndex, x_lup, y_lup;
     int trailingChars;
 
-    // parse input using scanf for later parsing controls
+    // Parse input using scanf for later parsing controls
     int parsed = sscanf(input, "bitmap,%d,%d,%d%n",&bitmapIndex, &x_lup, &y_lup, &trailingChars);
     if(!errorHandling(parsed, 3)) return;
     hasExtraCharacters(input, trailingChars);
@@ -302,7 +302,7 @@ void parseClearscherm(const char *input) {
 	char color[MAX_PARSED_STRING_SIZE];
 	int trailingChars;
 
-	// parse input using scanf for later parsing controls
+	// Parse input using scanf for later parsing controls
 	int parsed = sscanf(input, "clearscherm,%19[^,]%n",color, &trailingChars);
     if(!errorHandling(parsed, 1)) return;
     trimWhitespace(color);
