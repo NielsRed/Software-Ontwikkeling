@@ -1,8 +1,10 @@
-/*
- * UserInput.h
- *
- *  Created on: Nov 21, 2024
- *      Author: dupon
+/**
+  ******************************************************************************
+  * @file      UserInput.h
+  * @version   v 1.0.1
+  * @date      17/12/2024
+  * @author    Niels Redegeld
+  ******************************************************************************
  */
 
 #ifndef INC_FRONT_LAYER_USERINPUT_H_
