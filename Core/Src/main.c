@@ -30,8 +30,19 @@ int main(void)
 	SystemInit(); // System speed to 168MHz
 
 	UB_VGA_Screen_Init(); // Init VGA-Screen
+
 	UART2_Init_Interrupt(9600);
 
+	API_clearscreen(VGA_WHITE);
+
+//	API_draw_text(10, 200, VGA_COL_RED,"die kale bats", "consolas", 1, 2, 0);
+//	API_draw_text(10, 150, VGA_COL_RED,"die kale bats", "consolas", 1, 1, 0);
+//	API_draw_text(10, 110, VGA_COL_RED,"the quick brown fox met die kale bats", "consolas", 1, 0, 0);
+//    matchesCommand("lijn, 1, 2, 3, 4, lichtrood, 20, 0");
+//    matchesCommand("rechthoek, 1, 2, 3, 4, rood, 20, 0, 0");
+//    matchesCommand("tekst,10,10,rood,txt,arial,2,normaal");
+//    matchesCommand("bitmap,1,20,20");
+//    matchesCommand("tekst,10,30,rood,the quick brown fox jumps over de kale bats,consolas,1,cursief");
   while(1)
   {
 

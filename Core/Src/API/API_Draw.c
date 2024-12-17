@@ -28,7 +28,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
   // Consts
 ///////////////////////////////////////////////////////////////////////////////////////////
-const char *fonts[] = {"arial", "consola", "comic sans"};
+const char *fonts[] = {"arial", "consolas", "comic sans"};
 const char font_amount = sizeof(fonts) / sizeof(fonts[0]);
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -267,7 +267,7 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
   /// @param y_lup Y-coordinate of the upper-left corner.
   /// @param color Color of the text.
   /// @param text Pointer to the string to display.
-  /// @param fontname Name of the font (e.g., "arial", "consola", "comic sans").
+  /// @param fontname Name of the font (e.g., "arial", "consolas", "comic sans").
   /// @param fontsize Size of the font.
   /// @param fontstyle Text style: 0 for basic, 1 for italic, 2 for bold.
   /// @param reserved Reserved for future use.
@@ -304,30 +304,30 @@ int API_draw_text(int x_lup, int y_lup, int color, char *text, char *fontname, i
         }
         else if (fontstyle == 1)
         {
-            font_array = arial_cursief;
+            font_array = arial_vet;
         }
         else if (fontstyle == 2)
         {
-            font_array = arial_vet;
+            font_array = arial_cursief;
         }
         else
         {
             return 0;
         }
     }
-    else if (!strcmp(fontname, "consola"))
+    else if (!strcmp(fontname, "consolas"))
     {
         if (fontstyle == 0)
         {
-            font_array = consola_basic;
+            font_array = consolas_basic;
         }
         else if (fontstyle == 1)
         {
-            font_array = consola_cursief;
+            font_array = consolas_vet;
         }
         else if (fontstyle == 2)
         {
-            font_array = consola_vet;
+            font_array = consolas_cursief;
         }
         else
         {
@@ -358,10 +358,6 @@ int API_draw_text(int x_lup, int y_lup, int color, char *text, char *fontname, i
         return 0;
     }
 
-    if (!strcmp(fontname, "Consola"))
-    {
-        font_array = consola_basic;
-    }
 
 
     int x_pos = x_lup; //current x pos

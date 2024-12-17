@@ -28,15 +28,15 @@
 ///
 /// Supported Fonts and Styles:
 /// - Arial: Basic, Bold (Vet), Italic (Cursief)
-/// - Consola: Basic, Bold (Vet), Italic (Cursief)
+/// - consolas: Basic, Bold (Vet), Italic (Cursief)
 /// - Comic Sans: Basic, Bold (Vet), Italic (Cursief)
 ///////////////////////////////////////////////////////////////////////////////////////////
 extern const uint16_t arial_basic[128][16];      ///< Arial basic style
 extern const uint16_t arial_vet[128][16];        ///< Arial bold style
 extern const uint16_t arial_cursief[128][16];    ///< Arial italic style
-extern const uint16_t consola_basic[128][16];    ///< Consola basic style
-extern const uint16_t consola_vet[128][16];      ///< Consola bold style
-extern const uint16_t consola_cursief[128][16];  ///< Consola italic style
+extern const uint16_t consolas_basic[128][16];    ///< consolas basic style
+extern const uint16_t consolas_vet[128][16];      ///< consolas bold style
+extern const uint16_t consolas_cursief[128][16];  ///< consolas italic style
 extern const uint16_t comic_sans_basic[128][16]; ///< Comic Sans basic style
 extern const uint16_t comic_sans_vet[128][16];   ///< Comic Sans bold style
 extern const uint16_t comic_sans_cursief[128][16];///< Comic Sans italic style

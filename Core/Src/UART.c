@@ -107,7 +107,6 @@ void USART2_IRQHandler(void)
     if (USART2->SR & USART_SR_RXNE)
     { // Check if data is received
         char received = USART2->DR;  // Read the received character
-
         // Check if we received a termination character
         if (received == '\n' || received == '\r')
         {

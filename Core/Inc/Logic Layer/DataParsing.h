@@ -16,8 +16,8 @@
 #define NUM_FONTS 2
 #define NUM_STYLES 3
 
-#define MAX_PARSED_STRING_SIZE 20
-#define MAX_STRING_BUFFER_SIZE 50
+#define MAX_PARSED_STRING_SIZE 100
+#define MAX_STRING_BUFFER_SIZE 100
 
 char *userCommands[] = {"lijn", "rechthoek", "tekst", "bitmap", "clearscherm"};
 char *fontNames[] = {"arial", "consolas"};

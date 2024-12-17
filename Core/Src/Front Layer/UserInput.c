@@ -71,7 +71,7 @@ char FL_Parse_String(uint16_t size, char String_Received[])
             UART2_SendString("\n");
 
             // Here you can further process the command
-            // matchesCommand(processed_string);
+            matchesCommand(processed_string);
             stringStop = 1; // Stop further processing
         } else
         {

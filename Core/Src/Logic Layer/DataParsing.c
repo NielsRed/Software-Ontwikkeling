@@ -30,13 +30,13 @@ ColorMap color_map[] = {
     {"lichtgroen", VGA_LIGHTGREEN},
     {"cyaan", VGA_CYAN},
     {"lichtcyaan", VGA_LIGHTCYAN},
-    {"rood", VGA_RED},
+    {"rood", VGA_COL_RED},
     {"lichtrood", VGA_LIGHTRED},
     {"magenta", VGA_MAGENTA},
     {"lichtmagenta", VGA_LIGHTMAGENTA},
     {"bruin", VGA_BROWN},
     {"geel", VGA_YELLOW},
-    {"grijs", VGA_GRAY},
+    {"grijs", VGA_GREY},
     {"wit", VGA_WHITE}
 };
 
@@ -128,13 +128,15 @@ int checkAttribute(const char *att, char *att_list[], int max_atts)
     }
 
     // Compare
-    for (int i = 0; i < max_atts; i++)
+    for (int j = 0; j < max_atts; j++)
     {
-        if (strcmp(lowerAtt, att_list[i]) == 0)
+        if (strcmp(lowerAtt, att_list[j]) == 0)
         {
-            sprintf(lowerAtt, "found attribute: %s\n", att);
-            UART2_SendString(lowerAtt);
-            return 1;
+        	char new [MAX_PARSED_STRING_SIZE];
+        	new[MAX_PARSED_STRING_SIZE-1] = '\0';
+            sprintf(new, "found attribute: %s\n", att);
+            UART2_SendString(new);
+            return j;
         }
     }
     sprintf(lowerAtt, "unknown attribute: %s\n", att);
@@ -262,7 +264,7 @@ void parseLijn(const char *input)
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
 
-    //API_draw_line(x, y, x_prime, y_prime, getColorValue(color), thickness, 0);
+    API_draw_line(x, y, x_prime, y_prime, getColorValue(color), thickness, 0);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -282,7 +284,7 @@ void parseRechthoek(const char *input)
     if(!errorHandling(parsed, 8)) return;
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
-//    API_draw_rectangle(x_lup, y_lup, width, height, getColorValue(color), filled, 0, 0);
+    API_draw_rectangle(x_lup, y_lup, width, height, getColorValue(color), filled, 0, 0);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -298,14 +300,14 @@ void parseTekst(const char *input)
     int trailingChars;
 
     // Parse input using scanf for later parsing controls
-    int parsed = sscanf(input, "tekst,%d,%d,%19[^,],%19[^,],%19[^,],%d, %19[^,]%n",&x, &y, color, text,fontName, &fontSize, fontStyle,&trailingChars);
+    int parsed = sscanf(input, "tekst,%d,%d,%19[^,],%60[^,],%19[^,],%d, %19[^,]%n",&x, &y, color, text,fontName, &fontSize, fontStyle,&trailingChars);
 
     if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color);
     checkAttribute(fontName, fontNames, NUM_FONTS);
-    checkAttribute(fontStyle, fontStyles, NUM_STYLES);
+    int fontstyle1 = checkAttribute(fontStyle, fontStyles, NUM_STYLES);
     hasExtraCharacters(input, trailingChars);
-//    API_draw_text (x, y, getColorValue(color), text, fontName, fontSize, 0, 0);
+    API_draw_text (x, y, getColorValue(color), text, fontName, fontSize, fontstyle1, 0);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -323,6 +325,7 @@ void parseBitmap(const char *input)
     int parsed = sscanf(input, "bitmap,%d,%d,%d%n",&bitmapIndex, &x_lup, &y_lup, &trailingChars);
     if(!errorHandling(parsed, 3)) return;
     hasExtraCharacters(input, trailingChars);
+    API_draw_bitmap(x_lup, y_lup, bitmapIndex);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -341,5 +344,5 @@ void parseClearscherm(const char *input)
     if(!errorHandling(parsed, 1)) return;
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
-//    API_clearscreen(getColorValue(color));
+    API_clearscreen(getColorValue(color));
 }
