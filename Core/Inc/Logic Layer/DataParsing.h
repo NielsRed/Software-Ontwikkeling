@@ -41,6 +41,7 @@ int errorHandling(int parsed, int argumentCount);
 int hasExtraCharacters(const char *input, int offset);
 int checkAttribute(const char *att, char *att_list[], int max_atts);
 int getColorValue(const char *color);
+void checkForErrorCode(int error);
 
 
 #endif /* INC_DATAPARSING_H_ */

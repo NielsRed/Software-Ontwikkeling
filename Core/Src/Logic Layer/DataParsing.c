@@ -16,6 +16,7 @@
 
 #include "DataParsing.h"
 #include "UART.h"
+#include <ctype.h>
 #include <string.h>
 #include <stdio.h>
 #include "API_Draw.h"
@@ -222,7 +223,7 @@ int hasExtraCharacters(const char *input, int offset)
     const char *remainder = input + offset;
     while (*remainder)
     {
-        if (!isspace(*remainder))
+        if (!isspace((unsigned char)*remainder))
         { // Check if the remainder is not a whitespace or something like \n or \r
             UART2_SendString("Command arguments overload, only using the protocol arguments\n");
             return 1; // Found unexpected characters
@@ -254,6 +255,22 @@ int getColorValue(const char *color)
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
+  /// @brief  Checks if an error message is returned from the API layer.
+  /// @note   Provides an error to uart when the API layer returns an error code > 0
+  /// @param  input: The return value from the API layer function.
+  /// @retval None
+///////////////////////////////////////////////////////////////////////////////////////
+void checkForErrorCode(int error)
+{
+	char buffer[MAX_STRING_BUFFER_SIZE];
+	if(error > 0)
+	{
+	    sprintf(buffer, "API error: %d\n", error);
+	    UART2_SendString(buffer);
+	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
   /// @brief  Parses a command string to draw a line.
   /// @note   Extracts line properties like coordinates, color, and thickness.
   /// @param  input: The full user input string.
@@ -274,14 +291,17 @@ void parseLijn(const char *input)
     	// Without optional "reserved"
         sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d%n", &x, &y, &x_prime, &y_prime, color, &thickness, &trailingChars);
         // Use default value 0 for "reserved".
+        if (!errorHandling(parsed, 6)) return;// Use errorHandling for validation
+    }
+    else
+    {
+    	if(!errorHandling(parsed,7)) return;// Use errorHandling for validation
     }
 
-    // Use errorHandling for validation
-    if (!errorHandling(parsed, 6) && !errorHandling(parsed, 7))return;
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
 
-    API_draw_line(x, y, x_prime, y_prime, getColorValue(color), thickness, 0);
+    checkForErrorCode(API_draw_line(x, y, x_prime, y_prime, getColorValue(color), thickness, 0));
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -304,19 +324,22 @@ void parseRechthoek(const char *input)
     {
         // Without "reserved" and "reserved2"
         sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d%n", &x_lup, &y_lup, &width, &height, color, &filled, &trailingChars);
+        if (!errorHandling(parsed, 6)) return;// Use errorHandling for validation
     }
     else if (parsed == 7)
     {
         // if "reserved2" missing try without "reserved2"
         sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d%n", &x_lup, &y_lup, &width, &height, color, &filled, &reserved, &trailingChars);
+        if (!errorHandling(parsed, 7)) return;// Use errorHandling for validation
     }
-
-    // Use errorHandling for validation
-    if (!errorHandling(parsed, 6) && !errorHandling(parsed, 7) && !errorHandling(parsed, 8))return;
+    else
+    {
+    	if (!errorHandling(parsed, 8)) return;// Use errorHandling for validation
+    }
 
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
-    API_draw_rectangle(x_lup, y_lup, width, height, getColorValue(color), filled, 0, 0);
+    checkForErrorCode(API_draw_rectangle(x_lup, y_lup, width, height, getColorValue(color), filled, 0, 0));
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -339,7 +362,7 @@ void parseTekst(const char *input)
     checkAttribute(fontName, fontNames, NUM_FONTS);
     int fontstyle1 = checkAttribute(fontStyle, fontStyles, NUM_STYLES);
     hasExtraCharacters(input, trailingChars);
-    API_draw_text (x, y, getColorValue(color), text, fontName, fontSize, fontstyle1, 0);
+    checkForErrorCode(API_draw_text (x, y, getColorValue(color), text, fontName, fontSize, fontstyle1, 0));
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -357,7 +380,7 @@ void parseBitmap(const char *input)
     int parsed = sscanf(input, "bitmap,%d,%d,%d%n",&bitmapIndex, &x_lup, &y_lup, &trailingChars);
     if(!errorHandling(parsed, 3)) return;
     hasExtraCharacters(input, trailingChars);
-    API_draw_bitmap(x_lup, y_lup, bitmapIndex);
+    checkForErrorCode(API_draw_bitmap(x_lup, y_lup, bitmapIndex));
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -376,5 +399,5 @@ void parseClearscherm(const char *input)
     if(!errorHandling(parsed, 1)) return;
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
-    API_clearscreen(getColorValue(color));
+    checkForErrorCode(API_clearscreen(getColorValue(color)));
 }
