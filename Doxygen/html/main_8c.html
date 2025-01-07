@@ -83,7 +83,7 @@ $(function(){ initResizable(false); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_f396504afdc959660871b003fa10164d.html">Documents</a></li><li class="navelem"><a class="el" href="dir_7e17ac9cf8fba2cb04bc248c85b0ceb7.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_281fe6c33423cdec592979c52664375b.html">Software-Ontwikkeling</a></li><li class="navelem"><a class="el" href="dir_63bf93612e3f1d814430cc31c593dd97.html">Core</a></li><li class="navelem"><a class="el" href="dir_ce9770c402537ff59fe29837fe95dbb7.html">Src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -97,35 +97,16 @@ $(function(){ initResizable(false); });
 <p>STM32F4xx Devices vector table for RIDE7 toolchain. This module performs:  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;main.h&quot;</code><br />
+<code>#include &quot;UART.h&quot;</code><br />
 <code>#include &quot;stm32_ub_vga_screen.h&quot;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;API_Draw.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top"><a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (void)</td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab33ebb2c5ca2d80d259c64a9d658589f" id="r_ab33ebb2c5ca2d80d259c64a9d658589f"><td class="memItemLeft" align="right" valign="top"><a id="ab33ebb2c5ca2d80d259c64a9d658589f" name="ab33ebb2c5ca2d80d259c64a9d658589f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>delay_us</b> (uint32_t us)</td></tr>
-<tr class="separator:ab33ebb2c5ca2d80d259c64a9d658589f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bd932ff2b609e9831c2d18f672e1dc0" id="r_a0bd932ff2b609e9831c2d18f672e1dc0"><td class="memItemLeft" align="right" valign="top"><a id="a0bd932ff2b609e9831c2d18f672e1dc0" name="a0bd932ff2b609e9831c2d18f672e1dc0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>UART2_Init_Interrupt</b> (uint32_t baudrate)</td></tr>
-<tr class="separator:a0bd932ff2b609e9831c2d18f672e1dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a540abb6f824b7b52303302aa0ed5a151" id="r_a540abb6f824b7b52303302aa0ed5a151"><td class="memItemLeft" align="right" valign="top"><a id="a540abb6f824b7b52303302aa0ed5a151" name="a540abb6f824b7b52303302aa0ed5a151"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>UART2_SendChar</b> (char c)</td></tr>
-<tr class="separator:a540abb6f824b7b52303302aa0ed5a151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfa56a1ff08601bbfbb3702697fc1aeb" id="r_abfa56a1ff08601bbfbb3702697fc1aeb"><td class="memItemLeft" align="right" valign="top"><a id="abfa56a1ff08601bbfbb3702697fc1aeb" name="abfa56a1ff08601bbfbb3702697fc1aeb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>UART2_SendString</b> (char *str)</td></tr>
-<tr class="separator:abfa56a1ff08601bbfbb3702697fc1aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad41ce26ea5a5771ebd76defb39f3d4fb" id="r_ad41ce26ea5a5771ebd76defb39f3d4fb"><td class="memItemLeft" align="right" valign="top"><a id="ad41ce26ea5a5771ebd76defb39f3d4fb" name="ad41ce26ea5a5771ebd76defb39f3d4fb"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>UART2_ReceiveChar</b> ()</td></tr>
-<tr class="separator:ad41ce26ea5a5771ebd76defb39f3d4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa406e79de7e519299ebd0844d982ce81" id="r_aa406e79de7e519299ebd0844d982ce81"><td class="memItemLeft" align="right" valign="top"><a id="aa406e79de7e519299ebd0844d982ce81" name="aa406e79de7e519299ebd0844d982ce81"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>UART2_ReceiveString</b> (char *buffer, uint16_t max_length)</td></tr>
-<tr class="separator:aa406e79de7e519299ebd0844d982ce81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ca6fd0e6f77921dd1123539857ba0a8" id="r_a0ca6fd0e6f77921dd1123539857ba0a8"><td class="memItemLeft" align="right" valign="top"><a id="a0ca6fd0e6f77921dd1123539857ba0a8" name="a0ca6fd0e6f77921dd1123539857ba0a8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>USART2_IRQHandler</b> (void)</td></tr>
-<tr class="separator:a0ca6fd0e6f77921dd1123539857ba0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>STM32F4xx Devices vector table for RIDE7 toolchain. This module performs: </p>
