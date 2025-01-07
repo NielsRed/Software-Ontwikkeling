@@ -259,8 +259,19 @@ void parseLijn(const char *input)
     int trailingChars;
 
     // Parse input using scanf for later parsing controls
-    int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d%n",&x, &y, &x_prime, &y_prime, color, &thickness, &reserved, &trailingChars);
-    if(!errorHandling(parsed, 6)) return;
+    int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d%n",
+                        &x, &y, &x_prime, &y_prime, color, &thickness, &reserved, &trailingChars);
+
+    // Check parsed arguments
+    if (parsed == 6) {
+    	// Without optional "reserved"
+        sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d%n",
+               &x, &y, &x_prime, &y_prime, color, &thickness, &trailingChars);
+        // Use default value 0 for "reserved".
+    }
+
+    // Gebruik de errorHandling-functie voor validatie
+    if (!errorHandling(parsed, 6) && !errorHandling(parsed, 7))return;
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
 
@@ -280,8 +291,23 @@ void parseRechthoek(const char *input)
     int trailingChars;
 
     // Parse input using scanf for later parsing controls
-    int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d%n",&x_lup, &y_lup, &width, &height,color, &filled, &reserved, &reserved2,&trailingChars);
-    if(!errorHandling(parsed, 7)) return;
+    int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d%n",
+                        &x_lup, &y_lup, &width, &height, color, &filled, &reserved, &reserved2, &trailingChars);
+
+    // Check parsed arguments
+    if (parsed == 6) {
+        // Without "reserved" and "reserved2"
+        sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d%n",
+               &x_lup, &y_lup, &width, &height, color, &filled, &trailingChars);
+    } else if (parsed == 7) {
+        // if "reserved2" missing try without "reserved2"
+        sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d%n",
+               &x_lup, &y_lup, &width, &height, color, &filled, &reserved, &trailingChars);
+    }
+
+    // Use errorHandling for validation
+    if (!errorHandling(parsed, 6) && !errorHandling(parsed, 7) && !errorHandling(parsed, 8))return;
+
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
     API_draw_rectangle(x_lup, y_lup, width, height, getColorValue(color), filled, 0, 0);

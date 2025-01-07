@@ -224,25 +224,25 @@ int API_draw_bitmap(int x_lup, int y_lup, int bm_nr)
 	switch (bm_nr)
 	{
 	case 0:
-		bitmap = bitmaptest;
-		break;
-	case 1:
 		bitmap = bitmap_angry_face;
 		break;
-	case 2:
+	case 1:
 		bitmap = bitmap_happy_face;
 		break;
-	case 3:
+	case 2:
 		bitmap = bitmap_arrow_up;
 		break;
-	case 4:
+	case 3:
 		bitmap = bitmap_arrow_down;
 		break;
-	case 5:
+	case 4:
 		bitmap = bitmap_arrow_left;
 		break;
-	case 6:
+	case 5:
 		bitmap = bitmap_arrow_right;
+		break;
+	case 6:
+		bitmap = bitmaptest;
 		break;
 	default:
 		return 1;
