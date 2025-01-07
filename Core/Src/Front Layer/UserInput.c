@@ -52,18 +52,18 @@ char FL_Parse_String(uint16_t size, char String_Received[])
         // Check for the end of the string
         if (String_Received[i] == '\0')
         {
-            // Check if the previous character is not '|'
-            if (i == 0 || String_Received[i - 1] != '|')
+            // Check if the previous character is not '\r'
+            if (i == 0 || String_Received[i - 1] != '\n' || String_Received[i - 1] != '\r')
             {
                 UART2_SendString("\n\n");
-                UART2_SendString("ERROR! String Received does not meet requirements. Missing '|'");
+                UART2_SendString("ERROR! String Received does not meet requirements. Missing 'Enter'");
                 UART2_SendString("\n\n");
                 return USER_INPUT_ERR;
             }
         }
 
         // Check for '|' or newline, end of a command
-        if (String_Received[i] == '|' || String_Received[i] == '\n')
+        if (String_Received[i] == '\r' || String_Received[i] == '\n')
         {
             processed_string[j] = '\0'; // End the current command
             UART2_SendString("Command found: ");
