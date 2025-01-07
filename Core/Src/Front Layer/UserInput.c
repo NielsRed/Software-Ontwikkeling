@@ -49,6 +49,11 @@ char FL_Parse_String(uint16_t size, char String_Received[])
     // Process the string
     while (i < size && !stringStop)
     {
+
+//    	char log_buffer[64];
+//    	sprintf(log_buffer, "Char: %c ASCII: %d\n", String_Received[i], String_Received[i]);
+//    	UART2_SendString(log_buffer);
+
         // Check for the end of the string
         if (String_Received[i] == '\0')
         {

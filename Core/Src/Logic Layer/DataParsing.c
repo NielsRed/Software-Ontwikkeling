@@ -254,13 +254,13 @@ int getColorValue(const char *color)
 ///////////////////////////////////////////////////////////////////////////////////////
 void parseLijn(const char *input)
 {
-    int x, y, x_prime, y_prime, thickness, reserved;
+    int x, y, x_prime, y_prime, thickness, reserved = 0;
     char color[MAX_PARSED_STRING_SIZE];
     int trailingChars;
 
     // Parse input using scanf for later parsing controls
     int parsed = sscanf(input, "lijn,%d,%d,%d,%d,%19[^,],%d,%d%n",&x, &y, &x_prime, &y_prime, color, &thickness, &reserved, &trailingChars);
-    if(!errorHandling(parsed, 7)) return;
+    if(!errorHandling(parsed, 6)) return;
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
 
@@ -275,13 +275,13 @@ void parseLijn(const char *input)
 ///////////////////////////////////////////////////////////////////////////////////////
 void parseRechthoek(const char *input)
 {
-    int x_lup, y_lup, width, height, filled, reserved, reserved2;
+    int x_lup, y_lup, width, height, filled, reserved = 0, reserved2 = 0;
     char color[MAX_PARSED_STRING_SIZE];
     int trailingChars;
 
     // Parse input using scanf for later parsing controls
     int parsed = sscanf(input, "rechthoek,%d,%d,%d,%d,%19[^,],%d,%d,%d%n",&x_lup, &y_lup, &width, &height,color, &filled, &reserved, &reserved2,&trailingChars);
-    if(!errorHandling(parsed, 8)) return;
+    if(!errorHandling(parsed, 7)) return;
     trimWhitespace(color);
     hasExtraCharacters(input, trailingChars);
     API_draw_rectangle(x_lup, y_lup, width, height, getColorValue(color), filled, 0, 0);
