@@ -24,7 +24,7 @@ Deze layer ontvangt de opdrachten van de logic layer en zet dit om naar grafisch
 #### Note
 De rode blokken in het diagram markeren foutafhandelingspaden. Als er een fout optreedt (bijvoorbeeld een onherkenbaar commando of een patroonfout), wordt een foutmelding via UART teruggestuurd naar de gebruiker. Dit zorgt voor robuuste foutdetectie en gebruikersfeedback.
 
-![graphical design](Pictures\graphical.jpg)
+![graphical design](Pictures/graphical.jpg)
 
 ## Drie lagen model
 In het onderstaande plaatje ziet U het drie lagen model dat in onze software is geïmplementeerd. Deze is ontworpen om de functionaliteit modulair en overzichtelijk te maken. Het model bestaat uit drie lagen: de Front layer, de Logic layer, en de API layer. Elk van deze lagen heeft zijn eigen functie binnen dit systeem. Hieronder wordt een overzicht gegeven van de lagen en hun functies:
@@ -35,7 +35,7 @@ De Logic Layer is de layer die alles samenknoopt. Deze layer kijkt wat er precie
 #### API Layer
 De API Layer zorgt voor de aansturing richting het scherm en past de VGA-buffer aan, waardoor er beeld op het scherm verschijnt. Dit wordt gedaan aan de hand van de instructies van de Logic Layer. Ook hier wordt nog gecontroleerd of er geen errors in de aangeroepen data zit zodat er nooit een fout commando aangeroepen wordt. Als hier wel een fout in zit, wordt er een foutcode naar de Logic Layer gecommuniceerd. Hiermee vormt de API Layer de laatste Layer voordat er beeld op het scherm komt.
 
-![drielagen model](Pictures\drielagen.jpg)
+![drielagen model](Pictures/drielagen.jpg)
 
 ## Commando’s
 Hier onder zal aangegeven zijn welke commando’s gebruikt kunnen worden en hoe deze exact functioneren.
