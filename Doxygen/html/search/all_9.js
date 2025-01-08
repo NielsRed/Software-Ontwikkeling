@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_0',['b',['../d9/db6/a00146.html#ga84de5f534817cdbf8bd9064080effca2',1,'APSR_Type::b'],['../d9/db6/a00146.html#ga6e920e9d2e9a2738f8face0863888c0e',1,'IPSR_Type::b'],['../d9/db6/a00146.html#ga61873807b9abee3dfa090c036e580d2e',1,'xPSR_Type::b'],['../d9/db6/a00146.html#ga5d690aa9e65fccaa320e1b8613f502c9',1,'CONTROL_Type::b']]],
+  ['b_0',['b',['../d9/db6/a00146.html#ga2aa5accae1b4a391bf51c6f7ea8f60cf',1,'APSR_Type::b'],['../d9/db6/a00146.html#ga5ad228f4c416b918e8da5d3b3bdef15b',1,'IPSR_Type::b'],['../d9/db6/a00146.html#gadea479e0731292da336d0a5458e1db38',1,'xPSR_Type::b'],['../d9/db6/a00146.html#ga46b9418a2faeed31031e32ce18892aa4',1,'CONTROL_Type::b']]],
   ['bdcr_1',['BDCR',['../d7/d9f/a00454.html#a0b9a3ced775287c8585a6a61af4b40e9',1,'RCC_TypeDef']]],
   ['bdtr_2',['BDTR',['../d0/d29/a00470.html#a112c0403ac38905a70cf5aaa9c8cc38a',1,'TIM_TypeDef']]],
   ['bfar_3',['BFAR',['../d9/db6/a00146.html#gad49f99b1c83dcab356579af171bfa475',1,'SCB_Type']]],

@@ -318,7 +318,7 @@ var searchData=
   ['spi_5fsr_5fudr_315',['SPI_SR_UDR',['../d3/dcc/a00264.html#ga13d3292e963499c0e9a36869909229e6',1,'stm32f4xx.h']]],
   ['spi_5ftxcrcr_5ftxcrc_316',['SPI_TXCRCR_TXCRC',['../d3/dcc/a00264.html#ga1c69dc721e89e40056999b64572dff09',1,'stm32f4xx.h']]],
   ['spi_5ftypedef_317',['SPI_TypeDef',['../db/d2c/a00466.html',1,'']]],
-  ['spsel_318',['SPSEL',['../d9/db6/a00146.html#gae185aac93686ffc78e998a9daf41415b',1,'CONTROL_Type::SPSEL'],['../d9/db6/a00146.html#gae185aac93686ffc78e998a9daf41415b',1,'CONTROL_Type::@3::SPSEL']]],
+  ['spsel_318',['SPSEL',['../d9/db6/a00146.html#gae185aac93686ffc78e998a9daf41415b',1,'CONTROL_Type::SPSEL'],['../d9/db6/a00146.html#gae185aac93686ffc78e998a9daf41415b',1,'CONTROL_Type::@365302074306001157046312073056101015341110126255::SPSEL']]],
   ['sqr1_319',['SQR1',['../d0/dc3/a00354.html#a3302e1bcfdfbbfeb58779d0761fb377c',1,'ADC_TypeDef']]],
   ['sqr2_320',['SQR2',['../d0/dc3/a00354.html#aab440b0ad8631f5666dd32768a89cf60',1,'ADC_TypeDef']]],
   ['sqr3_321',['SQR3',['../d0/dc3/a00354.html#a97e40d9928fa25a5628d6442f0aa6c0f',1,'ADC_TypeDef']]],

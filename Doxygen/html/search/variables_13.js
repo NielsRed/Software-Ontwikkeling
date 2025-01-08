@@ -9,7 +9,7 @@ var searchData=
   ['smcr_6',['SMCR',['../d0/d29/a00470.html#a02758713abfe580460dd5bcd8762702a',1,'TIM_TypeDef']]],
   ['smpr1_7',['SMPR1',['../d0/dc3/a00354.html#af9d6c604e365c7d9d7601bf4ef373498',1,'ADC_TypeDef']]],
   ['smpr2_8',['SMPR2',['../d0/dc3/a00354.html#a6ac83fae8377c7b7fcae50fa4211b0e8',1,'ADC_TypeDef']]],
-  ['spsel_9',['SPSEL',['../d9/db6/a00146.html#gae185aac93686ffc78e998a9daf41415b',1,'CONTROL_Type::SPSEL'],['../d9/db6/a00146.html#gae185aac93686ffc78e998a9daf41415b',1,'CONTROL_Type::@3::SPSEL']]],
+  ['spsel_9',['SPSEL',['../d9/db6/a00146.html#gae185aac93686ffc78e998a9daf41415b',1,'CONTROL_Type::SPSEL'],['../d9/db6/a00146.html#gae185aac93686ffc78e998a9daf41415b',1,'CONTROL_Type::@365302074306001157046312073056101015341110126255::SPSEL']]],
   ['sqr1_10',['SQR1',['../d0/dc3/a00354.html#a3302e1bcfdfbbfeb58779d0761fb377c',1,'ADC_TypeDef']]],
   ['sqr2_11',['SQR2',['../d0/dc3/a00354.html#aab440b0ad8631f5666dd32768a89cf60',1,'ADC_TypeDef']]],
   ['sqr3_12',['SQR3',['../d0/dc3/a00354.html#a97e40d9928fa25a5628d6442f0aa6c0f',1,'ADC_TypeDef']]],

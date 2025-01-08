@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['u16_0',['u16',['../d9/db6/a00146.html#gae8d499140220fa6d4eab1da7262bf08e',1,'ITM_Type::u16'],['../d9/db6/a00146.html#gae8d499140220fa6d4eab1da7262bf08e',1,'ITM_Type::@4::u16']]],
-  ['u32_1',['u32',['../d9/db6/a00146.html#gacaf6d0e14a3d4b541c624913b4a1931e',1,'ITM_Type::u32'],['../d9/db6/a00146.html#gacaf6d0e14a3d4b541c624913b4a1931e',1,'ITM_Type::@4::u32']]],
-  ['u8_2',['u8',['../d9/db6/a00146.html#ga0374c0b98ab9de6f71fabff7412df832',1,'ITM_Type::u8'],['../d9/db6/a00146.html#ga0374c0b98ab9de6f71fabff7412df832',1,'ITM_Type::@4::u8']]],
+  ['u16_0',['u16',['../d9/db6/a00146.html#gae8d499140220fa6d4eab1da7262bf08e',1,'ITM_Type::u16'],['../d9/db6/a00146.html#gae8d499140220fa6d4eab1da7262bf08e',1,'ITM_Type::@132272077142114063212132016114236064120056247336::u16']]],
+  ['u32_1',['u32',['../d9/db6/a00146.html#gacaf6d0e14a3d4b541c624913b4a1931e',1,'ITM_Type::u32'],['../d9/db6/a00146.html#gacaf6d0e14a3d4b541c624913b4a1931e',1,'ITM_Type::@132272077142114063212132016114236064120056247336::u32']]],
+  ['u8_2',['u8',['../d9/db6/a00146.html#ga0374c0b98ab9de6f71fabff7412df832',1,'ITM_Type::u8'],['../d9/db6/a00146.html#ga0374c0b98ab9de6f71fabff7412df832',1,'ITM_Type::@132272077142114063212132016114236064120056247336::u8']]],
   ['uart_2ec_3',['UART.c',['../dd/d32/a00041.html',1,'']]],
   ['uart2_5finit_5finterrupt_4',['UART2_Init_Interrupt',['../dd/d32/a00041.html#a0bd932ff2b609e9831c2d18f672e1dc0',1,'UART.c']]],
   ['uart2_5freceivechar_5',['UART2_ReceiveChar',['../dd/d32/a00041.html#ad6a2267db7302e66efd0abc554547b01',1,'UART.c']]],
