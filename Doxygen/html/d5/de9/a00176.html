@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: GPIO_Exported_Constants</title>
+<title>Software Ontwikkeling: DMA_peripheral_increment_offset</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -85,23 +85,43 @@ $(function(){ initResizable(false); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Topics</a>  </div>
-  <div class="headertitle"><div class="title">GPIO_Exported_Constants<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../dd/d42/a00109.html">GPIO</a></div></div></div>
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">DMA_peripheral_increment_offset<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d7/d70/a00106.html">DMA</a> &raquo; <a class="el" href="../../d6/db8/a00158.html">DMA_Exported_Constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d4c/a00177.html">GPIO_pins_define</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d90/a00178.html">GPIO_Pin_sources</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dd9/a00179.html">GPIO_Alternat_function_selection_define</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d81/a00180.html">GPIO_Legacy</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga939053c42e486b82963b8eecc809bce0" id="r_ga939053c42e486b82963b8eecc809bce0"><td class="memItemLeft" align="right" valign="top"><a id="ga939053c42e486b82963b8eecc809bce0" name="ga939053c42e486b82963b8eecc809bce0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_PINCOS_Psize</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="separator:ga939053c42e486b82963b8eecc809bce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae8184971db13b62cd9f4dc5aecf9c22" id="r_gaae8184971db13b62cd9f4dc5aecf9c22"><td class="memItemLeft" align="right" valign="top"><a id="gaae8184971db13b62cd9f4dc5aecf9c22" name="gaae8184971db13b62cd9f4dc5aecf9c22"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_PINCOS_WordAligned</b>&#160;&#160;&#160;((uint32_t)0x00008000)</td></tr>
+<tr class="separator:gaae8184971db13b62cd9f4dc5aecf9c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fcfea7f5dedb658358f1220773fb2f2" id="r_ga2fcfea7f5dedb658358f1220773fb2f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2fcfea7f5dedb658358f1220773fb2f2">IS_DMA_PINCOS_SIZE</a>(SIZE)</td></tr>
+<tr class="separator:ga2fcfea7f5dedb658358f1220773fb2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga2fcfea7f5dedb658358f1220773fb2f2" name="ga2fcfea7f5dedb658358f1220773fb2f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2fcfea7f5dedb658358f1220773fb2f2">&#9670;&#160;</a></span>IS_DMA_PINCOS_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IS_DMA_PINCOS_SIZE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>SIZE</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                  (((SIZE) == DMA_PINCOS_Psize) || \</div>
+<div class="line">                                  ((SIZE) == DMA_PINCOS_WordAligned))</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

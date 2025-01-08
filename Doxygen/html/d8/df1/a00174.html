@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: DMA_flow_controller_definitions</title>
+<title>Software Ontwikkeling: DMA_interrupt_enable_definitions</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,39 +86,47 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">DMA_flow_controller_definitions<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d5/d1e/a00103.html">DMA</a> &raquo; <a class="el" href="../../d3/df8/a00155.html">DMA_Exported_Constants</a></div></div></div>
+  <div class="headertitle"><div class="title">DMA_interrupt_enable_definitions<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d7/d70/a00106.html">DMA</a> &raquo; <a class="el" href="../../d6/db8/a00158.html">DMA_Exported_Constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gafe69109789c2c285f98193f4b598cbc1" id="r_gafe69109789c2c285f98193f4b598cbc1"><td class="memItemLeft" align="right" valign="top"><a id="gafe69109789c2c285f98193f4b598cbc1" name="gafe69109789c2c285f98193f4b598cbc1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_FlowCtrl_Memory</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
-<tr class="separator:gafe69109789c2c285f98193f4b598cbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga33a735d51a2b790a25c579753edddd46" id="r_ga33a735d51a2b790a25c579753edddd46"><td class="memItemLeft" align="right" valign="top"><a id="ga33a735d51a2b790a25c579753edddd46" name="ga33a735d51a2b790a25c579753edddd46"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_FlowCtrl_Peripheral</b>&#160;&#160;&#160;((uint32_t)0x00000020)</td></tr>
-<tr class="separator:ga33a735d51a2b790a25c579753edddd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78c0f18c0a86c67510f540a4210aadb7" id="r_ga78c0f18c0a86c67510f540a4210aadb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78c0f18c0a86c67510f540a4210aadb7">IS_DMA_FLOW_CTRL</a>(CTRL)</td></tr>
-<tr class="separator:ga78c0f18c0a86c67510f540a4210aadb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06e83dd277e0d3e5635cf8ce8dfd6e16" id="r_ga06e83dd277e0d3e5635cf8ce8dfd6e16"><td class="memItemLeft" align="right" valign="top"><a id="ga06e83dd277e0d3e5635cf8ce8dfd6e16" name="ga06e83dd277e0d3e5635cf8ce8dfd6e16"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_IT_TC</b>&#160;&#160;&#160;((uint32_t)0x00000010)</td></tr>
+<tr class="separator:ga06e83dd277e0d3e5635cf8ce8dfd6e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf11c572b9797e04a14b105fdc2e5f66" id="r_gadf11c572b9797e04a14b105fdc2e5f66"><td class="memItemLeft" align="right" valign="top"><a id="gadf11c572b9797e04a14b105fdc2e5f66" name="gadf11c572b9797e04a14b105fdc2e5f66"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_IT_HT</b>&#160;&#160;&#160;((uint32_t)0x00000008)</td></tr>
+<tr class="separator:gadf11c572b9797e04a14b105fdc2e5f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9d92649d2a0146f663ff253d8f3b59e" id="r_gaf9d92649d2a0146f663ff253d8f3b59e"><td class="memItemLeft" align="right" valign="top"><a id="gaf9d92649d2a0146f663ff253d8f3b59e" name="gaf9d92649d2a0146f663ff253d8f3b59e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_IT_TE</b>&#160;&#160;&#160;((uint32_t)0x00000004)</td></tr>
+<tr class="separator:gaf9d92649d2a0146f663ff253d8f3b59e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga71137443f7bdced1ee80697596e9ea98" id="r_ga71137443f7bdced1ee80697596e9ea98"><td class="memItemLeft" align="right" valign="top"><a id="ga71137443f7bdced1ee80697596e9ea98" name="ga71137443f7bdced1ee80697596e9ea98"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_IT_DME</b>&#160;&#160;&#160;((uint32_t)0x00000002)</td></tr>
+<tr class="separator:ga71137443f7bdced1ee80697596e9ea98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93164ec039fc5579662c382e68d7d13f" id="r_ga93164ec039fc5579662c382e68d7d13f"><td class="memItemLeft" align="right" valign="top"><a id="ga93164ec039fc5579662c382e68d7d13f" name="ga93164ec039fc5579662c382e68d7d13f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_IT_FE</b>&#160;&#160;&#160;((uint32_t)0x00000080)</td></tr>
+<tr class="separator:ga93164ec039fc5579662c382e68d7d13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47f6af7da302c19aba24516037d305e7" id="r_ga47f6af7da302c19aba24516037d305e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga47f6af7da302c19aba24516037d305e7">IS_DMA_CONFIG_IT</a>(IT)</td></tr>
+<tr class="separator:ga47f6af7da302c19aba24516037d305e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga78c0f18c0a86c67510f540a4210aadb7" name="ga78c0f18c0a86c67510f540a4210aadb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga78c0f18c0a86c67510f540a4210aadb7">&#9670;&#160;</a></span>IS_DMA_FLOW_CTRL</h2>
+<a id="ga47f6af7da302c19aba24516037d305e7" name="ga47f6af7da302c19aba24516037d305e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga47f6af7da302c19aba24516037d305e7">&#9670;&#160;</a></span>IS_DMA_CONFIG_IT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IS_DMA_FLOW_CTRL</td>
+          <td class="memname">#define IS_DMA_CONFIG_IT</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CTRL</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>IT</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                (((CTRL) == DMA_FlowCtrl_Memory) || \</div>
-<div class="line">                                ((CTRL) == DMA_FlowCtrl_Peripheral))</div>
+<b>Value:</b><div class="fragment"><div class="line">((((IT) &amp; 0xFFFFFF61) == 0x00) &amp;&amp; ((IT) != 0x00))</div>
 </div><!-- fragment -->
 </div>
 </div>

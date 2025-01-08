@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['eth_5ftypedef_0',['ETH_TypeDef',['../d4/d6d/a00402.html',1,'']]],
-  ['exti_5ftypedef_1',['EXTI_TypeDef',['../d1/d8b/a00406.html',1,'']]]
+  ['eth_5ftypedef_0',['ETH_TypeDef',['../de/de8/a00405.html',1,'']]],
+  ['exti_5ftypedef_1',['EXTI_TypeDef',['../de/d3d/a00409.html',1,'']]]
 ];

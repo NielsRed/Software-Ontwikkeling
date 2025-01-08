@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: MISC_SysTick_clock_source</title>
+<title>Software Ontwikkeling: MISC_Vector_Table_Base</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,39 +86,39 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">MISC_SysTick_clock_source<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d4/d3a/a00101.html">MISC</a> &raquo; <a class="el" href="../../d9/d7d/a00150.html">MISC_Exported_Constants</a></div></div></div>
+  <div class="headertitle"><div class="title">MISC_Vector_Table_Base<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d0/dc2/a00104.html">MISC</a> &raquo; <a class="el" href="../../da/d01/a00153.html">MISC_Exported_Constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga545c387ce43db90f15faad5f354f890d" id="r_ga545c387ce43db90f15faad5f354f890d"><td class="memItemLeft" align="right" valign="top"><a id="ga545c387ce43db90f15faad5f354f890d" name="ga545c387ce43db90f15faad5f354f890d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SysTick_CLKSource_HCLK_Div8</b>&#160;&#160;&#160;((uint32_t)0xFFFFFFFB)</td></tr>
-<tr class="separator:ga545c387ce43db90f15faad5f354f890d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a885ce2632ad4c35e229bb7c6e60191" id="r_ga8a885ce2632ad4c35e229bb7c6e60191"><td class="memItemLeft" align="right" valign="top"><a id="ga8a885ce2632ad4c35e229bb7c6e60191" name="ga8a885ce2632ad4c35e229bb7c6e60191"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SysTick_CLKSource_HCLK</b>&#160;&#160;&#160;((uint32_t)0x00000004)</td></tr>
-<tr class="separator:ga8a885ce2632ad4c35e229bb7c6e60191"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22d6291f6aed29442cf4cd9098fa0784" id="r_ga22d6291f6aed29442cf4cd9098fa0784"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga22d6291f6aed29442cf4cd9098fa0784">IS_SYSTICK_CLK_SOURCE</a>(SOURCE)</td></tr>
-<tr class="separator:ga22d6291f6aed29442cf4cd9098fa0784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8be8181cc3e5d42f6204af306ab50f80" id="r_ga8be8181cc3e5d42f6204af306ab50f80"><td class="memItemLeft" align="right" valign="top"><a id="ga8be8181cc3e5d42f6204af306ab50f80" name="ga8be8181cc3e5d42f6204af306ab50f80"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NVIC_VectTab_RAM</b>&#160;&#160;&#160;((uint32_t)0x20000000)</td></tr>
+<tr class="separator:ga8be8181cc3e5d42f6204af306ab50f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafbf92fd28a1090b2aa49732ebd5704b5" id="r_gafbf92fd28a1090b2aa49732ebd5704b5"><td class="memItemLeft" align="right" valign="top"><a id="gafbf92fd28a1090b2aa49732ebd5704b5" name="gafbf92fd28a1090b2aa49732ebd5704b5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NVIC_VectTab_FLASH</b>&#160;&#160;&#160;((uint32_t)0x08000000)</td></tr>
+<tr class="separator:gafbf92fd28a1090b2aa49732ebd5704b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26b9d493ccb98fcce9a27303078940c8" id="r_ga26b9d493ccb98fcce9a27303078940c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga26b9d493ccb98fcce9a27303078940c8">IS_NVIC_VECTTAB</a>(VECTTAB)</td></tr>
+<tr class="separator:ga26b9d493ccb98fcce9a27303078940c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga22d6291f6aed29442cf4cd9098fa0784" name="ga22d6291f6aed29442cf4cd9098fa0784"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga22d6291f6aed29442cf4cd9098fa0784">&#9670;&#160;</a></span>IS_SYSTICK_CLK_SOURCE</h2>
+<a id="ga26b9d493ccb98fcce9a27303078940c8" name="ga26b9d493ccb98fcce9a27303078940c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26b9d493ccb98fcce9a27303078940c8">&#9670;&#160;</a></span>IS_NVIC_VECTTAB</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IS_SYSTICK_CLK_SOURCE</td>
+          <td class="memname">#define IS_NVIC_VECTTAB</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>SOURCE</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VECTTAB</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                       (((SOURCE) == SysTick_CLKSource_HCLK) || \</div>
-<div class="line">                                       ((SOURCE) == SysTick_CLKSource_HCLK_Div8))</div>
+<b>Value:</b><div class="fragment"><div class="line">                                  (((VECTTAB) == NVIC_VectTab_RAM) || \</div>
+<div class="line">                                  ((VECTTAB) == NVIC_VectTab_FLASH))</div>
 </div><!-- fragment -->
 </div>
 </div>

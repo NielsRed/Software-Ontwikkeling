@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: DMA_peripheral_data_size</title>
+<title>Software Ontwikkeling: DMA_data_buffer_size</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,43 +86,32 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">DMA_peripheral_data_size<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d5/d1e/a00103.html">DMA</a> &raquo; <a class="el" href="../../d3/df8/a00155.html">DMA_Exported_Constants</a></div></div></div>
+  <div class="headertitle"><div class="title">DMA_data_buffer_size<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d7/d70/a00106.html">DMA</a> &raquo; <a class="el" href="../../d6/db8/a00158.html">DMA_Exported_Constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga7577035ae4ff413164000227a8cea346" id="r_ga7577035ae4ff413164000227a8cea346"><td class="memItemLeft" align="right" valign="top"><a id="ga7577035ae4ff413164000227a8cea346" name="ga7577035ae4ff413164000227a8cea346"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_PeripheralDataSize_Byte</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
-<tr class="separator:ga7577035ae4ff413164000227a8cea346"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1988e5005ee65c261018f62866e4585" id="r_gab1988e5005ee65c261018f62866e4585"><td class="memItemLeft" align="right" valign="top"><a id="gab1988e5005ee65c261018f62866e4585" name="gab1988e5005ee65c261018f62866e4585"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_PeripheralDataSize_HalfWord</b>&#160;&#160;&#160;((uint32_t)0x00000800)</td></tr>
-<tr class="separator:gab1988e5005ee65c261018f62866e4585"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga516ea7a40945d8325fe73e079b245ea1" id="r_ga516ea7a40945d8325fe73e079b245ea1"><td class="memItemLeft" align="right" valign="top"><a id="ga516ea7a40945d8325fe73e079b245ea1" name="ga516ea7a40945d8325fe73e079b245ea1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_PeripheralDataSize_Word</b>&#160;&#160;&#160;((uint32_t)0x00001000)</td></tr>
-<tr class="separator:ga516ea7a40945d8325fe73e079b245ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad7916e0ae55cdf5efdfa68a09a028037" id="r_gad7916e0ae55cdf5efdfa68a09a028037"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad7916e0ae55cdf5efdfa68a09a028037">IS_DMA_PERIPHERAL_DATA_SIZE</a>(SIZE)</td></tr>
-<tr class="separator:gad7916e0ae55cdf5efdfa68a09a028037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72ef4033bb3bc2cdfdbe579083b05e32" id="r_ga72ef4033bb3bc2cdfdbe579083b05e32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga72ef4033bb3bc2cdfdbe579083b05e32">IS_DMA_BUFFER_SIZE</a>(SIZE)</td></tr>
+<tr class="separator:ga72ef4033bb3bc2cdfdbe579083b05e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gad7916e0ae55cdf5efdfa68a09a028037" name="gad7916e0ae55cdf5efdfa68a09a028037"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad7916e0ae55cdf5efdfa68a09a028037">&#9670;&#160;</a></span>IS_DMA_PERIPHERAL_DATA_SIZE</h2>
+<a id="ga72ef4033bb3bc2cdfdbe579083b05e32" name="ga72ef4033bb3bc2cdfdbe579083b05e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga72ef4033bb3bc2cdfdbe579083b05e32">&#9670;&#160;</a></span>IS_DMA_BUFFER_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IS_DMA_PERIPHERAL_DATA_SIZE</td>
+          <td class="memname">#define IS_DMA_BUFFER_SIZE</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>SIZE</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                           (((SIZE) == DMA_PeripheralDataSize_Byte)  || \</div>
-<div class="line">                                           ((SIZE) == DMA_PeripheralDataSize_HalfWord) || \</div>
-<div class="line">                                           ((SIZE) == DMA_PeripheralDataSize_Word))</div>
+<b>Value:</b><div class="fragment"><div class="line">(((SIZE) &gt;= 0x1) &amp;&amp; ((SIZE) &lt; 0x10000))</div>
 </div><!-- fragment -->
 </div>
 </div>

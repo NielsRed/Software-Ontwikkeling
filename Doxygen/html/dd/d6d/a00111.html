@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: Initialization and Configuration</title>
+<title>Software Ontwikkeling: Interrupts and flags management functions</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,90 +86,131 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Initialization and Configuration<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../dd/d42/a00109.html">GPIO</a> &raquo; <a class="el" href="../../d4/d81/a00110.html">GPIO_Private_Functions</a></div></div></div>
+  <div class="headertitle"><div class="title">Interrupts and flags management functions<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d7/d70/a00106.html">DMA</a> &raquo; <a class="el" href="../../df/d98/a00107.html">DMA_Private_Functions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Initialization and Configuration.  
+<p>Interrupts and flags management functions.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa60bdf3182c44b5fa818f237042f52ee" id="r_gaa60bdf3182c44b5fa818f237042f52ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa60bdf3182c44b5fa818f237042f52ee">GPIO_DeInit</a> (<a class="el" href="../../d1/d7e/a00434.html">GPIO_TypeDef</a> *GPIOx)</td></tr>
-<tr class="memdesc:gaa60bdf3182c44b5fa818f237042f52ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitializes the GPIOx peripheral registers to their default reset values.  <br /></td></tr>
-<tr class="separator:gaa60bdf3182c44b5fa818f237042f52ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga71abf9404261370d03cca449b88d3a65" id="r_ga71abf9404261370d03cca449b88d3a65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga71abf9404261370d03cca449b88d3a65">GPIO_Init</a> (<a class="el" href="../../d1/d7e/a00434.html">GPIO_TypeDef</a> *GPIOx, <a class="el" href="../../d8/d57/a00498.html">GPIO_InitTypeDef</a> *GPIO_InitStruct)</td></tr>
-<tr class="memdesc:ga71abf9404261370d03cca449b88d3a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct.  <br /></td></tr>
-<tr class="separator:ga71abf9404261370d03cca449b88d3a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab28de41278e7f8c63d0851e2733b10df" id="r_gab28de41278e7f8c63d0851e2733b10df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab28de41278e7f8c63d0851e2733b10df">GPIO_StructInit</a> (<a class="el" href="../../d8/d57/a00498.html">GPIO_InitTypeDef</a> *GPIO_InitStruct)</td></tr>
-<tr class="memdesc:gab28de41278e7f8c63d0851e2733b10df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each GPIO_InitStruct member with its default value.  <br /></td></tr>
-<tr class="separator:gab28de41278e7f8c63d0851e2733b10df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad2f2e615928c69fd0d8c641a7cedaafc" id="r_gad2f2e615928c69fd0d8c641a7cedaafc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad2f2e615928c69fd0d8c641a7cedaafc">GPIO_PinLockConfig</a> (<a class="el" href="../../d1/d7e/a00434.html">GPIO_TypeDef</a> *GPIOx, uint16_t GPIO_Pin)</td></tr>
-<tr class="memdesc:gad2f2e615928c69fd0d8c641a7cedaafc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks GPIO Pins configuration registers.  <br /></td></tr>
-<tr class="separator:gad2f2e615928c69fd0d8c641a7cedaafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4d631cdd6cd020106435f30c0c6fb15" id="r_gaa4d631cdd6cd020106435f30c0c6fb15"><td class="memItemLeft" align="right" valign="top">FunctionalState&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa4d631cdd6cd020106435f30c0c6fb15">DMA_GetCmdStatus</a> (<a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *DMAy_Streamx)</td></tr>
+<tr class="memdesc:gaa4d631cdd6cd020106435f30c0c6fb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the status of EN bit for the specified DMAy Streamx.  <br /></td></tr>
+<tr class="separator:gaa4d631cdd6cd020106435f30c0c6fb15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9893809a7067861ec111f7d712ebf28d" id="r_ga9893809a7067861ec111f7d712ebf28d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9893809a7067861ec111f7d712ebf28d">DMA_GetFIFOStatus</a> (<a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *DMAy_Streamx)</td></tr>
+<tr class="memdesc:ga9893809a7067861ec111f7d712ebf28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current DMAy Streamx FIFO filled level.  <br /></td></tr>
+<tr class="separator:ga9893809a7067861ec111f7d712ebf28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10cfc0fe31d64a1fd8fb3efb4ae2a411" id="r_ga10cfc0fe31d64a1fd8fb3efb4ae2a411"><td class="memItemLeft" align="right" valign="top">FlagStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga10cfc0fe31d64a1fd8fb3efb4ae2a411">DMA_GetFlagStatus</a> (<a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, uint32_t DMA_FLAG)</td></tr>
+<tr class="memdesc:ga10cfc0fe31d64a1fd8fb3efb4ae2a411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified DMAy Streamx flag is set or not.  <br /></td></tr>
+<tr class="separator:ga10cfc0fe31d64a1fd8fb3efb4ae2a411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga510d62b4051f5a5de164e84b266b851d" id="r_ga510d62b4051f5a5de164e84b266b851d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga510d62b4051f5a5de164e84b266b851d">DMA_ClearFlag</a> (<a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, uint32_t DMA_FLAG)</td></tr>
+<tr class="memdesc:ga510d62b4051f5a5de164e84b266b851d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the DMAy Streamx's pending flags.  <br /></td></tr>
+<tr class="separator:ga510d62b4051f5a5de164e84b266b851d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9c469a3f5d4aca5c97dee798ffc2f05" id="r_gab9c469a3f5d4aca5c97dee798ffc2f05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab9c469a3f5d4aca5c97dee798ffc2f05">DMA_ITConfig</a> (<a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, uint32_t DMA_IT, FunctionalState NewState)</td></tr>
+<tr class="memdesc:gab9c469a3f5d4aca5c97dee798ffc2f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified DMAy Streamx interrupts.  <br /></td></tr>
+<tr class="separator:gab9c469a3f5d4aca5c97dee798ffc2f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad0ccf5f6548bd7cf8f2cae30393bb716" id="r_gad0ccf5f6548bd7cf8f2cae30393bb716"><td class="memItemLeft" align="right" valign="top">ITStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad0ccf5f6548bd7cf8f2cae30393bb716">DMA_GetITStatus</a> (<a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, uint32_t DMA_IT)</td></tr>
+<tr class="memdesc:gad0ccf5f6548bd7cf8f2cae30393bb716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified DMAy Streamx interrupt has occurred or not.  <br /></td></tr>
+<tr class="separator:gad0ccf5f6548bd7cf8f2cae30393bb716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5433018889cd36140d98bb380c4e76e" id="r_gad5433018889cd36140d98bb380c4e76e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad5433018889cd36140d98bb380c4e76e">DMA_ClearITPendingBit</a> (<a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, uint32_t DMA_IT)</td></tr>
+<tr class="memdesc:gad5433018889cd36140d98bb380c4e76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the DMAy Streamx's interrupt pending bits.  <br /></td></tr>
+<tr class="separator:gad5433018889cd36140d98bb380c4e76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Initialization and Configuration. </p>
+<p>Interrupts and flags management functions. </p>
 <pre class="fragment"> ===============================================================================
-                        Initialization and Configuration
+                  Interrupts and flags management functions
  ===============================================================================  
+
+  This subsection provides functions allowing to
+   - Check the DMA enable status
+   - Check the FIFO status 
+   - Configure the DMA Interrupts sources and check or clear the flags or pending bits status.   
+   
+ 1. DMA Enable status:
+   After configuring the DMA Stream (DMA_Init() function) and enabling the stream,
+   it is recommended to check (or wait until) the DMA Stream is effectively enabled.
+   A Stream may remain disabled if a configuration parameter is wrong.
+   After disabling a DMA Stream, it is also recommended to check (or wait until) the DMA
+   Stream is effectively disabled. If a Stream is disabled while a data transfer is ongoing, 
+   the current data will be transferred and the Stream will be effectively disabled only after
+   this data transfer completion.
+   To monitor this state it is possible to use the following function:
+     - FunctionalState DMA_GetCmdStatus(DMA_Stream_TypeDef* DMAy_Streamx); 
+ 
+ 2. FIFO Status:
+   It is possible to monitor the FIFO status when a transfer is ongoing using the following 
+   function:
+     - uint32_t DMA_GetFIFOStatus(DMA_Stream_TypeDef* DMAy_Streamx); 
+ 
+ 3. DMA Interrupts and Flags:
+  The user should identify which mode will be used in his application to manage the
+  DMA controller events: Polling mode or Interrupt mode. 
+    
+  Polling Mode
+  =============
+    Each DMA stream can be managed through 4 event Flags:
+    (x : DMA Stream number )
+       1. DMA_FLAG_FEIFx  : to indicate that a FIFO Mode Transfer Error event occurred.
+       2. DMA_FLAG_DMEIFx : to indicate that a Direct Mode Transfer Error event occurred.
+       3. DMA_FLAG_TEIFx  : to indicate that a Transfer Error event occurred.
+       4. DMA_FLAG_HTIFx  : to indicate that a Half-Transfer Complete event occurred.
+       5. DMA_FLAG_TCIFx  : to indicate that a Transfer Complete event occurred .       
+
+   In this Mode it is advised to use the following functions:
+      - FlagStatus DMA_GetFlagStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_FLAG);
+      - void DMA_ClearFlag(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_FLAG);
+
+  Interrupt Mode
+  ===============
+    Each DMA Stream can be managed through 4 Interrupts:
+
+    Interrupt Source
+    ----------------
+       1. DMA_IT_FEIFx  : specifies the interrupt source for the  FIFO Mode Transfer Error event.
+       2. DMA_IT_DMEIFx : specifies the interrupt source for the Direct Mode Transfer Error event.
+       3. DMA_IT_TEIFx  : specifies the interrupt source for the Transfer Error event.
+       4. DMA_IT_HTIFx  : specifies the interrupt source for the Half-Transfer Complete event.
+       5. DMA_IT_TCIFx  : specifies the interrupt source for the a Transfer Complete event. 
+     
+  In this Mode it is advised to use the following functions:
+     - void DMA_ITConfig(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT, FunctionalState NewState);
+     - ITStatus DMA_GetITStatus(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT);
+     - void DMA_ClearITPendingBit(DMA_Stream_TypeDef* DMAy_Streamx, uint32_t DMA_IT);
 </pre> <h2 class="groupheader">Function Documentation</h2>
-<a id="gaa60bdf3182c44b5fa818f237042f52ee" name="gaa60bdf3182c44b5fa818f237042f52ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa60bdf3182c44b5fa818f237042f52ee">&#9670;&#160;</a></span>GPIO_DeInit()</h2>
+<a id="ga510d62b4051f5a5de164e84b266b851d" name="ga510d62b4051f5a5de164e84b266b851d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga510d62b4051f5a5de164e84b266b851d">&#9670;&#160;</a></span>DMA_ClearFlag()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void GPIO_DeInit </td>
+          <td class="memname">void DMA_ClearFlag </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d7e/a00434.html">GPIO_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>GPIOx</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deinitializes the GPIOx peripheral registers to their default reset values. </p>
-<dl class="section note"><dt>Note</dt><dd>By default, The GPIO pins are configured in input floating mode (except JTAG pins). </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">GPIOx</td><td>where x can be (A..I) to select the GPIO peripheral. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga71abf9404261370d03cca449b88d3a65" name="ga71abf9404261370d03cca449b88d3a65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga71abf9404261370d03cca449b88d3a65">&#9670;&#160;</a></span>GPIO_Init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GPIO_Init </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d7e/a00434.html">GPIO_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>GPIOx</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d8/d57/a00498.html">GPIO_InitTypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>GPIO_InitStruct</em></span>&#160;)</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>DMA_FLAG</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct. </p>
+<p>Clears the DMAy Streamx's pending flags. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">GPIOx</td><td>where x can be (A..I) to select the GPIO peripheral. </td></tr>
-    <tr><td class="paramname">GPIO_InitStruct</td><td>pointer to a <a class="el" href="../../d8/d57/a00498.html" title="GPIO Init structure definition.">GPIO_InitTypeDef</a> structure that contains the configuration information for the specified GPIO peripheral. </td></tr>
+    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
+    <tr><td class="paramname">DMA_FLAG</td><td>specifies the flag to clear. This parameter can be any combination of the following values: <ul>
+<li>DMA_FLAG_TCIFx: Streamx transfer complete flag </li>
+<li>DMA_FLAG_HTIFx: Streamx half transfer complete flag </li>
+<li>DMA_FLAG_TEIFx: Streamx transfer error flag </li>
+<li>DMA_FLAG_DMEIFx: Streamx direct mode error flag </li>
+<li>DMA_FLAG_FEIFx: Streamx FIFO error flag Where x can be 0 to 7 to select the DMA Stream. <br  />
+ </li>
+</ul>
+</td></tr>
   </table>
   </dd>
 </dl>
@@ -182,33 +223,37 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gad2f2e615928c69fd0d8c641a7cedaafc" name="gad2f2e615928c69fd0d8c641a7cedaafc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad2f2e615928c69fd0d8c641a7cedaafc">&#9670;&#160;</a></span>GPIO_PinLockConfig()</h2>
+<a id="gad5433018889cd36140d98bb380c4e76e" name="gad5433018889cd36140d98bb380c4e76e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5433018889cd36140d98bb380c4e76e">&#9670;&#160;</a></span>DMA_ClearITPendingBit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void GPIO_PinLockConfig </td>
+          <td class="memname">void DMA_ClearITPendingBit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d7e/a00434.html">GPIO_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>GPIOx</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>GPIO_Pin</em></span>&#160;)</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>DMA_IT</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Locks GPIO Pins configuration registers. </p>
-<dl class="section note"><dt>Note</dt><dd>The locked registers are GPIOx_MODER, GPIOx_OTYPER, GPIOx_OSPEEDR, GPIOx_PUPDR, GPIOx_AFRL and GPIOx_AFRH. </dd>
-<dd>
-The configuration of the locked GPIO pins can no longer be modified until the next reset. </dd></dl>
+<p>Clears the DMAy Streamx's interrupt pending bits. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">GPIOx</td><td>where x can be (A..I) to select the GPIO peripheral. </td></tr>
-    <tr><td class="paramname">GPIO_Pin</td><td>specifies the port bit to be locked. This parameter can be any combination of GPIO_Pin_x where x can be (0..15). </td></tr>
+    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
+    <tr><td class="paramname">DMA_IT</td><td>specifies the DMA interrupt pending bit to clear. This parameter can be any combination of the following values: <ul>
+<li>DMA_IT_TCIFx: Streamx transfer complete interrupt </li>
+<li>DMA_IT_HTIFx: Streamx half transfer complete interrupt </li>
+<li>DMA_IT_TEIFx: Streamx transfer error interrupt </li>
+<li>DMA_IT_DMEIFx: Streamx direct mode error interrupt </li>
+<li>DMA_IT_FEIFx: Streamx FIFO error interrupt Where x can be 0 to 7 to select the DMA Stream. </li>
+</ul>
+</td></tr>
   </table>
   </dd>
 </dl>
@@ -221,25 +266,200 @@ The configuration of the locked GPIO pins can no longer be modified until the ne
 
 </div>
 </div>
-<a id="gab28de41278e7f8c63d0851e2733b10df" name="gab28de41278e7f8c63d0851e2733b10df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab28de41278e7f8c63d0851e2733b10df">&#9670;&#160;</a></span>GPIO_StructInit()</h2>
+<a id="gaa4d631cdd6cd020106435f30c0c6fb15" name="gaa4d631cdd6cd020106435f30c0c6fb15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4d631cdd6cd020106435f30c0c6fb15">&#9670;&#160;</a></span>DMA_GetCmdStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void GPIO_StructInit </td>
+          <td class="memname">FunctionalState DMA_GetCmdStatus </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d8/d57/a00498.html">GPIO_InitTypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>GPIO_InitStruct</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fills each GPIO_InitStruct member with its default value. </p>
+<p>Returns the status of EN bit for the specified DMAy Streamx. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">GPIO_InitStruct</td><td>: pointer to a <a class="el" href="../../d8/d57/a00498.html" title="GPIO Init structure definition.">GPIO_InitTypeDef</a> structure which will be initialized. </td></tr>
+    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>After configuring the DMA Stream (<a class="el" href="../../d1/dd6/a00108.html#gaced8a4149acfb0a50b50e63273a87148" title="Initializes the DMAy Streamx according to the specified parameters in the DMA_InitStruct structure.">DMA_Init()</a> function) and enabling the stream, it is recommended to check (or wait until) the DMA Stream is effectively enabled. A Stream may remain disabled if a configuration parameter is wrong. After disabling a DMA Stream, it is also recommended to check (or wait until) the DMA Stream is effectively disabled. If a Stream is disabled while a data transfer is ongoing, the current data will be transferred and the Stream will be effectively disabled only after the transfer of this single data is finished. <br  />
+</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Current</td><td>state of the DMAy Streamx (ENABLE or DISABLE). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9893809a7067861ec111f7d712ebf28d" name="ga9893809a7067861ec111f7d712ebf28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9893809a7067861ec111f7d712ebf28d">&#9670;&#160;</a></span>DMA_GetFIFOStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t DMA_GetFIFOStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the current DMAy Streamx FIFO filled level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">The</td><td>FIFO filling state.<ul>
+<li>DMA_FIFOStatus_Less1QuarterFull: when FIFO is less than 1 quarter-full and not empty.</li>
+<li>DMA_FIFOStatus_1QuarterFull: if more than 1 quarter-full.</li>
+<li>DMA_FIFOStatus_HalfFull: if more than 1 half-full.</li>
+<li>DMA_FIFOStatus_3QuartersFull: if more than 3 quarters-full.</li>
+<li>DMA_FIFOStatus_Empty: when FIFO is empty</li>
+<li>DMA_FIFOStatus_Full: when FIFO is full </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga10cfc0fe31d64a1fd8fb3efb4ae2a411" name="ga10cfc0fe31d64a1fd8fb3efb4ae2a411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga10cfc0fe31d64a1fd8fb3efb4ae2a411">&#9670;&#160;</a></span>DMA_GetFlagStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FlagStatus DMA_GetFlagStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>DMA_FLAG</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the specified DMAy Streamx flag is set or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
+    <tr><td class="paramname">DMA_FLAG</td><td>specifies the flag to check. This parameter can be one of the following values: <ul>
+<li>DMA_FLAG_TCIFx: Streamx transfer complete flag </li>
+<li>DMA_FLAG_HTIFx: Streamx half transfer complete flag </li>
+<li>DMA_FLAG_TEIFx: Streamx transfer error flag </li>
+<li>DMA_FLAG_DMEIFx: Streamx direct mode error flag </li>
+<li>DMA_FLAG_FEIFx: Streamx FIFO error flag Where x can be 0 to 7 to select the DMA Stream. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">The</td><td>new state of DMA_FLAG (SET or RESET). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad0ccf5f6548bd7cf8f2cae30393bb716" name="gad0ccf5f6548bd7cf8f2cae30393bb716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad0ccf5f6548bd7cf8f2cae30393bb716">&#9670;&#160;</a></span>DMA_GetITStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ITStatus DMA_GetITStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>DMA_IT</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the specified DMAy Streamx interrupt has occurred or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
+    <tr><td class="paramname">DMA_IT</td><td>specifies the DMA interrupt source to check. This parameter can be one of the following values: <ul>
+<li>DMA_IT_TCIFx: Streamx transfer complete interrupt </li>
+<li>DMA_IT_HTIFx: Streamx half transfer complete interrupt </li>
+<li>DMA_IT_TEIFx: Streamx transfer error interrupt </li>
+<li>DMA_IT_DMEIFx: Streamx direct mode error interrupt </li>
+<li>DMA_IT_FEIFx: Streamx FIFO error interrupt Where x can be 0 to 7 to select the DMA Stream. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">The</td><td>new state of DMA_IT (SET or RESET). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab9c469a3f5d4aca5c97dee798ffc2f05" name="gab9c469a3f5d4aca5c97dee798ffc2f05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9c469a3f5d4aca5c97dee798ffc2f05">&#9670;&#160;</a></span>DMA_ITConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DMA_ITConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d93/a00397.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>DMA_IT</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FunctionalState</td>          <td class="paramname"><span class="paramname"><em>NewState</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables or disables the specified DMAy Streamx interrupts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
+    <tr><td class="paramname">DMA_IT</td><td>specifies the DMA interrupt sources to be enabled or disabled. This parameter can be any combination of the following values: <ul>
+<li>DMA_IT_TC: Transfer complete interrupt mask </li>
+<li>DMA_IT_HT: Half transfer complete interrupt mask </li>
+<li>DMA_IT_TE: Transfer error interrupt mask </li>
+<li>DMA_IT_FE: FIFO error interrupt mask </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">NewState</td><td>new state of the specified DMA interrupts. This parameter can be: ENABLE or DISABLE. </td></tr>
   </table>
   </dd>
 </dl>

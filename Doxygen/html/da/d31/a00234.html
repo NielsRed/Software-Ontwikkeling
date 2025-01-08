@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: TIM_Update_Source</title>
+<title>Software Ontwikkeling: TIM_Forced_Action</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,70 +86,40 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">TIM_Update_Source<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d4/d98/a00120.html">TIM</a> &raquo; <a class="el" href="../../d8/d72/a00199.html">TIM_Exported_constants</a></div></div></div>
+  <div class="headertitle"><div class="title">TIM_Forced_Action<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../de/d36/a00123.html">TIM</a> &raquo; <a class="el" href="../../db/d53/a00202.html">TIM_Exported_constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga32c67bc3f8211a2c7b44ee9fe1523875" id="r_ga32c67bc3f8211a2c7b44ee9fe1523875"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga32c67bc3f8211a2c7b44ee9fe1523875">TIM_UpdateSource_Global</a>&#160;&#160;&#160;((uint16_t)0x0000)</td></tr>
-<tr class="separator:ga32c67bc3f8211a2c7b44ee9fe1523875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f50423cdb011137ae8cd303ccd2080c" id="r_ga6f50423cdb011137ae8cd303ccd2080c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6f50423cdb011137ae8cd303ccd2080c">TIM_UpdateSource_Regular</a>&#160;&#160;&#160;((uint16_t)0x0001)</td></tr>
-<tr class="separator:ga6f50423cdb011137ae8cd303ccd2080c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c916798d8f5f4a828afadceb5d38a95" id="r_ga7c916798d8f5f4a828afadceb5d38a95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7c916798d8f5f4a828afadceb5d38a95">IS_TIM_UPDATE_SOURCE</a>(SOURCE)</td></tr>
-<tr class="separator:ga7c916798d8f5f4a828afadceb5d38a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19d3769825f1dfdbdbde3edb60310b99" id="r_ga19d3769825f1dfdbdbde3edb60310b99"><td class="memItemLeft" align="right" valign="top"><a id="ga19d3769825f1dfdbdbde3edb60310b99" name="ga19d3769825f1dfdbdbde3edb60310b99"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_ForcedAction_Active</b>&#160;&#160;&#160;((uint16_t)0x0050)</td></tr>
+<tr class="separator:ga19d3769825f1dfdbdbde3edb60310b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79656f2193ec5e12a15d0ae5b025d273" id="r_ga79656f2193ec5e12a15d0ae5b025d273"><td class="memItemLeft" align="right" valign="top"><a id="ga79656f2193ec5e12a15d0ae5b025d273" name="ga79656f2193ec5e12a15d0ae5b025d273"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_ForcedAction_InActive</b>&#160;&#160;&#160;((uint16_t)0x0040)</td></tr>
+<tr class="separator:ga79656f2193ec5e12a15d0ae5b025d273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2cb16f281d32c95ab974dc5157bfa63" id="r_gaa2cb16f281d32c95ab974dc5157bfa63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa2cb16f281d32c95ab974dc5157bfa63">IS_TIM_FORCED_ACTION</a>(ACTION)</td></tr>
+<tr class="separator:gaa2cb16f281d32c95ab974dc5157bfa63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga7c916798d8f5f4a828afadceb5d38a95" name="ga7c916798d8f5f4a828afadceb5d38a95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7c916798d8f5f4a828afadceb5d38a95">&#9670;&#160;</a></span>IS_TIM_UPDATE_SOURCE</h2>
+<a id="gaa2cb16f281d32c95ab974dc5157bfa63" name="gaa2cb16f281d32c95ab974dc5157bfa63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa2cb16f281d32c95ab974dc5157bfa63">&#9670;&#160;</a></span>IS_TIM_FORCED_ACTION</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IS_TIM_UPDATE_SOURCE</td>
+          <td class="memname">#define IS_TIM_FORCED_ACTION</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>SOURCE</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ACTION</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                      (((SOURCE) == <a class="code hl_define" href="#ga32c67bc3f8211a2c7b44ee9fe1523875">TIM_UpdateSource_Global</a>) || \</div>
-<div class="line">                                      ((SOURCE) == <a class="code hl_define" href="#ga6f50423cdb011137ae8cd303ccd2080c">TIM_UpdateSource_Regular</a>))</div>
-<div class="ttc" id="aa00234_html_ga32c67bc3f8211a2c7b44ee9fe1523875"><div class="ttname"><a href="#ga32c67bc3f8211a2c7b44ee9fe1523875">TIM_UpdateSource_Global</a></div><div class="ttdeci">#define TIM_UpdateSource_Global</div><div class="ttdef"><b>Definition</b> stm32f4xx_tim.h:806</div></div>
-<div class="ttc" id="aa00234_html_ga6f50423cdb011137ae8cd303ccd2080c"><div class="ttname"><a href="#ga6f50423cdb011137ae8cd303ccd2080c">TIM_UpdateSource_Regular</a></div><div class="ttdeci">#define TIM_UpdateSource_Regular</div><div class="ttdef"><b>Definition</b> stm32f4xx_tim.h:809</div></div>
+<b>Value:</b><div class="fragment"><div class="line">                                      (((ACTION) == TIM_ForcedAction_Active) || \</div>
+<div class="line">                                      ((ACTION) == TIM_ForcedAction_InActive))</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="ga32c67bc3f8211a2c7b44ee9fe1523875" name="ga32c67bc3f8211a2c7b44ee9fe1523875"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga32c67bc3f8211a2c7b44ee9fe1523875">&#9670;&#160;</a></span>TIM_UpdateSource_Global</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TIM_UpdateSource_Global&#160;&#160;&#160;((uint16_t)0x0000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Source of update is the counter overflow/underflow or the setting of UG bit, or an update generation through the slave mode controller. </p>
-
-</div>
-</div>
-<a id="ga6f50423cdb011137ae8cd303ccd2080c" name="ga6f50423cdb011137ae8cd303ccd2080c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6f50423cdb011137ae8cd303ccd2080c">&#9670;&#160;</a></span>TIM_UpdateSource_Regular</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TIM_UpdateSource_Regular&#160;&#160;&#160;((uint16_t)0x0001)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Source of update is counter overflow/underflow. </p>
-
 </div>
 </div>
 </div><!-- contents -->

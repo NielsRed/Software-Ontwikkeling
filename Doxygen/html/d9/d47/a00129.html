@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: Specific interface management functions</title>
+<title>Software Ontwikkeling: Interrupts DMA and flags management functions</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,77 +86,190 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Specific interface management functions<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d4/d98/a00120.html">TIM</a> &raquo; <a class="el" href="../../d8/dfa/a00121.html">TIM_Private_Functions</a></div></div></div>
+  <div class="headertitle"><div class="title">Interrupts DMA and flags management functions<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../de/d36/a00123.html">TIM</a> &raquo; <a class="el" href="../../da/d72/a00124.html">TIM_Private_Functions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Specific interface management functions.  
+<p>Interrupts, DMA and flags management functions.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga0fc7e76c47a3bd1ba1ebc71427832b51" id="r_ga0fc7e76c47a3bd1ba1ebc71427832b51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0fc7e76c47a3bd1ba1ebc71427832b51">TIM_EncoderInterfaceConfig</a> (<a class="el" href="../../d0/d29/a00470.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_EncoderMode, uint16_t TIM_IC1Polarity, uint16_t TIM_IC2Polarity)</td></tr>
-<tr class="memdesc:ga0fc7e76c47a3bd1ba1ebc71427832b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the TIMx Encoder Interface.  <br /></td></tr>
-<tr class="separator:ga0fc7e76c47a3bd1ba1ebc71427832b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga42c2d1025a3937c9d9f38631af86ffa4" id="r_ga42c2d1025a3937c9d9f38631af86ffa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga42c2d1025a3937c9d9f38631af86ffa4">TIM_SelectHallSensor</a> (<a class="el" href="../../d0/d29/a00470.html">TIM_TypeDef</a> *TIMx, FunctionalState NewState)</td></tr>
-<tr class="memdesc:ga42c2d1025a3937c9d9f38631af86ffa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the TIMx's Hall sensor interface.  <br /></td></tr>
-<tr class="separator:ga42c2d1025a3937c9d9f38631af86ffa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70e3d6c09d55ee69002e154c85cd40e4" id="r_ga70e3d6c09d55ee69002e154c85cd40e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga70e3d6c09d55ee69002e154c85cd40e4">TIM_ITConfig</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_IT, FunctionalState NewState)</td></tr>
+<tr class="memdesc:ga70e3d6c09d55ee69002e154c85cd40e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified TIM interrupts.  <br /></td></tr>
+<tr class="separator:ga70e3d6c09d55ee69002e154c85cd40e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38bd4ffda920dd4f7655a0a2c6100a6e" id="r_ga38bd4ffda920dd4f7655a0a2c6100a6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga38bd4ffda920dd4f7655a0a2c6100a6e">TIM_GenerateEvent</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_EventSource)</td></tr>
+<tr class="memdesc:ga38bd4ffda920dd4f7655a0a2c6100a6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the TIMx event to be generate by software.  <br /></td></tr>
+<tr class="separator:ga38bd4ffda920dd4f7655a0a2c6100a6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0adcbbd5e838ec8642e7a9b80075f41f" id="r_ga0adcbbd5e838ec8642e7a9b80075f41f"><td class="memItemLeft" align="right" valign="top">FlagStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0adcbbd5e838ec8642e7a9b80075f41f">TIM_GetFlagStatus</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_FLAG)</td></tr>
+<tr class="memdesc:ga0adcbbd5e838ec8642e7a9b80075f41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the specified TIM flag is set or not.  <br /></td></tr>
+<tr class="separator:ga0adcbbd5e838ec8642e7a9b80075f41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46568c7b254941dc53e785342d60baf3" id="r_ga46568c7b254941dc53e785342d60baf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga46568c7b254941dc53e785342d60baf3">TIM_ClearFlag</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_FLAG)</td></tr>
+<tr class="memdesc:ga46568c7b254941dc53e785342d60baf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the TIMx's pending flags.  <br /></td></tr>
+<tr class="separator:ga46568c7b254941dc53e785342d60baf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0827a0b411707304f76d33050727c24d" id="r_ga0827a0b411707304f76d33050727c24d"><td class="memItemLeft" align="right" valign="top">ITStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0827a0b411707304f76d33050727c24d">TIM_GetITStatus</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_IT)</td></tr>
+<tr class="memdesc:ga0827a0b411707304f76d33050727c24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the TIM interrupt has occurred or not.  <br /></td></tr>
+<tr class="separator:ga0827a0b411707304f76d33050727c24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9eb1e95af71ed380f51a2c6d585cc5d6" id="r_ga9eb1e95af71ed380f51a2c6d585cc5d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9eb1e95af71ed380f51a2c6d585cc5d6">TIM_ClearITPendingBit</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_IT)</td></tr>
+<tr class="memdesc:ga9eb1e95af71ed380f51a2c6d585cc5d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the TIMx's interrupt pending bits.  <br /></td></tr>
+<tr class="separator:ga9eb1e95af71ed380f51a2c6d585cc5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7156f84c436c8ac92cd789611826d09" id="r_gad7156f84c436c8ac92cd789611826d09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad7156f84c436c8ac92cd789611826d09">TIM_DMAConfig</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_DMABase, uint16_t TIM_DMABurstLength)</td></tr>
+<tr class="memdesc:gad7156f84c436c8ac92cd789611826d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the TIMx's DMA interface.  <br /></td></tr>
+<tr class="separator:gad7156f84c436c8ac92cd789611826d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24700389cfa3ea9b42234933b23f1399" id="r_ga24700389cfa3ea9b42234933b23f1399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga24700389cfa3ea9b42234933b23f1399">TIM_DMACmd</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_DMASource, FunctionalState NewState)</td></tr>
+<tr class="memdesc:ga24700389cfa3ea9b42234933b23f1399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the TIMx's DMA Requests.  <br /></td></tr>
+<tr class="separator:ga24700389cfa3ea9b42234933b23f1399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5273cb65acb885fe7982827b1c6b7d75" id="r_ga5273cb65acb885fe7982827b1c6b7d75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5273cb65acb885fe7982827b1c6b7d75">TIM_SelectCCDMA</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, FunctionalState NewState)</td></tr>
+<tr class="memdesc:ga5273cb65acb885fe7982827b1c6b7d75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the TIMx peripheral Capture Compare DMA source.  <br /></td></tr>
+<tr class="separator:ga5273cb65acb885fe7982827b1c6b7d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Specific interface management functions. </p>
+<p>Interrupts, DMA and flags management functions. </p>
 <pre class="fragment"> ===============================================================================
-                    Specific interface management functions
+                 Interrupts, DMA and flags management functions
  ===============================================================================  
 </pre> <h2 class="groupheader">Function Documentation</h2>
-<a id="ga0fc7e76c47a3bd1ba1ebc71427832b51" name="ga0fc7e76c47a3bd1ba1ebc71427832b51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0fc7e76c47a3bd1ba1ebc71427832b51">&#9670;&#160;</a></span>TIM_EncoderInterfaceConfig()</h2>
+<a id="ga46568c7b254941dc53e785342d60baf3" name="ga46568c7b254941dc53e785342d60baf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46568c7b254941dc53e785342d60baf3">&#9670;&#160;</a></span>TIM_ClearFlag()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void TIM_EncoderInterfaceConfig </td>
+          <td class="memname">void TIM_ClearFlag </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d0/d29/a00470.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_EncoderMode</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_IC1Polarity</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_IC2Polarity</em></span>&#160;)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_FLAG</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Configures the TIMx Encoder Interface. </p>
+<p>Clears the TIMx's pending flags. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">TIMx</td><td>where x can be 1, 2, 3, 4, 5, 8, 9 or 12 to select the TIM peripheral. </td></tr>
-    <tr><td class="paramname">TIM_EncoderMode</td><td>specifies the TIMx Encoder Mode. This parameter can be one of the following values: <ul>
-<li>TIM_EncoderMode_TI1: Counter counts on TI1FP1 edge depending on TI2FP2 level. </li>
-<li>TIM_EncoderMode_TI2: Counter counts on TI2FP2 edge depending on TI1FP1 level. </li>
-<li>TIM_EncoderMode_TI12: Counter counts on both TI1FP1 and TI2FP2 edges depending on the level of the other input. </li>
+    <tr><td class="paramname">TIMx</td><td>where x can be 1 to 14 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">TIM_FLAG</td><td>specifies the flag bit to clear. This parameter can be any combination of the following values: <ul>
+<li>TIM_FLAG_Update: TIM update Flag </li>
+<li>TIM_FLAG_CC1: TIM Capture Compare 1 Flag </li>
+<li>TIM_FLAG_CC2: TIM Capture Compare 2 Flag </li>
+<li>TIM_FLAG_CC3: TIM Capture Compare 3 Flag </li>
+<li>TIM_FLAG_CC4: TIM Capture Compare 4 Flag </li>
+<li>TIM_FLAG_COM: TIM Commutation Flag </li>
+<li>TIM_FLAG_Trigger: TIM Trigger Flag </li>
+<li>TIM_FLAG_Break: TIM Break Flag </li>
+<li>TIM_FLAG_CC1OF: TIM Capture Compare 1 over capture Flag </li>
+<li>TIM_FLAG_CC2OF: TIM Capture Compare 2 over capture Flag </li>
+<li>TIM_FLAG_CC3OF: TIM Capture Compare 3 over capture Flag </li>
+<li>TIM_FLAG_CC4OF: TIM Capture Compare 4 over capture Flag</li>
 </ul>
 </td></tr>
-    <tr><td class="paramname">TIM_IC1Polarity</td><td>specifies the IC1 Polarity This parameter can be one of the following values: <ul>
-<li>TIM_ICPolarity_Falling: IC Falling edge. </li>
-<li>TIM_ICPolarity_Rising: IC Rising edge. </li>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>TIM6 and TIM7 can have only one update flag. </dd>
+<dd>
+TIM_FLAG_COM and TIM_FLAG_Break are used only with TIM1 and TIM8.</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9eb1e95af71ed380f51a2c6d585cc5d6" name="ga9eb1e95af71ed380f51a2c6d585cc5d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9eb1e95af71ed380f51a2c6d585cc5d6">&#9670;&#160;</a></span>TIM_ClearITPendingBit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TIM_ClearITPendingBit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_IT</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears the TIMx's interrupt pending bits. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1 to 14 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">TIM_IT</td><td>specifies the pending bit to clear. This parameter can be any combination of the following values: <ul>
+<li>TIM_IT_Update: TIM1 update Interrupt source </li>
+<li>TIM_IT_CC1: TIM Capture Compare 1 Interrupt source </li>
+<li>TIM_IT_CC2: TIM Capture Compare 2 Interrupt source </li>
+<li>TIM_IT_CC3: TIM Capture Compare 3 Interrupt source </li>
+<li>TIM_IT_CC4: TIM Capture Compare 4 Interrupt source </li>
+<li>TIM_IT_COM: TIM Commutation Interrupt source </li>
+<li>TIM_IT_Trigger: TIM Trigger Interrupt source </li>
+<li>TIM_IT_Break: TIM Break Interrupt source</li>
 </ul>
 </td></tr>
-    <tr><td class="paramname">TIM_IC2Polarity</td><td>specifies the IC2 Polarity This parameter can be one of the following values: <ul>
-<li>TIM_ICPolarity_Falling: IC Falling edge. </li>
-<li>TIM_ICPolarity_Rising: IC Rising edge. </li>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>TIM6 and TIM7 can generate only an update interrupt. </dd>
+<dd>
+TIM_IT_COM and TIM_IT_Break are used only with TIM1 and TIM8.</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga24700389cfa3ea9b42234933b23f1399" name="ga24700389cfa3ea9b42234933b23f1399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24700389cfa3ea9b42234933b23f1399">&#9670;&#160;</a></span>TIM_DMACmd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TIM_DMACmd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_DMASource</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FunctionalState</td>          <td class="paramname"><span class="paramname"><em>NewState</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables or disables the TIMx's DMA Requests. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1, 2, 3, 4, 5, 6, 7 or 8 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">TIM_DMASource</td><td>specifies the DMA Request sources. This parameter can be any combination of the following values: <ul>
+<li>TIM_DMA_Update: TIM update Interrupt source </li>
+<li>TIM_DMA_CC1: TIM Capture Compare 1 DMA source </li>
+<li>TIM_DMA_CC2: TIM Capture Compare 2 DMA source </li>
+<li>TIM_DMA_CC3: TIM Capture Compare 3 DMA source </li>
+<li>TIM_DMA_CC4: TIM Capture Compare 4 DMA source </li>
+<li>TIM_DMA_COM: TIM Commutation DMA source </li>
+<li>TIM_DMA_Trigger: TIM Trigger DMA source </li>
 </ul>
 </td></tr>
+    <tr><td class="paramname">NewState</td><td>new state of the DMA Request sources. This parameter can be: ENABLE or DISABLE. </td></tr>
   </table>
   </dd>
 </dl>
@@ -169,16 +282,242 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga42c2d1025a3937c9d9f38631af86ffa4" name="ga42c2d1025a3937c9d9f38631af86ffa4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga42c2d1025a3937c9d9f38631af86ffa4">&#9670;&#160;</a></span>TIM_SelectHallSensor()</h2>
+<a id="gad7156f84c436c8ac92cd789611826d09" name="gad7156f84c436c8ac92cd789611826d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7156f84c436c8ac92cd789611826d09">&#9670;&#160;</a></span>TIM_DMAConfig()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void TIM_SelectHallSensor </td>
+          <td class="memname">void TIM_DMAConfig </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d0/d29/a00470.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_DMABase</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_DMABurstLength</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the TIMx's DMA interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1, 2, 3, 4, 5 or 8 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">TIM_DMABase</td><td>DMA Base address. This parameter can be one of the following values: <ul>
+<li>TIM_DMABase_CR1 <br  />
+ </li>
+<li>TIM_DMABase_CR2 </li>
+<li>TIM_DMABase_SMCR </li>
+<li>TIM_DMABase_DIER </li>
+<li>TIM1_DMABase_SR </li>
+<li>TIM_DMABase_EGR </li>
+<li>TIM_DMABase_CCMR1 </li>
+<li>TIM_DMABase_CCMR2 </li>
+<li>TIM_DMABase_CCER </li>
+<li>TIM_DMABase_CNT <br  />
+ </li>
+<li>TIM_DMABase_PSC <br  />
+ </li>
+<li>TIM_DMABase_ARR </li>
+<li>TIM_DMABase_RCR </li>
+<li>TIM_DMABase_CCR1 </li>
+<li>TIM_DMABase_CCR2 </li>
+<li>TIM_DMABase_CCR3 <br  />
+ </li>
+<li>TIM_DMABase_CCR4 </li>
+<li>TIM_DMABase_BDTR </li>
+<li>TIM_DMABase_DCR </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">TIM_DMABurstLength</td><td>DMA Burst length. This parameter can be one value between: TIM_DMABurstLength_1Transfer and TIM_DMABurstLength_18Transfers. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga38bd4ffda920dd4f7655a0a2c6100a6e" name="ga38bd4ffda920dd4f7655a0a2c6100a6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga38bd4ffda920dd4f7655a0a2c6100a6e">&#9670;&#160;</a></span>TIM_GenerateEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TIM_GenerateEvent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_EventSource</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the TIMx event to be generate by software. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1 to 14 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">TIM_EventSource</td><td>specifies the event source. This parameter can be one or more of the following values: <br  />
+ <ul>
+<li>TIM_EventSource_Update: Timer update Event source </li>
+<li>TIM_EventSource_CC1: Timer Capture Compare 1 Event source </li>
+<li>TIM_EventSource_CC2: Timer Capture Compare 2 Event source </li>
+<li>TIM_EventSource_CC3: Timer Capture Compare 3 Event source </li>
+<li>TIM_EventSource_CC4: Timer Capture Compare 4 Event source </li>
+<li>TIM_EventSource_COM: Timer COM event source <br  />
+ </li>
+<li>TIM_EventSource_Trigger: Timer Trigger Event source </li>
+<li>TIM_EventSource_Break: Timer Break event source</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>TIM6 and TIM7 can only generate an update event. </dd>
+<dd>
+TIM_EventSource_COM and TIM_EventSource_Break are used only with TIM1 and TIM8.</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0adcbbd5e838ec8642e7a9b80075f41f" name="ga0adcbbd5e838ec8642e7a9b80075f41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0adcbbd5e838ec8642e7a9b80075f41f">&#9670;&#160;</a></span>TIM_GetFlagStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FlagStatus TIM_GetFlagStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_FLAG</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the specified TIM flag is set or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1 to 14 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">TIM_FLAG</td><td>specifies the flag to check. This parameter can be one of the following values: <ul>
+<li>TIM_FLAG_Update: TIM update Flag </li>
+<li>TIM_FLAG_CC1: TIM Capture Compare 1 Flag </li>
+<li>TIM_FLAG_CC2: TIM Capture Compare 2 Flag </li>
+<li>TIM_FLAG_CC3: TIM Capture Compare 3 Flag </li>
+<li>TIM_FLAG_CC4: TIM Capture Compare 4 Flag </li>
+<li>TIM_FLAG_COM: TIM Commutation Flag </li>
+<li>TIM_FLAG_Trigger: TIM Trigger Flag </li>
+<li>TIM_FLAG_Break: TIM Break Flag </li>
+<li>TIM_FLAG_CC1OF: TIM Capture Compare 1 over capture Flag </li>
+<li>TIM_FLAG_CC2OF: TIM Capture Compare 2 over capture Flag </li>
+<li>TIM_FLAG_CC3OF: TIM Capture Compare 3 over capture Flag </li>
+<li>TIM_FLAG_CC4OF: TIM Capture Compare 4 over capture Flag</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>TIM6 and TIM7 can have only one update flag. </dd>
+<dd>
+TIM_FLAG_COM and TIM_FLAG_Break are used only with TIM1 and TIM8. <br  />
+</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">The</td><td>new state of TIM_FLAG (SET or RESET). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0827a0b411707304f76d33050727c24d" name="ga0827a0b411707304f76d33050727c24d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0827a0b411707304f76d33050727c24d">&#9670;&#160;</a></span>TIM_GetITStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ITStatus TIM_GetITStatus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_IT</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the TIM interrupt has occurred or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1 to 14 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">TIM_IT</td><td>specifies the TIM interrupt source to check. This parameter can be one of the following values: <ul>
+<li>TIM_IT_Update: TIM update Interrupt source </li>
+<li>TIM_IT_CC1: TIM Capture Compare 1 Interrupt source </li>
+<li>TIM_IT_CC2: TIM Capture Compare 2 Interrupt source </li>
+<li>TIM_IT_CC3: TIM Capture Compare 3 Interrupt source </li>
+<li>TIM_IT_CC4: TIM Capture Compare 4 Interrupt source </li>
+<li>TIM_IT_COM: TIM Commutation Interrupt source </li>
+<li>TIM_IT_Trigger: TIM Trigger Interrupt source </li>
+<li>TIM_IT_Break: TIM Break Interrupt source</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>TIM6 and TIM7 can generate only an update interrupt. </dd>
+<dd>
+TIM_IT_COM and TIM_IT_Break are used only with TIM1 and TIM8.</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">The</td><td>new state of the TIM_IT(SET or RESET). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga70e3d6c09d55ee69002e154c85cd40e4" name="ga70e3d6c09d55ee69002e154c85cd40e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70e3d6c09d55ee69002e154c85cd40e4">&#9670;&#160;</a></span>TIM_ITConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TIM_ITConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_IT</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -188,11 +527,71 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enables or disables the TIMx's Hall sensor interface. </p>
+<p>Enables or disables the specified TIM interrupts. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">TIMx</td><td>where x can be 1, 2, 3, 4, 5, 8, 9 or 12 to select the TIM peripheral. </td></tr>
-    <tr><td class="paramname">NewState</td><td>new state of the TIMx Hall sensor interface. This parameter can be: ENABLE or DISABLE. </td></tr>
+    <tr><td class="paramname">TIMx</td><td>where x can be 1 to 14 to select the TIMx peripheral. </td></tr>
+    <tr><td class="paramname">TIM_IT</td><td>specifies the TIM interrupts sources to be enabled or disabled. This parameter can be any combination of the following values: <ul>
+<li>TIM_IT_Update: TIM update Interrupt source </li>
+<li>TIM_IT_CC1: TIM Capture Compare 1 Interrupt source </li>
+<li>TIM_IT_CC2: TIM Capture Compare 2 Interrupt source </li>
+<li>TIM_IT_CC3: TIM Capture Compare 3 Interrupt source </li>
+<li>TIM_IT_CC4: TIM Capture Compare 4 Interrupt source </li>
+<li>TIM_IT_COM: TIM Commutation Interrupt source </li>
+<li>TIM_IT_Trigger: TIM Trigger Interrupt source </li>
+<li>TIM_IT_Break: TIM Break Interrupt source</li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>For TIM6 and TIM7 only the parameter TIM_IT_Update can be used </dd>
+<dd>
+For TIM9 and TIM12 only one of the following parameters can be used: TIM_IT_Update, TIM_IT_CC1, TIM_IT_CC2 or TIM_IT_Trigger. </dd>
+<dd>
+For TIM10, TIM11, TIM13 and TIM14 only one of the following parameters can be used: TIM_IT_Update or TIM_IT_CC1 <br  />
+ </dd>
+<dd>
+TIM_IT_COM and TIM_IT_Break can be used only with TIM1 and TIM8</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NewState</td><td>new state of the TIM interrupts. This parameter can be: ENABLE or DISABLE. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5273cb65acb885fe7982827b1c6b7d75" name="ga5273cb65acb885fe7982827b1c6b7d75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5273cb65acb885fe7982827b1c6b7d75">&#9670;&#160;</a></span>TIM_SelectCCDMA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TIM_SelectCCDMA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FunctionalState</td>          <td class="paramname"><span class="paramname"><em>NewState</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Selects the TIMx peripheral Capture Compare DMA source. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1, 2, 3, 4, 5 or 8 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">NewState</td><td>new state of the Capture Compare DMA source This parameter can be: ENABLE or DISABLE. </td></tr>
   </table>
   </dd>
 </dl>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: CMSIS NVIC</title>
+<title>Software Ontwikkeling: CMSIS Core Definitions</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,60 +86,147 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">CMSIS NVIC<div class="ingroups"><a class="el" href="../../d5/deb/a00132.html">CMSIS Core Definitions</a> &#124; <a class="el" href="../../d5/deb/a00132.html">CMSIS Core Definitions</a> &raquo; <a class="el" href="../../d0/de8/a00133.html">CMSIS Core Register</a> &raquo; <a class="el" href="../../de/d76/a00134.html">CMSIS Core</a></div></div></div>
+  <div class="headertitle"><div class="title">CMSIS Core Definitions</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5e/a00136.html">CMSIS SCB</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d5e/a00136.html">CMSIS Core Register</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de3/a00306.html">NVIC_Type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure type to access the Nested Vectored Interrupt Controller (NVIC).  <a href="../../d1/de3/a00306.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/df5/a00137.html">CMSIS Core</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga9eebe495e2e48d302211108837a2b3e8" id="r_ga9eebe495e2e48d302211108837a2b3e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9eebe495e2e48d302211108837a2b3e8">NVIC_STIR_INTID_Pos</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ga9eebe495e2e48d302211108837a2b3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4060c4dfcebb08871ca4244176ce752" id="r_gae4060c4dfcebb08871ca4244176ce752"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae4060c4dfcebb08871ca4244176ce752">NVIC_STIR_INTID_Msk</a>&#160;&#160;&#160;(0x1FFUL &lt;&lt; <a class="el" href="#ga9eebe495e2e48d302211108837a2b3e8">NVIC_STIR_INTID_Pos</a>)</td></tr>
-<tr class="separator:gae4060c4dfcebb08871ca4244176ce752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90ffc8179476f80347379bfe29639edc" id="r_ga90ffc8179476f80347379bfe29639edc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="separator:ga90ffc8179476f80347379bfe29639edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc7392964da961a44e916fcff7add532" id="r_gafc7392964da961a44e916fcff7add532"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="separator:gafc7392964da961a44e916fcff7add532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb6f5d2c3271c95d0a02fd06723af25d" id="r_gacb6f5d2c3271c95d0a02fd06723af25d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacb6f5d2c3271c95d0a02fd06723af25d">__CM4_CMSIS_VERSION</a>&#160;&#160;&#160;((<a class="el" href="#ga90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a> &lt;&lt; 16) | <a class="el" href="#gafc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a>)</td></tr>
+<tr class="separator:gacb6f5d2c3271c95d0a02fd06723af25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63ea62503c88acab19fcf3d5743009e3" id="r_ga63ea62503c88acab19fcf3d5743009e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga63ea62503c88acab19fcf3d5743009e3">__CORTEX_M</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="separator:ga63ea62503c88acab19fcf3d5743009e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65104fb6a96df4ec7f7e72781b561060" id="r_ga65104fb6a96df4ec7f7e72781b561060"><td class="memItemLeft" align="right" valign="top"><a id="ga65104fb6a96df4ec7f7e72781b561060" name="ga65104fb6a96df4ec7f7e72781b561060"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>__CORE_CM4_H_DEPENDANT</b></td></tr>
+<tr class="separator:ga65104fb6a96df4ec7f7e72781b561060"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf63697ed9952cc71e1225efe205f6cd3" id="r_gaf63697ed9952cc71e1225efe205f6cd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf63697ed9952cc71e1225efe205f6cd3">__I</a>&#160;&#160;&#160;volatile const</td></tr>
+<tr class="separator:gaf63697ed9952cc71e1225efe205f6cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e25d9380f9ef903923964322e71f2f6" id="r_ga7e25d9380f9ef903923964322e71f2f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7e25d9380f9ef903923964322e71f2f6">__O</a>&#160;&#160;&#160;volatile</td></tr>
+<tr class="separator:ga7e25d9380f9ef903923964322e71f2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec43007d9998a0a0e01faede4133d6be" id="r_gaec43007d9998a0a0e01faede4133d6be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaec43007d9998a0a0e01faede4133d6be">__IO</a>&#160;&#160;&#160;volatile</td></tr>
+<tr class="separator:gaec43007d9998a0a0e01faede4133d6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Type definitions for the Cortex-M NVIC Registers </p>
+<p>This file defines all structures and symbols for CMSIS core:</p><ul>
+<li>CMSIS version number</li>
+<li>Cortex-M core</li>
+<li>Cortex-M core Revision Number </li>
+</ul>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gae4060c4dfcebb08871ca4244176ce752" name="gae4060c4dfcebb08871ca4244176ce752"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae4060c4dfcebb08871ca4244176ce752">&#9670;&#160;</a></span>NVIC_STIR_INTID_Msk</h2>
+<a id="gacb6f5d2c3271c95d0a02fd06723af25d" name="gacb6f5d2c3271c95d0a02fd06723af25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb6f5d2c3271c95d0a02fd06723af25d">&#9670;&#160;</a></span>__CM4_CMSIS_VERSION</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NVIC_STIR_INTID_Msk&#160;&#160;&#160;(0x1FFUL &lt;&lt; <a class="el" href="#ga9eebe495e2e48d302211108837a2b3e8">NVIC_STIR_INTID_Pos</a>)</td>
+          <td class="memname">#define __CM4_CMSIS_VERSION&#160;&#160;&#160;((<a class="el" href="#ga90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a> &lt;&lt; 16) | <a class="el" href="#gafc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>STIR: INTLINESNUM Mask </p>
+<p>CMSIS HAL version number </p>
 
 </div>
 </div>
-<a id="ga9eebe495e2e48d302211108837a2b3e8" name="ga9eebe495e2e48d302211108837a2b3e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9eebe495e2e48d302211108837a2b3e8">&#9670;&#160;</a></span>NVIC_STIR_INTID_Pos</h2>
+<a id="ga90ffc8179476f80347379bfe29639edc" name="ga90ffc8179476f80347379bfe29639edc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90ffc8179476f80347379bfe29639edc">&#9670;&#160;</a></span>__CM4_CMSIS_VERSION_MAIN</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NVIC_STIR_INTID_Pos&#160;&#160;&#160;0</td>
+          <td class="memname">#define __CM4_CMSIS_VERSION_MAIN&#160;&#160;&#160;(0x02)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>STIR: INTLINESNUM Position </p>
+<p>[31:16] CMSIS HAL main version </p>
+
+</div>
+</div>
+<a id="gafc7392964da961a44e916fcff7add532" name="gafc7392964da961a44e916fcff7add532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafc7392964da961a44e916fcff7add532">&#9670;&#160;</a></span>__CM4_CMSIS_VERSION_SUB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __CM4_CMSIS_VERSION_SUB&#160;&#160;&#160;(0x10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>[15:0] CMSIS HAL sub version </p>
+
+</div>
+</div>
+<a id="ga63ea62503c88acab19fcf3d5743009e3" name="ga63ea62503c88acab19fcf3d5743009e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63ea62503c88acab19fcf3d5743009e3">&#9670;&#160;</a></span>__CORTEX_M</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __CORTEX_M&#160;&#160;&#160;(0x04)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Cortex core __FPU_USED to be checked prior to making use of FPU specific registers and functions standard types definitions Core Instruction Access Core Function Access Compiler specific SIMD Intrinsics </p>
+
+</div>
+</div>
+<a id="gaf63697ed9952cc71e1225efe205f6cd3" name="gaf63697ed9952cc71e1225efe205f6cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf63697ed9952cc71e1225efe205f6cd3">&#9670;&#160;</a></span>__I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __I&#160;&#160;&#160;volatile const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>defines 'read only' permissions </p>
+
+</div>
+</div>
+<a id="gaec43007d9998a0a0e01faede4133d6be" name="gaec43007d9998a0a0e01faede4133d6be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec43007d9998a0a0e01faede4133d6be">&#9670;&#160;</a></span>__IO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __IO&#160;&#160;&#160;volatile</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>defines 'read / write' permissions </p>
+
+</div>
+</div>
+<a id="ga7e25d9380f9ef903923964322e71f2f6" name="ga7e25d9380f9ef903923964322e71f2f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e25d9380f9ef903923964322e71f2f6">&#9670;&#160;</a></span>__O</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __O&#160;&#160;&#160;volatile</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>defines 'write only' permissions </p>
 
 </div>
 </div>

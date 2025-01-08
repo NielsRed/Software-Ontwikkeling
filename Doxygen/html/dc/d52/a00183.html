@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: RCC_PLL_Clock_Source</title>
+<title>Software Ontwikkeling: GPIO_Legacy</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,162 +86,26 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">RCC_PLL_Clock_Source<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d8/d17/a00114.html">RCC</a> &raquo; <a class="el" href="../../d8/d64/a00181.html">RCC_Exported_Constants</a></div></div></div>
+  <div class="headertitle"><div class="title">GPIO_Legacy<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../db/d57/a00112.html">GPIO</a> &raquo; <a class="el" href="../../db/dd9/a00179.html">GPIO_Exported_Constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga1cbb1ae8d9e282a763a0070b251921f9" id="r_ga1cbb1ae8d9e282a763a0070b251921f9"><td class="memItemLeft" align="right" valign="top"><a id="ga1cbb1ae8d9e282a763a0070b251921f9" name="ga1cbb1ae8d9e282a763a0070b251921f9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RCC_PLLSource_HSI</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
-<tr class="separator:ga1cbb1ae8d9e282a763a0070b251921f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3706d0db7fe1836c65dc2ea7deded721" id="r_ga3706d0db7fe1836c65dc2ea7deded721"><td class="memItemLeft" align="right" valign="top"><a id="ga3706d0db7fe1836c65dc2ea7deded721" name="ga3706d0db7fe1836c65dc2ea7deded721"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RCC_PLLSource_HSE</b>&#160;&#160;&#160;((uint32_t)0x00400000)</td></tr>
-<tr class="separator:ga3706d0db7fe1836c65dc2ea7deded721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a8a84a16989bb4e5aca1af65ccf9a1b" id="r_ga8a8a84a16989bb4e5aca1af65ccf9a1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8a8a84a16989bb4e5aca1af65ccf9a1b">IS_RCC_PLL_SOURCE</a>(SOURCE)</td></tr>
-<tr class="separator:ga8a8a84a16989bb4e5aca1af65ccf9a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8db327c085e20aeb673a9784f8508597" id="r_ga8db327c085e20aeb673a9784f8508597"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8db327c085e20aeb673a9784f8508597">IS_RCC_PLLM_VALUE</a>(VALUE)</td></tr>
-<tr class="separator:ga8db327c085e20aeb673a9784f8508597"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga12835741fbedd278ad1e91abebe00837" id="r_ga12835741fbedd278ad1e91abebe00837"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12835741fbedd278ad1e91abebe00837">IS_RCC_PLLN_VALUE</a>(VALUE)</td></tr>
-<tr class="separator:ga12835741fbedd278ad1e91abebe00837"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad808f83505f4e802e5bafab7831f0235" id="r_gad808f83505f4e802e5bafab7831f0235"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad808f83505f4e802e5bafab7831f0235">IS_RCC_PLLP_VALUE</a>(VALUE)</td></tr>
-<tr class="separator:gad808f83505f4e802e5bafab7831f0235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad66dbe75bf8ab2b64b200e796281a851" id="r_gad66dbe75bf8ab2b64b200e796281a851"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad66dbe75bf8ab2b64b200e796281a851">IS_RCC_PLLQ_VALUE</a>(VALUE)</td></tr>
-<tr class="separator:gad66dbe75bf8ab2b64b200e796281a851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac30fb7f6fe9f22a7d6c5585909db5c3c" id="r_gac30fb7f6fe9f22a7d6c5585909db5c3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac30fb7f6fe9f22a7d6c5585909db5c3c">IS_RCC_PLLI2SN_VALUE</a>(VALUE)</td></tr>
-<tr class="separator:gac30fb7f6fe9f22a7d6c5585909db5c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa2fece4b24f6219b423e1b092b7705c8" id="r_gaa2fece4b24f6219b423e1b092b7705c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa2fece4b24f6219b423e1b092b7705c8">IS_RCC_PLLI2SR_VALUE</a>(VALUE)</td></tr>
-<tr class="separator:gaa2fece4b24f6219b423e1b092b7705c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf4dafa8caa4e91d2bee996c4bfdf8cc" id="r_gadf4dafa8caa4e91d2bee996c4bfdf8cc"><td class="memItemLeft" align="right" valign="top"><a id="gadf4dafa8caa4e91d2bee996c4bfdf8cc" name="gadf4dafa8caa4e91d2bee996c4bfdf8cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO_Mode_AIN</b>&#160;&#160;&#160;<a class="el" href="../../db/d57/a00112.html#gga1347339e1c84a196fabbb31205eec5d4a6e5c0d7e6d2e22b834b24e1ca1d6d0db">GPIO_Mode_AN</a></td></tr>
+<tr class="separator:gadf4dafa8caa4e91d2bee996c4bfdf8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaddd737997abcd1154c0998b22333b579" id="r_gaddd737997abcd1154c0998b22333b579"><td class="memItemLeft" align="right" valign="top"><a id="gaddd737997abcd1154c0998b22333b579" name="gaddd737997abcd1154c0998b22333b579"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO_AF_OTG1_FS</b>&#160;&#160;&#160;<a class="el" href="../../d7/d25/a00182.html#gaeba0aeefec841e505170efc7762ae588">GPIO_AF_OTG_FS</a></td></tr>
+<tr class="separator:gaddd737997abcd1154c0998b22333b579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54715298b3dc7e843429fd3e24d42cd4" id="r_ga54715298b3dc7e843429fd3e24d42cd4"><td class="memItemLeft" align="right" valign="top"><a id="ga54715298b3dc7e843429fd3e24d42cd4" name="ga54715298b3dc7e843429fd3e24d42cd4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO_AF_OTG2_HS</b>&#160;&#160;&#160;GPIO_AF_OTG_HS</td></tr>
+<tr class="separator:ga54715298b3dc7e843429fd3e24d42cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85e574d8321b9d9aaa2790351b4f0c1e" id="r_ga85e574d8321b9d9aaa2790351b4f0c1e"><td class="memItemLeft" align="right" valign="top"><a id="ga85e574d8321b9d9aaa2790351b4f0c1e" name="ga85e574d8321b9d9aaa2790351b4f0c1e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>GPIO_AF_OTG2_FS</b>&#160;&#160;&#160;GPIO_AF_OTG_HS_FS</td></tr>
+<tr class="separator:ga85e574d8321b9d9aaa2790351b4f0c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga8a8a84a16989bb4e5aca1af65ccf9a1b" name="ga8a8a84a16989bb4e5aca1af65ccf9a1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8a8a84a16989bb4e5aca1af65ccf9a1b">&#9670;&#160;</a></span>IS_RCC_PLL_SOURCE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_RCC_PLL_SOURCE</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>SOURCE</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                   (((SOURCE) == RCC_PLLSource_HSI) || \</div>
-<div class="line">                                   ((SOURCE) == RCC_PLLSource_HSE))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="gac30fb7f6fe9f22a7d6c5585909db5c3c" name="gac30fb7f6fe9f22a7d6c5585909db5c3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac30fb7f6fe9f22a7d6c5585909db5c3c">&#9670;&#160;</a></span>IS_RCC_PLLI2SN_VALUE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_RCC_PLLI2SN_VALUE</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VALUE</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((192 &lt;= (VALUE)) &amp;&amp; ((VALUE) &lt;= 432))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="gaa2fece4b24f6219b423e1b092b7705c8" name="gaa2fece4b24f6219b423e1b092b7705c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa2fece4b24f6219b423e1b092b7705c8">&#9670;&#160;</a></span>IS_RCC_PLLI2SR_VALUE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_RCC_PLLI2SR_VALUE</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VALUE</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((2 &lt;= (VALUE)) &amp;&amp; ((VALUE) &lt;= 7))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ga8db327c085e20aeb673a9784f8508597" name="ga8db327c085e20aeb673a9784f8508597"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8db327c085e20aeb673a9784f8508597">&#9670;&#160;</a></span>IS_RCC_PLLM_VALUE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_RCC_PLLM_VALUE</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VALUE</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((VALUE) &lt;= 63)</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ga12835741fbedd278ad1e91abebe00837" name="ga12835741fbedd278ad1e91abebe00837"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga12835741fbedd278ad1e91abebe00837">&#9670;&#160;</a></span>IS_RCC_PLLN_VALUE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_RCC_PLLN_VALUE</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VALUE</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((192 &lt;= (VALUE)) &amp;&amp; ((VALUE) &lt;= 432))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="gad808f83505f4e802e5bafab7831f0235" name="gad808f83505f4e802e5bafab7831f0235"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad808f83505f4e802e5bafab7831f0235">&#9670;&#160;</a></span>IS_RCC_PLLP_VALUE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_RCC_PLLP_VALUE</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VALUE</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(((VALUE) == 2) || ((VALUE) == 4) || ((VALUE) == 6) || ((VALUE) == 8))</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="gad66dbe75bf8ab2b64b200e796281a851" name="gad66dbe75bf8ab2b64b200e796281a851"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad66dbe75bf8ab2b64b200e796281a851">&#9670;&#160;</a></span>IS_RCC_PLLQ_VALUE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_RCC_PLLQ_VALUE</td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VALUE</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">((4 &lt;= (VALUE)) &amp;&amp; ((VALUE) &lt;= 15))</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

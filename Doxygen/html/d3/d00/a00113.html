@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: GPIO Alternate functions configuration function</title>
+<title>Software Ontwikkeling: GPIO_Private_Functions</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -85,110 +85,24 @@ $(function(){ initResizable(false); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">GPIO Alternate functions configuration function<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../dd/d42/a00109.html">GPIO</a> &raquo; <a class="el" href="../../d4/d81/a00110.html">GPIO_Private_Functions</a></div></div></div>
+<a href="#groups">Topics</a>  </div>
+  <div class="headertitle"><div class="title">GPIO_Private_Functions<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../db/d57/a00112.html">GPIO</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>GPIO Alternate functions configuration function.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga0a77617a322562ae84f8d72486032c5d" id="r_ga0a77617a322562ae84f8d72486032c5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0a77617a322562ae84f8d72486032c5d">GPIO_PinAFConfig</a> (<a class="el" href="../../d1/d7e/a00434.html">GPIO_TypeDef</a> *GPIOx, uint16_t GPIO_PinSource, uint8_t GPIO_AF)</td></tr>
-<tr class="memdesc:ga0a77617a322562ae84f8d72486032c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the mapping of the specified pin.  <br /></td></tr>
-<tr class="separator:ga0a77617a322562ae84f8d72486032c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d17/a00114.html">Initialization and Configuration</a></td></tr>
+<tr class="memdesc:d8/d17/a00114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization and Configuration. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da3/a00115.html">GPIO Read and Write</a></td></tr>
+<tr class="memdesc:d2/da3/a00115"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO Read and Write. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d3e/a00116.html">GPIO Alternate functions configuration function</a></td></tr>
+<tr class="memdesc:d4/d3e/a00116"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO Alternate functions configuration function. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>GPIO Alternate functions configuration function. </p>
-<pre class="fragment"> ===============================================================================
-               GPIO Alternate functions configuration function
- ===============================================================================  
-</pre> <h2 class="groupheader">Function Documentation</h2>
-<a id="ga0a77617a322562ae84f8d72486032c5d" name="ga0a77617a322562ae84f8d72486032c5d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0a77617a322562ae84f8d72486032c5d">&#9670;&#160;</a></span>GPIO_PinAFConfig()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GPIO_PinAFConfig </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d1/d7e/a00434.html">GPIO_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>GPIOx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>GPIO_PinSource</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>GPIO_AF</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Changes the mapping of the specified pin. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">GPIOx</td><td>where x can be (A..I) to select the GPIO peripheral. </td></tr>
-    <tr><td class="paramname">GPIO_PinSource</td><td>specifies the pin for the Alternate function. This parameter can be GPIO_PinSourcex where x can be (0..15). </td></tr>
-    <tr><td class="paramname">GPIO_AFSelection</td><td>selects the pin to used as Alternate function. This parameter can be one of the following values: <ul>
-<li>GPIO_AF_RTC_50Hz: Connect RTC_50Hz pin to AF0 (default after reset) </li>
-<li>GPIO_AF_MCO: Connect MCO pin (MCO1 and MCO2) to AF0 (default after reset) </li>
-<li>GPIO_AF_TAMPER: Connect TAMPER pins (TAMPER_1 and TAMPER_2) to AF0 (default after reset) </li>
-<li>GPIO_AF_SWJ: Connect SWJ pins (SWD and JTAG)to AF0 (default after reset) </li>
-<li>GPIO_AF_TRACE: Connect TRACE pins to AF0 (default after reset) </li>
-<li>GPIO_AF_TIM1: Connect TIM1 pins to AF1 </li>
-<li>GPIO_AF_TIM2: Connect TIM2 pins to AF1 </li>
-<li>GPIO_AF_TIM3: Connect TIM3 pins to AF2 </li>
-<li>GPIO_AF_TIM4: Connect TIM4 pins to AF2 </li>
-<li>GPIO_AF_TIM5: Connect TIM5 pins to AF2 </li>
-<li>GPIO_AF_TIM8: Connect TIM8 pins to AF3 </li>
-<li>GPIO_AF_TIM9: Connect TIM9 pins to AF3 </li>
-<li>GPIO_AF_TIM10: Connect TIM10 pins to AF3 </li>
-<li>GPIO_AF_TIM11: Connect TIM11 pins to AF3 </li>
-<li>GPIO_AF_I2C1: Connect I2C1 pins to AF4 </li>
-<li>GPIO_AF_I2C2: Connect I2C2 pins to AF4 </li>
-<li>GPIO_AF_I2C3: Connect I2C3 pins to AF4 </li>
-<li>GPIO_AF_SPI1: Connect SPI1 pins to AF5 </li>
-<li>GPIO_AF_SPI2: Connect SPI2/I2S2 pins to AF5 </li>
-<li>GPIO_AF_SPI3: Connect SPI3/I2S3 pins to AF6 </li>
-<li>GPIO_AF_I2S3ext: Connect I2S3ext pins to AF7 </li>
-<li>GPIO_AF_USART1: Connect USART1 pins to AF7 </li>
-<li>GPIO_AF_USART2: Connect USART2 pins to AF7 </li>
-<li>GPIO_AF_USART3: Connect USART3 pins to AF7 </li>
-<li>GPIO_AF_UART4: Connect UART4 pins to AF8 </li>
-<li>GPIO_AF_UART5: Connect UART5 pins to AF8 </li>
-<li>GPIO_AF_USART6: Connect USART6 pins to AF8 </li>
-<li>GPIO_AF_CAN1: Connect CAN1 pins to AF9 </li>
-<li>GPIO_AF_CAN2: Connect CAN2 pins to AF9 </li>
-<li>GPIO_AF_TIM12: Connect TIM12 pins to AF9 </li>
-<li>GPIO_AF_TIM13: Connect TIM13 pins to AF9 </li>
-<li>GPIO_AF_TIM14: Connect TIM14 pins to AF9 </li>
-<li>GPIO_AF_OTG_FS: Connect OTG_FS pins to AF10 </li>
-<li>GPIO_AF_OTG_HS: Connect OTG_HS pins to AF10 </li>
-<li>GPIO_AF_ETH: Connect ETHERNET pins to AF11 </li>
-<li>GPIO_AF_FSMC: Connect FSMC pins to AF12 </li>
-<li>GPIO_AF_OTG_HS_FS: Connect OTG HS (configured in FS) pins to AF12 </li>
-<li>GPIO_AF_SDIO: Connect SDIO pins to AF12 </li>
-<li>GPIO_AF_DCMI: Connect DCMI pins to AF13 </li>
-<li>GPIO_AF_EVENTOUT: Connect EVENTOUT pins to AF15 </li>
-</ul>
-</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

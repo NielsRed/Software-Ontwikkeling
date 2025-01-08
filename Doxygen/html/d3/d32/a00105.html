@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: Initialization and Configuration functions</title>
+<title>Software Ontwikkeling: MISC_Private_Functions</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,60 +86,151 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Initialization and Configuration functions<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d5/d1e/a00103.html">DMA</a> &raquo; <a class="el" href="../../d0/dc2/a00104.html">DMA_Private_Functions</a></div></div></div>
+  <div class="headertitle"><div class="title">MISC_Private_Functions<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d0/dc2/a00104.html">MISC</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Initialization and Configuration functions.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga38d4a4ab8990299f8a6cf064e1e811d0" id="r_ga38d4a4ab8990299f8a6cf064e1e811d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga38d4a4ab8990299f8a6cf064e1e811d0">DMA_DeInit</a> (<a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *DMAy_Streamx)</td></tr>
-<tr class="memdesc:ga38d4a4ab8990299f8a6cf064e1e811d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitialize the DMAy Streamx registers to their default reset values.  <br /></td></tr>
-<tr class="separator:ga38d4a4ab8990299f8a6cf064e1e811d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaced8a4149acfb0a50b50e63273a87148" id="r_gaced8a4149acfb0a50b50e63273a87148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaced8a4149acfb0a50b50e63273a87148">DMA_Init</a> (<a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, <a class="el" href="../../d5/d0f/a00494.html">DMA_InitTypeDef</a> *DMA_InitStruct)</td></tr>
-<tr class="memdesc:gaced8a4149acfb0a50b50e63273a87148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the DMAy Streamx according to the specified parameters in the DMA_InitStruct structure.  <br /></td></tr>
-<tr class="separator:gaced8a4149acfb0a50b50e63273a87148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f7f95f750a90a6824f4e9b6f58adc7e" id="r_ga0f7f95f750a90a6824f4e9b6f58adc7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0f7f95f750a90a6824f4e9b6f58adc7e">DMA_StructInit</a> (<a class="el" href="../../d5/d0f/a00494.html">DMA_InitTypeDef</a> *DMA_InitStruct)</td></tr>
-<tr class="memdesc:ga0f7f95f750a90a6824f4e9b6f58adc7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills each DMA_InitStruct member with its default value.  <br /></td></tr>
-<tr class="separator:ga0f7f95f750a90a6824f4e9b6f58adc7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab2bea22f9f6dc62fdd7afb385a0c1f73" id="r_gab2bea22f9f6dc62fdd7afb385a0c1f73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab2bea22f9f6dc62fdd7afb385a0c1f73">DMA_Cmd</a> (<a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, FunctionalState NewState)</td></tr>
-<tr class="memdesc:gab2bea22f9f6dc62fdd7afb385a0c1f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the specified DMAy Streamx.  <br /></td></tr>
-<tr class="separator:gab2bea22f9f6dc62fdd7afb385a0c1f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga210a9861460b3c9b3fa14fdc1a949744" id="r_ga210a9861460b3c9b3fa14fdc1a949744"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga210a9861460b3c9b3fa14fdc1a949744">DMA_PeriphIncOffsetSizeConfig</a> (<a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, uint32_t DMA_Pincos)</td></tr>
-<tr class="memdesc:ga210a9861460b3c9b3fa14fdc1a949744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures, when the PINC (Peripheral Increment address mode) bit is set, if the peripheral address should be incremented with the data size (configured with PSIZE bits) or by a fixed offset equal to 4 (32-bit aligned addresses).  <br /></td></tr>
-<tr class="separator:ga210a9861460b3c9b3fa14fdc1a949744"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga77f7628f6be9d6d088127eceb090b8b2" id="r_ga77f7628f6be9d6d088127eceb090b8b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga77f7628f6be9d6d088127eceb090b8b2">DMA_FlowControllerConfig</a> (<a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *DMAy_Streamx, uint32_t DMA_FlowCtrl)</td></tr>
-<tr class="memdesc:ga77f7628f6be9d6d088127eceb090b8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures, when the DMAy Streamx is disabled, the flow controller for the next transactions (Peripheral or Memory).  <br /></td></tr>
-<tr class="separator:ga77f7628f6be9d6d088127eceb090b8b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfb1f34f803ce54c976643db8c484442" id="r_gadfb1f34f803ce54c976643db8c484442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadfb1f34f803ce54c976643db8c484442">NVIC_PriorityGroupConfig</a> (uint32_t NVIC_PriorityGroup)</td></tr>
+<tr class="memdesc:gadfb1f34f803ce54c976643db8c484442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the priority grouping: pre-emption priority and subpriority.  <br /></td></tr>
+<tr class="separator:gadfb1f34f803ce54c976643db8c484442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ab373ed0870c06fca5eb51d639adf41" id="r_ga4ab373ed0870c06fca5eb51d639adf41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4ab373ed0870c06fca5eb51d639adf41">NVIC_Init</a> (<a class="el" href="../../d7/dfc/a00349.html">NVIC_InitTypeDef</a> *NVIC_InitStruct)</td></tr>
+<tr class="memdesc:ga4ab373ed0870c06fca5eb51d639adf41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the NVIC peripheral according to the specified parameters in the NVIC_InitStruct.  <br /></td></tr>
+<tr class="separator:ga4ab373ed0870c06fca5eb51d639adf41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1145208ad70edfc2fab19b8b8ef1b1a1" id="r_ga1145208ad70edfc2fab19b8b8ef1b1a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1145208ad70edfc2fab19b8b8ef1b1a1">NVIC_SetVectorTable</a> (uint32_t NVIC_VectTab, uint32_t Offset)</td></tr>
+<tr class="memdesc:ga1145208ad70edfc2fab19b8b8ef1b1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the vector table location and Offset.  <br /></td></tr>
+<tr class="separator:ga1145208ad70edfc2fab19b8b8ef1b1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae21011c5232f5b8f366acbecd12a1d4a" id="r_gae21011c5232f5b8f366acbecd12a1d4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae21011c5232f5b8f366acbecd12a1d4a">NVIC_SystemLPConfig</a> (uint8_t LowPowerMode, FunctionalState NewState)</td></tr>
+<tr class="memdesc:gae21011c5232f5b8f366acbecd12a1d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the condition for the system to enter low power mode.  <br /></td></tr>
+<tr class="separator:gae21011c5232f5b8f366acbecd12a1d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2777d255bb06ad62bb6372a9db1ff385" id="r_ga2777d255bb06ad62bb6372a9db1ff385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2777d255bb06ad62bb6372a9db1ff385">SysTick_CLKSourceConfig</a> (uint32_t SysTick_CLKSource)</td></tr>
+<tr class="memdesc:ga2777d255bb06ad62bb6372a9db1ff385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the SysTick clock source.  <br /></td></tr>
+<tr class="separator:ga2777d255bb06ad62bb6372a9db1ff385"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Initialization and Configuration functions. </p>
-<pre class="fragment"> ===============================================================================
-                 Initialization and Configuration functions
- ===============================================================================  
-
-  This subsection provides functions allowing to initialize the DMA Stream source
-  and destination addresses, incrementation and data sizes, transfer direction, 
-  buffer size, circular/normal mode selection, memory-to-memory mode selection 
-  and Stream priority value.
-  
-  The DMA_Init() function follows the DMA configuration procedures as described in
-  reference manual (RM0090) except the first point: waiting on EN bit to be reset.
-  This condition should be checked by user application using the function DMA_GetCmdStatus()
-  before calling the DMA_Init() function.
-</pre> <h2 class="groupheader">Function Documentation</h2>
-<a id="gab2bea22f9f6dc62fdd7afb385a0c1f73" name="gab2bea22f9f6dc62fdd7afb385a0c1f73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab2bea22f9f6dc62fdd7afb385a0c1f73">&#9670;&#160;</a></span>DMA_Cmd()</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga4ab373ed0870c06fca5eb51d639adf41" name="ga4ab373ed0870c06fca5eb51d639adf41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4ab373ed0870c06fca5eb51d639adf41">&#9670;&#160;</a></span>NVIC_Init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DMA_Cmd </td>
+          <td class="memname">void NVIC_Init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
+          <td class="paramtype"><a class="el" href="../../d7/dfc/a00349.html">NVIC_InitTypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>NVIC_InitStruct</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the NVIC peripheral according to the specified parameters in the NVIC_InitStruct. </p>
+<dl class="section note"><dt>Note</dt><dd>To configure interrupts priority correctly, the <a class="el" href="#gadfb1f34f803ce54c976643db8c484442" title="Configures the priority grouping: pre-emption priority and subpriority.">NVIC_PriorityGroupConfig()</a> function should be called before. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NVIC_InitStruct</td><td>pointer to a <a class="el" href="../../d7/dfc/a00349.html" title="NVIC Init Structure definition.">NVIC_InitTypeDef</a> structure that contains the configuration information for the specified NVIC peripheral. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gadfb1f34f803ce54c976643db8c484442" name="gadfb1f34f803ce54c976643db8c484442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadfb1f34f803ce54c976643db8c484442">&#9670;&#160;</a></span>NVIC_PriorityGroupConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NVIC_PriorityGroupConfig </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>NVIC_PriorityGroup</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the priority grouping: pre-emption priority and subpriority. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NVIC_PriorityGroup</td><td>specifies the priority grouping bits length. This parameter can be one of the following values: <ul>
+<li>NVIC_PriorityGroup_0: 0 bits for pre-emption priority 4 bits for subpriority </li>
+<li>NVIC_PriorityGroup_1: 1 bits for pre-emption priority 3 bits for subpriority </li>
+<li>NVIC_PriorityGroup_2: 2 bits for pre-emption priority 2 bits for subpriority </li>
+<li>NVIC_PriorityGroup_3: 3 bits for pre-emption priority 1 bits for subpriority </li>
+<li>NVIC_PriorityGroup_4: 4 bits for pre-emption priority 0 bits for subpriority </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>When the NVIC_PriorityGroup_0 is selected, IRQ pre-emption is no more possible. The pending IRQ priority will be managed only by the subpriority. </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga1145208ad70edfc2fab19b8b8ef1b1a1" name="ga1145208ad70edfc2fab19b8b8ef1b1a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1145208ad70edfc2fab19b8b8ef1b1a1">&#9670;&#160;</a></span>NVIC_SetVectorTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NVIC_SetVectorTable </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>NVIC_VectTab</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>Offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the vector table location and Offset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NVIC_VectTab</td><td>specifies if the vector table is in RAM or FLASH memory. This parameter can be one of the following values: <ul>
+<li>NVIC_VectTab_RAM: Vector Table in internal SRAM. </li>
+<li>NVIC_VectTab_FLASH: Vector Table in internal FLASH. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">Offset</td><td>Vector Table base offset field. This value must be a multiple of 0x200. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae21011c5232f5b8f366acbecd12a1d4a" name="gae21011c5232f5b8f366acbecd12a1d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae21011c5232f5b8f366acbecd12a1d4a">&#9670;&#160;</a></span>NVIC_SystemLPConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NVIC_SystemLPConfig </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>LowPowerMode</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -149,90 +240,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enables or disables the specified DMAy Streamx. </p>
+<p>Selects the condition for the system to enter low power mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
-    <tr><td class="paramname">NewState</td><td>new state of the DMAy Streamx. This parameter can be: ENABLE or DISABLE.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>This function may be used to perform Pause-Resume operation. When a transfer is ongoing, calling this function to disable the Stream will cause the transfer to be paused. All configuration registers and the number of remaining data will be preserved. When calling again this function to re-enable the Stream, the transfer will be resumed from the point where it was paused. <br  />
-</dd>
-<dd>
-After configuring the DMA Stream (<a class="el" href="#gaced8a4149acfb0a50b50e63273a87148" title="Initializes the DMAy Streamx according to the specified parameters in the DMA_InitStruct structure.">DMA_Init()</a> function) and enabling the stream, it is recommended to check (or wait until) the DMA Stream is effectively enabled. A Stream may remain disabled if a configuration parameter is wrong. After disabling a DMA Stream, it is also recommended to check (or wait until) the DMA Stream is effectively disabled. If a Stream is disabled while a data transfer is ongoing, the current data will be transferred and the Stream will be effectively disabled only after the transfer of this single data is finished. <br  />
-</dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga38d4a4ab8990299f8a6cf064e1e811d0" name="ga38d4a4ab8990299f8a6cf064e1e811d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga38d4a4ab8990299f8a6cf064e1e811d0">&#9670;&#160;</a></span>DMA_DeInit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DMA_DeInit </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Deinitialize the DMAy Streamx registers to their default reset values. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga77f7628f6be9d6d088127eceb090b8b2" name="ga77f7628f6be9d6d088127eceb090b8b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga77f7628f6be9d6d088127eceb090b8b2">&#9670;&#160;</a></span>DMA_FlowControllerConfig()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DMA_FlowControllerConfig </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>DMA_FlowCtrl</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configures, when the DMAy Streamx is disabled, the flow controller for the next transactions (Peripheral or Memory). </p>
-<dl class="section note"><dt>Note</dt><dd>Before enabling this feature, check if the used peripheral supports the Flow Controller mode or not. <br  />
-</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
-    <tr><td class="paramname">DMA_FlowCtrl</td><td>specifies the DMA flow controller. This parameter can be one of the following values: <ul>
-<li>DMA_FlowCtrl_Memory: DMAy_Streamx transactions flow controller is the DMA controller. </li>
-<li>DMA_FlowCtrl_Peripheral: DMAy_Streamx transactions flow controller is the peripheral. <br  />
- </li>
+    <tr><td class="paramname">LowPowerMode</td><td>Specifies the new mode for the system to enter low power mode. This parameter can be one of the following values: <ul>
+<li>NVIC_LP_SEVONPEND: Low Power SEV on Pend. </li>
+<li>NVIC_LP_SLEEPDEEP: Low Power DEEPSLEEP request. </li>
+<li>NVIC_LP_SLEEPONEXIT: Low Power Sleep on Exit. </li>
 </ul>
 </td></tr>
+    <tr><td class="paramname">NewState</td><td>new state of LP condition. This parameter can be: ENABLE or DISABLE. </td></tr>
   </table>
   </dd>
 </dl>
@@ -245,106 +262,29 @@ After configuring the DMA Stream (<a class="el" href="#gaced8a4149acfb0a50b50e63
 
 </div>
 </div>
-<a id="gaced8a4149acfb0a50b50e63273a87148" name="gaced8a4149acfb0a50b50e63273a87148"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaced8a4149acfb0a50b50e63273a87148">&#9670;&#160;</a></span>DMA_Init()</h2>
+<a id="ga2777d255bb06ad62bb6372a9db1ff385" name="ga2777d255bb06ad62bb6372a9db1ff385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2777d255bb06ad62bb6372a9db1ff385">&#9670;&#160;</a></span>SysTick_CLKSourceConfig()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DMA_Init </td>
+          <td class="memname">void SysTick_CLKSourceConfig </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>SysTick_CLKSource</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/d0f/a00494.html">DMA_InitTypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMA_InitStruct</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes the DMAy Streamx according to the specified parameters in the DMA_InitStruct structure. </p>
-<dl class="section note"><dt>Note</dt><dd>Before calling this function, it is recommended to check that the Stream is actually disabled using the function <a class="el" href="../../d1/dd6/a00108.html#gaa4d631cdd6cd020106435f30c0c6fb15" title="Returns the status of EN bit for the specified DMAy Streamx.">DMA_GetCmdStatus()</a>. <br  />
- </dd></dl>
+<p>Configures the SysTick clock source. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
-    <tr><td class="paramname">DMA_InitStruct</td><td>pointer to a <a class="el" href="../../d5/d0f/a00494.html" title="DMA Init structure definition.">DMA_InitTypeDef</a> structure that contains the configuration information for the specified DMA Stream. <br  />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga210a9861460b3c9b3fa14fdc1a949744" name="ga210a9861460b3c9b3fa14fdc1a949744"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga210a9861460b3c9b3fa14fdc1a949744">&#9670;&#160;</a></span>DMA_PeriphIncOffsetSizeConfig()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DMA_PeriphIncOffsetSizeConfig </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d9/dad/a00394.html">DMA_Stream_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMAy_Streamx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>DMA_Pincos</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configures, when the PINC (Peripheral Increment address mode) bit is set, if the peripheral address should be incremented with the data size (configured with PSIZE bits) or by a fixed offset equal to 4 (32-bit aligned addresses). </p>
-<dl class="section note"><dt>Note</dt><dd>This function has no effect if the Peripheral Increment mode is disabled.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">DMAy_Streamx</td><td>where y can be 1 or 2 to select the DMA and x can be 0 to 7 to select the DMA Stream. </td></tr>
-    <tr><td class="paramname">DMA_Pincos</td><td>specifies the Peripheral increment offset size. This parameter can be one of the following values: <ul>
-<li>DMA_PINCOS_Psize: Peripheral address increment is done <br  />
- accordingly to PSIZE parameter. </li>
-<li>DMA_PINCOS_WordAligned: Peripheral address increment offset is fixed to 4 (32-bit aligned addresses). </li>
+    <tr><td class="paramname">SysTick_CLKSource</td><td>specifies the SysTick clock source. This parameter can be one of the following values: <ul>
+<li>SysTick_CLKSource_HCLK_Div8: AHB clock divided by 8 selected as SysTick clock source. </li>
+<li>SysTick_CLKSource_HCLK: AHB clock selected as SysTick clock source. </li>
 </ul>
 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ga0f7f95f750a90a6824f4e9b6f58adc7e" name="ga0f7f95f750a90a6824f4e9b6f58adc7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0f7f95f750a90a6824f4e9b6f58adc7e">&#9670;&#160;</a></span>DMA_StructInit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DMA_StructInit </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d0f/a00494.html">DMA_InitTypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>DMA_InitStruct</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fills each DMA_InitStruct member with its default value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">DMA_InitStruct</td><td>: pointer to a <a class="el" href="../../d5/d0f/a00494.html" title="DMA Init structure definition.">DMA_InitTypeDef</a> structure which will be initialized. </td></tr>
   </table>
   </dd>
 </dl>

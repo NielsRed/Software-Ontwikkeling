@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: TIM_OSSI_Off_State_Selection_for_Idle_mode_state</title>
+<title>Software Ontwikkeling: TIM_Break_Polarity</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,39 +86,39 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">TIM_OSSI_Off_State_Selection_for_Idle_mode_state<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d4/d98/a00120.html">TIM</a> &raquo; <a class="el" href="../../d8/d72/a00199.html">TIM_Exported_constants</a></div></div></div>
+  <div class="headertitle"><div class="title">TIM_Break_Polarity<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../de/d36/a00123.html">TIM</a> &raquo; <a class="el" href="../../db/d53/a00202.html">TIM_Exported_constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gaf643ec0d2edb6c8fb725d00210b3d071" id="r_gaf643ec0d2edb6c8fb725d00210b3d071"><td class="memItemLeft" align="right" valign="top"><a id="gaf643ec0d2edb6c8fb725d00210b3d071" name="gaf643ec0d2edb6c8fb725d00210b3d071"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_OSSIState_Enable</b>&#160;&#160;&#160;((uint16_t)0x0400)</td></tr>
-<tr class="separator:gaf643ec0d2edb6c8fb725d00210b3d071"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae1962736fd5cad82e97a5814ef6758bd" id="r_gae1962736fd5cad82e97a5814ef6758bd"><td class="memItemLeft" align="right" valign="top"><a id="gae1962736fd5cad82e97a5814ef6758bd" name="gae1962736fd5cad82e97a5814ef6758bd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_OSSIState_Disable</b>&#160;&#160;&#160;((uint16_t)0x0000)</td></tr>
-<tr class="separator:gae1962736fd5cad82e97a5814ef6758bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad24fc8836152903b408239284cecfab1" id="r_gad24fc8836152903b408239284cecfab1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad24fc8836152903b408239284cecfab1">IS_TIM_OSSI_STATE</a>(STATE)</td></tr>
-<tr class="separator:gad24fc8836152903b408239284cecfab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga565656ca81d17f9a1807afe3971dff6e" id="r_ga565656ca81d17f9a1807afe3971dff6e"><td class="memItemLeft" align="right" valign="top"><a id="ga565656ca81d17f9a1807afe3971dff6e" name="ga565656ca81d17f9a1807afe3971dff6e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_BreakPolarity_Low</b>&#160;&#160;&#160;((uint16_t)0x0000)</td></tr>
+<tr class="separator:ga565656ca81d17f9a1807afe3971dff6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd4b72079548fd8903413a348539542b" id="r_gabd4b72079548fd8903413a348539542b"><td class="memItemLeft" align="right" valign="top"><a id="gabd4b72079548fd8903413a348539542b" name="gabd4b72079548fd8903413a348539542b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_BreakPolarity_High</b>&#160;&#160;&#160;((uint16_t)0x2000)</td></tr>
+<tr class="separator:gabd4b72079548fd8903413a348539542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa29e33e74c5ff10972357ddd3f47f078" id="r_gaa29e33e74c5ff10972357ddd3f47f078"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa29e33e74c5ff10972357ddd3f47f078">IS_TIM_BREAK_POLARITY</a>(POLARITY)</td></tr>
+<tr class="separator:gaa29e33e74c5ff10972357ddd3f47f078"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gad24fc8836152903b408239284cecfab1" name="gad24fc8836152903b408239284cecfab1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad24fc8836152903b408239284cecfab1">&#9670;&#160;</a></span>IS_TIM_OSSI_STATE</h2>
+<a id="gaa29e33e74c5ff10972357ddd3f47f078" name="gaa29e33e74c5ff10972357ddd3f47f078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa29e33e74c5ff10972357ddd3f47f078">&#9670;&#160;</a></span>IS_TIM_BREAK_POLARITY</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IS_TIM_OSSI_STATE</td>
+          <td class="memname">#define IS_TIM_BREAK_POLARITY</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>STATE</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>POLARITY</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                  (((STATE) == TIM_OSSIState_Enable) || \</div>
-<div class="line">                                  ((STATE) == TIM_OSSIState_Disable))</div>
+<b>Value:</b><div class="fragment"><div class="line">                                         (((POLARITY) == TIM_BreakPolarity_Low) || \</div>
+<div class="line">                                         ((POLARITY) == TIM_BreakPolarity_High))</div>
 </div><!-- fragment -->
 </div>
 </div>

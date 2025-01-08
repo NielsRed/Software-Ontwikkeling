@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: TIM_Output_Compare_State</title>
+<title>Software Ontwikkeling: TIM_Counter_Mode</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,39 +86,51 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">TIM_Output_Compare_State<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d4/d98/a00120.html">TIM</a> &raquo; <a class="el" href="../../d8/d72/a00199.html">TIM_Exported_constants</a></div></div></div>
+  <div class="headertitle"><div class="title">TIM_Counter_Mode<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../de/d36/a00123.html">TIM</a> &raquo; <a class="el" href="../../db/d53/a00202.html">TIM_Exported_constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga4ad0f484cfa16b5190654da8278940d0" id="r_ga4ad0f484cfa16b5190654da8278940d0"><td class="memItemLeft" align="right" valign="top"><a id="ga4ad0f484cfa16b5190654da8278940d0" name="ga4ad0f484cfa16b5190654da8278940d0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_OutputState_Disable</b>&#160;&#160;&#160;((uint16_t)0x0000)</td></tr>
-<tr class="separator:ga4ad0f484cfa16b5190654da8278940d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga65afdda8761b6ac5ed0c0ad67c05dffe" id="r_ga65afdda8761b6ac5ed0c0ad67c05dffe"><td class="memItemLeft" align="right" valign="top"><a id="ga65afdda8761b6ac5ed0c0ad67c05dffe" name="ga65afdda8761b6ac5ed0c0ad67c05dffe"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_OutputState_Enable</b>&#160;&#160;&#160;((uint16_t)0x0001)</td></tr>
-<tr class="separator:ga65afdda8761b6ac5ed0c0ad67c05dffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5848617f830d2de688eaff50ed279679" id="r_ga5848617f830d2de688eaff50ed279679"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5848617f830d2de688eaff50ed279679">IS_TIM_OUTPUT_STATE</a>(STATE)</td></tr>
-<tr class="separator:ga5848617f830d2de688eaff50ed279679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4cd3ce74af3122507b77c8f6e79c832" id="r_gaf4cd3ce74af3122507b77c8f6e79c832"><td class="memItemLeft" align="right" valign="top"><a id="gaf4cd3ce74af3122507b77c8f6e79c832" name="gaf4cd3ce74af3122507b77c8f6e79c832"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_CounterMode_Up</b>&#160;&#160;&#160;((uint16_t)0x0000)</td></tr>
+<tr class="separator:gaf4cd3ce74af3122507b77c8f6e79c832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd7c4200d185bdcd9e64ae80e6b200b0" id="r_gadd7c4200d185bdcd9e64ae80e6b200b0"><td class="memItemLeft" align="right" valign="top"><a id="gadd7c4200d185bdcd9e64ae80e6b200b0" name="gadd7c4200d185bdcd9e64ae80e6b200b0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_CounterMode_Down</b>&#160;&#160;&#160;((uint16_t)0x0010)</td></tr>
+<tr class="separator:gadd7c4200d185bdcd9e64ae80e6b200b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac07392e9637f8a0d115d4ba9a002ae93" id="r_gac07392e9637f8a0d115d4ba9a002ae93"><td class="memItemLeft" align="right" valign="top"><a id="gac07392e9637f8a0d115d4ba9a002ae93" name="gac07392e9637f8a0d115d4ba9a002ae93"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_CounterMode_CenterAligned1</b>&#160;&#160;&#160;((uint16_t)0x0020)</td></tr>
+<tr class="separator:gac07392e9637f8a0d115d4ba9a002ae93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3793122e4c123a99e46fc2f04acea0d4" id="r_ga3793122e4c123a99e46fc2f04acea0d4"><td class="memItemLeft" align="right" valign="top"><a id="ga3793122e4c123a99e46fc2f04acea0d4" name="ga3793122e4c123a99e46fc2f04acea0d4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_CounterMode_CenterAligned2</b>&#160;&#160;&#160;((uint16_t)0x0040)</td></tr>
+<tr class="separator:ga3793122e4c123a99e46fc2f04acea0d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65d9bc01ffa287cd7cf200d08c20a1ce" id="r_ga65d9bc01ffa287cd7cf200d08c20a1ce"><td class="memItemLeft" align="right" valign="top"><a id="ga65d9bc01ffa287cd7cf200d08c20a1ce" name="ga65d9bc01ffa287cd7cf200d08c20a1ce"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TIM_CounterMode_CenterAligned3</b>&#160;&#160;&#160;((uint16_t)0x0060)</td></tr>
+<tr class="separator:ga65d9bc01ffa287cd7cf200d08c20a1ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9543fec190793e800d5d1b1b853636f5" id="r_ga9543fec190793e800d5d1b1b853636f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9543fec190793e800d5d1b1b853636f5">IS_TIM_COUNTER_MODE</a>(MODE)</td></tr>
+<tr class="separator:ga9543fec190793e800d5d1b1b853636f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga5848617f830d2de688eaff50ed279679" name="ga5848617f830d2de688eaff50ed279679"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5848617f830d2de688eaff50ed279679">&#9670;&#160;</a></span>IS_TIM_OUTPUT_STATE</h2>
+<a id="ga9543fec190793e800d5d1b1b853636f5" name="ga9543fec190793e800d5d1b1b853636f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9543fec190793e800d5d1b1b853636f5">&#9670;&#160;</a></span>IS_TIM_COUNTER_MODE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IS_TIM_OUTPUT_STATE</td>
+          <td class="memname">#define IS_TIM_COUNTER_MODE</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>STATE</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>MODE</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                    (((STATE) == TIM_OutputState_Disable) || \</div>
-<div class="line">                                    ((STATE) == TIM_OutputState_Enable))</div>
+<b>Value:</b><div class="fragment"><div class="line">                                   (((MODE) == TIM_CounterMode_Up) ||  \</div>
+<div class="line">                                   ((MODE) == TIM_CounterMode_Down) || \</div>
+<div class="line">                                   ((MODE) == TIM_CounterMode_CenterAligned1) || \</div>
+<div class="line">                                   ((MODE) == TIM_CounterMode_CenterAligned2) || \</div>
+<div class="line">                                   ((MODE) == TIM_CounterMode_CenterAligned3))</div>
 </div><!-- fragment -->
 </div>
 </div>

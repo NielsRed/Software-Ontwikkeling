@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: DMA_fifo_direct_mode</title>
+<title>Software Ontwikkeling: DMA_memory_data_size</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,39 +86,43 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">DMA_fifo_direct_mode<div class="ingroups"><a class="el" href="../../d4/d9a/a00246.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d5/d1e/a00103.html">DMA</a> &raquo; <a class="el" href="../../d3/df8/a00155.html">DMA_Exported_Constants</a></div></div></div>
+  <div class="headertitle"><div class="title">DMA_memory_data_size<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../d7/d70/a00106.html">DMA</a> &raquo; <a class="el" href="../../d6/db8/a00158.html">DMA_Exported_Constants</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gadad9e503fa9867a981e3090d333483d7" id="r_gadad9e503fa9867a981e3090d333483d7"><td class="memItemLeft" align="right" valign="top"><a id="gadad9e503fa9867a981e3090d333483d7" name="gadad9e503fa9867a981e3090d333483d7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_FIFOMode_Disable</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
-<tr class="separator:gadad9e503fa9867a981e3090d333483d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga482bc2af420602d1a8c2aa35049a3857" id="r_ga482bc2af420602d1a8c2aa35049a3857"><td class="memItemLeft" align="right" valign="top"><a id="ga482bc2af420602d1a8c2aa35049a3857" name="ga482bc2af420602d1a8c2aa35049a3857"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_FIFOMode_Enable</b>&#160;&#160;&#160;((uint32_t)0x00000004)</td></tr>
-<tr class="separator:ga482bc2af420602d1a8c2aa35049a3857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadb90a893aeb49fd4bc14af750af3837c" id="r_gadb90a893aeb49fd4bc14af750af3837c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadb90a893aeb49fd4bc14af750af3837c">IS_DMA_FIFO_MODE_STATE</a>(STATE)</td></tr>
-<tr class="separator:gadb90a893aeb49fd4bc14af750af3837c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad6093bccb60ff9adf81e21c73c58ba17" id="r_gad6093bccb60ff9adf81e21c73c58ba17"><td class="memItemLeft" align="right" valign="top"><a id="gad6093bccb60ff9adf81e21c73c58ba17" name="gad6093bccb60ff9adf81e21c73c58ba17"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_MemoryDataSize_Byte</b>&#160;&#160;&#160;((uint32_t)0x00000000)</td></tr>
+<tr class="separator:gad6093bccb60ff9adf81e21c73c58ba17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74c9b4e547f5eaaf35d4fd3d01ed5741" id="r_ga74c9b4e547f5eaaf35d4fd3d01ed5741"><td class="memItemLeft" align="right" valign="top"><a id="ga74c9b4e547f5eaaf35d4fd3d01ed5741" name="ga74c9b4e547f5eaaf35d4fd3d01ed5741"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_MemoryDataSize_HalfWord</b>&#160;&#160;&#160;((uint32_t)0x00002000)</td></tr>
+<tr class="separator:ga74c9b4e547f5eaaf35d4fd3d01ed5741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff403722a6f82d4b34c9ef306507bb98" id="r_gaff403722a6f82d4b34c9ef306507bb98"><td class="memItemLeft" align="right" valign="top"><a id="gaff403722a6f82d4b34c9ef306507bb98" name="gaff403722a6f82d4b34c9ef306507bb98"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DMA_MemoryDataSize_Word</b>&#160;&#160;&#160;((uint32_t)0x00004000)</td></tr>
+<tr class="separator:gaff403722a6f82d4b34c9ef306507bb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac9e3748cebcb16d4ae4206d562bc804c" id="r_gac9e3748cebcb16d4ae4206d562bc804c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac9e3748cebcb16d4ae4206d562bc804c">IS_DMA_MEMORY_DATA_SIZE</a>(SIZE)</td></tr>
+<tr class="separator:gac9e3748cebcb16d4ae4206d562bc804c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gadb90a893aeb49fd4bc14af750af3837c" name="gadb90a893aeb49fd4bc14af750af3837c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadb90a893aeb49fd4bc14af750af3837c">&#9670;&#160;</a></span>IS_DMA_FIFO_MODE_STATE</h2>
+<a id="gac9e3748cebcb16d4ae4206d562bc804c" name="gac9e3748cebcb16d4ae4206d562bc804c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac9e3748cebcb16d4ae4206d562bc804c">&#9670;&#160;</a></span>IS_DMA_MEMORY_DATA_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define IS_DMA_FIFO_MODE_STATE</td>
+          <td class="memname">#define IS_DMA_MEMORY_DATA_SIZE</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>STATE</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>SIZE</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">                                       (((STATE) == DMA_FIFOMode_Disable ) || \</div>
-<div class="line">                                       ((STATE) == DMA_FIFOMode_Enable))</div>
+<b>Value:</b><div class="fragment"><div class="line">                                       (((SIZE) == DMA_MemoryDataSize_Byte)  || \</div>
+<div class="line">                                       ((SIZE) == DMA_MemoryDataSize_HalfWord) || \</div>
+<div class="line">                                       ((SIZE) == DMA_MemoryDataSize_Word ))</div>
 </div><!-- fragment -->
 </div>
 </div>

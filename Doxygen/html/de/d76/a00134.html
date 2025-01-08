@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: CMSIS Core</title>
+<title>Software Ontwikkeling: CMSIS MISRA-C:2004 Compliance Exceptions</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -84,35 +84,18 @@ $(function(){ initResizable(false); });
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#groups">Topics</a> &#124;
-<a href="#nested-classes">Data Structures</a>  </div>
-  <div class="headertitle"><div class="title">CMSIS Core<div class="ingroups"><a class="el" href="../../d5/deb/a00132.html">CMSIS Core Definitions</a> &#124; <a class="el" href="../../d5/deb/a00132.html">CMSIS Core Definitions</a> &raquo; <a class="el" href="../../d0/de8/a00133.html">CMSIS Core Register</a></div></div></div>
+  <div class="headertitle"><div class="title">CMSIS MISRA-C:2004 Compliance Exceptions</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5b/a00135.html">CMSIS NVIC</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d56/a00274.html">APSR_Type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Application Program Status Register (APSR).  <a href="../../dd/d56/a00274.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dc9/a00282.html">IPSR_Type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Interrupt Program Status Register (IPSR).  <a href="../../dc/dc9/a00282.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d25/a00290.html">xPSR_Type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Special-Purpose Program Status Registers (xPSR).  <a href="../../de/d25/a00290.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0d/a00298.html">CONTROL_Type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Control Registers (CONTROL).  <a href="../../d9/d0d/a00298.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Type definitions for the Cortex-M Core Registers </p>
+<p>CMSIS violates following MISRA-C2004 Rules:</p>
+<ul>
+<li>Violates MISRA 2004 Required Rule 8.5, object/function definition in header file.<br  />
+ Function definitions in header files are used to allow 'inlining'.</li>
+<li>Violates MISRA 2004 Required Rule 18.4, declaration of union type or object of union type: '{...}'.<br  />
+ Unions are used for effective representation of core registers.</li>
+<li>Violates MISRA 2004 Advisory Rule 19.7, Function-like macro defined.<br  />
+ Function-like macros are used to allow more efficient code. </li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

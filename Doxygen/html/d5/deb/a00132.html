@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: CMSIS Core Definitions</title>
+<title>Software Ontwikkeling: Specific interface management functions</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -85,148 +85,123 @@ $(function(){ initResizable(false); });
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Topics</a> &#124;
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">CMSIS Core Definitions</div></div>
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">Specific interface management functions<div class="ingroups"><a class="el" href="../../de/dbc/a00249.html">STM32F4xx_StdPeriph_Driver</a> &raquo; <a class="el" href="../../de/d36/a00123.html">TIM</a> &raquo; <a class="el" href="../../da/d72/a00124.html">TIM_Private_Functions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Specific interface management functions.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de8/a00133.html">CMSIS Core Register</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d76/a00134.html">CMSIS Core</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga90ffc8179476f80347379bfe29639edc" id="r_ga90ffc8179476f80347379bfe29639edc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a>&#160;&#160;&#160;(0x02)</td></tr>
-<tr class="separator:ga90ffc8179476f80347379bfe29639edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc7392964da961a44e916fcff7add532" id="r_gafc7392964da961a44e916fcff7add532"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a>&#160;&#160;&#160;(0x10)</td></tr>
-<tr class="separator:gafc7392964da961a44e916fcff7add532"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacb6f5d2c3271c95d0a02fd06723af25d" id="r_gacb6f5d2c3271c95d0a02fd06723af25d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacb6f5d2c3271c95d0a02fd06723af25d">__CM4_CMSIS_VERSION</a>&#160;&#160;&#160;((<a class="el" href="#ga90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a> &lt;&lt; 16) | <a class="el" href="#gafc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a>)</td></tr>
-<tr class="separator:gacb6f5d2c3271c95d0a02fd06723af25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63ea62503c88acab19fcf3d5743009e3" id="r_ga63ea62503c88acab19fcf3d5743009e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga63ea62503c88acab19fcf3d5743009e3">__CORTEX_M</a>&#160;&#160;&#160;(0x04)</td></tr>
-<tr class="separator:ga63ea62503c88acab19fcf3d5743009e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga65104fb6a96df4ec7f7e72781b561060" id="r_ga65104fb6a96df4ec7f7e72781b561060"><td class="memItemLeft" align="right" valign="top"><a id="ga65104fb6a96df4ec7f7e72781b561060" name="ga65104fb6a96df4ec7f7e72781b561060"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>__CORE_CM4_H_DEPENDANT</b></td></tr>
-<tr class="separator:ga65104fb6a96df4ec7f7e72781b561060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf63697ed9952cc71e1225efe205f6cd3" id="r_gaf63697ed9952cc71e1225efe205f6cd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf63697ed9952cc71e1225efe205f6cd3">__I</a>&#160;&#160;&#160;volatile const</td></tr>
-<tr class="separator:gaf63697ed9952cc71e1225efe205f6cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7e25d9380f9ef903923964322e71f2f6" id="r_ga7e25d9380f9ef903923964322e71f2f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7e25d9380f9ef903923964322e71f2f6">__O</a>&#160;&#160;&#160;volatile</td></tr>
-<tr class="separator:ga7e25d9380f9ef903923964322e71f2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaec43007d9998a0a0e01faede4133d6be" id="r_gaec43007d9998a0a0e01faede4133d6be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaec43007d9998a0a0e01faede4133d6be">__IO</a>&#160;&#160;&#160;volatile</td></tr>
-<tr class="separator:gaec43007d9998a0a0e01faede4133d6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga0fc7e76c47a3bd1ba1ebc71427832b51" id="r_ga0fc7e76c47a3bd1ba1ebc71427832b51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0fc7e76c47a3bd1ba1ebc71427832b51">TIM_EncoderInterfaceConfig</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, uint16_t TIM_EncoderMode, uint16_t TIM_IC1Polarity, uint16_t TIM_IC2Polarity)</td></tr>
+<tr class="memdesc:ga0fc7e76c47a3bd1ba1ebc71427832b51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the TIMx Encoder Interface.  <br /></td></tr>
+<tr class="separator:ga0fc7e76c47a3bd1ba1ebc71427832b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42c2d1025a3937c9d9f38631af86ffa4" id="r_ga42c2d1025a3937c9d9f38631af86ffa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga42c2d1025a3937c9d9f38631af86ffa4">TIM_SelectHallSensor</a> (<a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *TIMx, FunctionalState NewState)</td></tr>
+<tr class="memdesc:ga42c2d1025a3937c9d9f38631af86ffa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables the TIMx's Hall sensor interface.  <br /></td></tr>
+<tr class="separator:ga42c2d1025a3937c9d9f38631af86ffa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>This file defines all structures and symbols for CMSIS core:</p><ul>
-<li>CMSIS version number</li>
-<li>Cortex-M core</li>
-<li>Cortex-M core Revision Number </li>
+<p>Specific interface management functions. </p>
+<pre class="fragment"> ===============================================================================
+                    Specific interface management functions
+ ===============================================================================  
+</pre> <h2 class="groupheader">Function Documentation</h2>
+<a id="ga0fc7e76c47a3bd1ba1ebc71427832b51" name="ga0fc7e76c47a3bd1ba1ebc71427832b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0fc7e76c47a3bd1ba1ebc71427832b51">&#9670;&#160;</a></span>TIM_EncoderInterfaceConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TIM_EncoderInterfaceConfig </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_EncoderMode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_IC1Polarity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>TIM_IC2Polarity</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the TIMx Encoder Interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1, 2, 3, 4, 5, 8, 9 or 12 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">TIM_EncoderMode</td><td>specifies the TIMx Encoder Mode. This parameter can be one of the following values: <ul>
+<li>TIM_EncoderMode_TI1: Counter counts on TI1FP1 edge depending on TI2FP2 level. </li>
+<li>TIM_EncoderMode_TI2: Counter counts on TI2FP2 edge depending on TI1FP1 level. </li>
+<li>TIM_EncoderMode_TI12: Counter counts on both TI1FP1 and TI2FP2 edges depending on the level of the other input. </li>
 </ul>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gacb6f5d2c3271c95d0a02fd06723af25d" name="gacb6f5d2c3271c95d0a02fd06723af25d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacb6f5d2c3271c95d0a02fd06723af25d">&#9670;&#160;</a></span>__CM4_CMSIS_VERSION</h2>
+</td></tr>
+    <tr><td class="paramname">TIM_IC1Polarity</td><td>specifies the IC1 Polarity This parameter can be one of the following values: <ul>
+<li>TIM_ICPolarity_Falling: IC Falling edge. </li>
+<li>TIM_ICPolarity_Rising: IC Rising edge. </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">TIM_IC2Polarity</td><td>specifies the IC2 Polarity This parameter can be one of the following values: <ul>
+<li>TIM_ICPolarity_Falling: IC Falling edge. </li>
+<li>TIM_ICPolarity_Rising: IC Rising edge. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga42c2d1025a3937c9d9f38631af86ffa4" name="ga42c2d1025a3937c9d9f38631af86ffa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga42c2d1025a3937c9d9f38631af86ffa4">&#9670;&#160;</a></span>TIM_SelectHallSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __CM4_CMSIS_VERSION&#160;&#160;&#160;((<a class="el" href="#ga90ffc8179476f80347379bfe29639edc">__CM4_CMSIS_VERSION_MAIN</a> &lt;&lt; 16) | <a class="el" href="#gafc7392964da961a44e916fcff7add532">__CM4_CMSIS_VERSION_SUB</a>)</td>
+          <td class="memname">void TIM_SelectHallSensor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d8e/a00473.html">TIM_TypeDef</a> *</td>          <td class="paramname"><span class="paramname"><em>TIMx</em></span>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p>CMSIS HAL version number </p>
-
-</div>
-</div>
-<a id="ga90ffc8179476f80347379bfe29639edc" name="ga90ffc8179476f80347379bfe29639edc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga90ffc8179476f80347379bfe29639edc">&#9670;&#160;</a></span>__CM4_CMSIS_VERSION_MAIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">#define __CM4_CMSIS_VERSION_MAIN&#160;&#160;&#160;(0x02)</td>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FunctionalState</td>          <td class="paramname"><span class="paramname"><em>NewState</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>[31:16] CMSIS HAL main version </p>
 
-</div>
-</div>
-<a id="gafc7392964da961a44e916fcff7add532" name="gafc7392964da961a44e916fcff7add532"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafc7392964da961a44e916fcff7add532">&#9670;&#160;</a></span>__CM4_CMSIS_VERSION_SUB</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __CM4_CMSIS_VERSION_SUB&#160;&#160;&#160;(0x10)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>[15:0] CMSIS HAL sub version </p>
-
-</div>
-</div>
-<a id="ga63ea62503c88acab19fcf3d5743009e3" name="ga63ea62503c88acab19fcf3d5743009e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga63ea62503c88acab19fcf3d5743009e3">&#9670;&#160;</a></span>__CORTEX_M</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __CORTEX_M&#160;&#160;&#160;(0x04)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Cortex core __FPU_USED to be checked prior to making use of FPU specific registers and functions standard types definitions Core Instruction Access Core Function Access Compiler specific SIMD Intrinsics </p>
-
-</div>
-</div>
-<a id="gaf63697ed9952cc71e1225efe205f6cd3" name="gaf63697ed9952cc71e1225efe205f6cd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf63697ed9952cc71e1225efe205f6cd3">&#9670;&#160;</a></span>__I</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __I&#160;&#160;&#160;volatile const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>defines 'read only' permissions </p>
-
-</div>
-</div>
-<a id="gaec43007d9998a0a0e01faede4133d6be" name="gaec43007d9998a0a0e01faede4133d6be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaec43007d9998a0a0e01faede4133d6be">&#9670;&#160;</a></span>__IO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __IO&#160;&#160;&#160;volatile</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>defines 'read / write' permissions </p>
-
-</div>
-</div>
-<a id="ga7e25d9380f9ef903923964322e71f2f6" name="ga7e25d9380f9ef903923964322e71f2f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga7e25d9380f9ef903923964322e71f2f6">&#9670;&#160;</a></span>__O</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __O&#160;&#160;&#160;volatile</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>defines 'write only' permissions </p>
+<p>Enables or disables the TIMx's Hall sensor interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TIMx</td><td>where x can be 1, 2, 3, 4, 5, 8, 9 or 12 to select the TIM peripheral. </td></tr>
+    <tr><td class="paramname">NewState</td><td>new state of the TIMx Hall sensor interface. This parameter can be: ENABLE or DISABLE. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

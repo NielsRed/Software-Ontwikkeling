@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Software Ontwikkeling: CMSIS System Control and ID Register not in the SCB</title>
+<title>Software Ontwikkeling: CMSIS Core</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -86,233 +86,33 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#groups">Topics</a> &#124;
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">CMSIS System Control and ID Register not in the SCB<div class="ingroups"><a class="el" href="../../d5/deb/a00132.html">CMSIS Core Definitions</a> &#124; <a class="el" href="../../d5/deb/a00132.html">CMSIS Core Definitions</a> &raquo; <a class="el" href="../../d0/de8/a00133.html">CMSIS Core Register</a> &raquo; <a class="el" href="../../de/d76/a00134.html">CMSIS Core</a> &raquo; <a class="el" href="../../d5/d5b/a00135.html">CMSIS NVIC</a> &raquo; <a class="el" href="../../d0/d5e/a00136.html">CMSIS SCB</a></div></div></div>
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">CMSIS Core<div class="ingroups"><a class="el" href="../../d5/d5b/a00135.html">CMSIS Core Definitions</a> &#124; <a class="el" href="../../d5/d5b/a00135.html">CMSIS Core Definitions</a> &raquo; <a class="el" href="../../d0/d5e/a00136.html">CMSIS Core Register</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/a00138.html">CMSIS SysTick</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddd/a00138.html">CMSIS NVIC</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d39/a00314.html">SCnSCB_Type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure type to access the System Control and ID Register not in the SCB.  <a href="../../d0/d39/a00314.html#details">More...</a><br /></td></tr>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4b/a00277.html">APSR_Type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Application Program Status Register (APSR).  <a href="../../d6/d4b/a00277.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga0777ddf379af50f9ca41d40573bfffc5" id="r_ga0777ddf379af50f9ca41d40573bfffc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0777ddf379af50f9ca41d40573bfffc5">SCnSCB_ICTR_INTLINESNUM_Pos</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ga0777ddf379af50f9ca41d40573bfffc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3efa0f5210051464e1034b19fc7b33c7" id="r_ga3efa0f5210051464e1034b19fc7b33c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3efa0f5210051464e1034b19fc7b33c7">SCnSCB_ICTR_INTLINESNUM_Msk</a>&#160;&#160;&#160;(0xFUL &lt;&lt; <a class="el" href="#ga0777ddf379af50f9ca41d40573bfffc5">SCnSCB_ICTR_INTLINESNUM_Pos</a>)</td></tr>
-<tr class="separator:ga3efa0f5210051464e1034b19fc7b33c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaff0b57464c60fea8182b903676f8de49" id="r_gaff0b57464c60fea8182b903676f8de49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaff0b57464c60fea8182b903676f8de49">SCnSCB_ACTLR_DISOOFP_Pos</a>&#160;&#160;&#160;9</td></tr>
-<tr class="separator:gaff0b57464c60fea8182b903676f8de49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1ecd6adafa43464d7097b132c19e8640" id="r_ga1ecd6adafa43464d7097b132c19e8640"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1ecd6adafa43464d7097b132c19e8640">SCnSCB_ACTLR_DISOOFP_Msk</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gaff0b57464c60fea8182b903676f8de49">SCnSCB_ACTLR_DISOOFP_Pos</a>)</td></tr>
-<tr class="separator:ga1ecd6adafa43464d7097b132c19e8640"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa194809383bc72ecf3416d85709281d7" id="r_gaa194809383bc72ecf3416d85709281d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa194809383bc72ecf3416d85709281d7">SCnSCB_ACTLR_DISFPCA_Pos</a>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:gaa194809383bc72ecf3416d85709281d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga10d5aa4a196dcde6f476016ece2c1b69" id="r_ga10d5aa4a196dcde6f476016ece2c1b69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga10d5aa4a196dcde6f476016ece2c1b69">SCnSCB_ACTLR_DISFPCA_Msk</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gaa194809383bc72ecf3416d85709281d7">SCnSCB_ACTLR_DISFPCA_Pos</a>)</td></tr>
-<tr class="separator:ga10d5aa4a196dcde6f476016ece2c1b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaab395870643a0bee78906bb15ca5bd02" id="r_gaab395870643a0bee78906bb15ca5bd02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaab395870643a0bee78906bb15ca5bd02">SCnSCB_ACTLR_DISFOLD_Pos</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:gaab395870643a0bee78906bb15ca5bd02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa9dd2d4a2350499188f438d0aa9fd982" id="r_gaa9dd2d4a2350499188f438d0aa9fd982"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa9dd2d4a2350499188f438d0aa9fd982">SCnSCB_ACTLR_DISFOLD_Msk</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gaab395870643a0bee78906bb15ca5bd02">SCnSCB_ACTLR_DISFOLD_Pos</a>)</td></tr>
-<tr class="separator:gaa9dd2d4a2350499188f438d0aa9fd982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafa2eb37493c0f8dae77cde81ecf80f77" id="r_gafa2eb37493c0f8dae77cde81ecf80f77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gafa2eb37493c0f8dae77cde81ecf80f77">SCnSCB_ACTLR_DISDEFWBUF_Pos</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:gafa2eb37493c0f8dae77cde81ecf80f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6cda7b7219232a008ec52cc8e89d5d08" id="r_ga6cda7b7219232a008ec52cc8e89d5d08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6cda7b7219232a008ec52cc8e89d5d08">SCnSCB_ACTLR_DISDEFWBUF_Msk</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gafa2eb37493c0f8dae77cde81ecf80f77">SCnSCB_ACTLR_DISDEFWBUF_Pos</a>)</td></tr>
-<tr class="separator:ga6cda7b7219232a008ec52cc8e89d5d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa3e79f5ead4a32c0ea742b2a9ffc0cd" id="r_gaaa3e79f5ead4a32c0ea742b2a9ffc0cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaa3e79f5ead4a32c0ea742b2a9ffc0cd">SCnSCB_ACTLR_DISMCYCINT_Pos</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:gaaa3e79f5ead4a32c0ea742b2a9ffc0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2a2818f0489ad10b6ea2964e899d4cbc" id="r_ga2a2818f0489ad10b6ea2964e899d4cbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2a2818f0489ad10b6ea2964e899d4cbc">SCnSCB_ACTLR_DISMCYCINT_Msk</a>&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gaaa3e79f5ead4a32c0ea742b2a9ffc0cd">SCnSCB_ACTLR_DISMCYCINT_Pos</a>)</td></tr>
-<tr class="separator:ga2a2818f0489ad10b6ea2964e899d4cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d58/a00285.html">IPSR_Type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Interrupt Program Status Register (IPSR).  <a href="../../d3/d58/a00285.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d82/a00293.html">xPSR_Type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Special-Purpose Program Status Registers (xPSR).  <a href="../../d6/d82/a00293.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d50/a00301.html">CONTROL_Type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union type to access the Control Registers (CONTROL).  <a href="../../da/d50/a00301.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Type definitions for the Cortex-M System Control and ID Register not in the SCB </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga6cda7b7219232a008ec52cc8e89d5d08" name="ga6cda7b7219232a008ec52cc8e89d5d08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6cda7b7219232a008ec52cc8e89d5d08">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISDEFWBUF_Msk</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISDEFWBUF_Msk&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gafa2eb37493c0f8dae77cde81ecf80f77">SCnSCB_ACTLR_DISDEFWBUF_Pos</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISDEFWBUF Mask </p>
-
-</div>
-</div>
-<a id="gafa2eb37493c0f8dae77cde81ecf80f77" name="gafa2eb37493c0f8dae77cde81ecf80f77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafa2eb37493c0f8dae77cde81ecf80f77">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISDEFWBUF_Pos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISDEFWBUF_Pos&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISDEFWBUF Position </p>
-
-</div>
-</div>
-<a id="gaa9dd2d4a2350499188f438d0aa9fd982" name="gaa9dd2d4a2350499188f438d0aa9fd982"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa9dd2d4a2350499188f438d0aa9fd982">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISFOLD_Msk</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISFOLD_Msk&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gaab395870643a0bee78906bb15ca5bd02">SCnSCB_ACTLR_DISFOLD_Pos</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISFOLD Mask </p>
-
-</div>
-</div>
-<a id="gaab395870643a0bee78906bb15ca5bd02" name="gaab395870643a0bee78906bb15ca5bd02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaab395870643a0bee78906bb15ca5bd02">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISFOLD_Pos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISFOLD_Pos&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISFOLD Position </p>
-
-</div>
-</div>
-<a id="ga10d5aa4a196dcde6f476016ece2c1b69" name="ga10d5aa4a196dcde6f476016ece2c1b69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga10d5aa4a196dcde6f476016ece2c1b69">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISFPCA_Msk</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISFPCA_Msk&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gaa194809383bc72ecf3416d85709281d7">SCnSCB_ACTLR_DISFPCA_Pos</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISFPCA Mask </p>
-
-</div>
-</div>
-<a id="gaa194809383bc72ecf3416d85709281d7" name="gaa194809383bc72ecf3416d85709281d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa194809383bc72ecf3416d85709281d7">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISFPCA_Pos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISFPCA_Pos&#160;&#160;&#160;8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISFPCA Position </p>
-
-</div>
-</div>
-<a id="ga2a2818f0489ad10b6ea2964e899d4cbc" name="ga2a2818f0489ad10b6ea2964e899d4cbc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga2a2818f0489ad10b6ea2964e899d4cbc">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISMCYCINT_Msk</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISMCYCINT_Msk&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gaaa3e79f5ead4a32c0ea742b2a9ffc0cd">SCnSCB_ACTLR_DISMCYCINT_Pos</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISMCYCINT Mask </p>
-
-</div>
-</div>
-<a id="gaaa3e79f5ead4a32c0ea742b2a9ffc0cd" name="gaaa3e79f5ead4a32c0ea742b2a9ffc0cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaa3e79f5ead4a32c0ea742b2a9ffc0cd">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISMCYCINT_Pos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISMCYCINT_Pos&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISMCYCINT Position </p>
-
-</div>
-</div>
-<a id="ga1ecd6adafa43464d7097b132c19e8640" name="ga1ecd6adafa43464d7097b132c19e8640"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1ecd6adafa43464d7097b132c19e8640">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISOOFP_Msk</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISOOFP_Msk&#160;&#160;&#160;(1UL &lt;&lt; <a class="el" href="#gaff0b57464c60fea8182b903676f8de49">SCnSCB_ACTLR_DISOOFP_Pos</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISOOFP Mask </p>
-
-</div>
-</div>
-<a id="gaff0b57464c60fea8182b903676f8de49" name="gaff0b57464c60fea8182b903676f8de49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaff0b57464c60fea8182b903676f8de49">&#9670;&#160;</a></span>SCnSCB_ACTLR_DISOOFP_Pos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ACTLR_DISOOFP_Pos&#160;&#160;&#160;9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ACTLR: DISOOFP Position </p>
-
-</div>
-</div>
-<a id="ga3efa0f5210051464e1034b19fc7b33c7" name="ga3efa0f5210051464e1034b19fc7b33c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3efa0f5210051464e1034b19fc7b33c7">&#9670;&#160;</a></span>SCnSCB_ICTR_INTLINESNUM_Msk</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ICTR_INTLINESNUM_Msk&#160;&#160;&#160;(0xFUL &lt;&lt; <a class="el" href="#ga0777ddf379af50f9ca41d40573bfffc5">SCnSCB_ICTR_INTLINESNUM_Pos</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ICTR: INTLINESNUM Mask </p>
-
-</div>
-</div>
-<a id="ga0777ddf379af50f9ca41d40573bfffc5" name="ga0777ddf379af50f9ca41d40573bfffc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0777ddf379af50f9ca41d40573bfffc5">&#9670;&#160;</a></span>SCnSCB_ICTR_INTLINESNUM_Pos</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SCnSCB_ICTR_INTLINESNUM_Pos&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ICTR: INTLINESNUM Position </p>
-
-</div>
-</div>
+<p>Type definitions for the Cortex-M Core Registers </p>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
